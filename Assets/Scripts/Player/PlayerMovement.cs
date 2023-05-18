@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
@@ -14,22 +13,18 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.updateRotation = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void GoToPoint(InputAction.CallbackContext context)
-    {
-        if (context.started)
+        if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = cam.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 navMeshAgent.SetDestination(hit.point);
                 Debug.Log(hit.point);
