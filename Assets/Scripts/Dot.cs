@@ -5,11 +5,14 @@ using UnityEngine;
 public class Dot : MonoBehaviour
 {
     private bool isConnected;
-    
+
+    private Pattern pattern;
+
     // Start is called before the first frame update
     void Start()
     {
-        isConnected = true;
+        isConnected = false;
+        pattern = transform.GetComponentInParent<Pattern>();
     }
 
     // Update is called once per frame
@@ -18,9 +21,25 @@ public class Dot : MonoBehaviour
         
     }
 
+    void OnMouseOver()
+    {
+        if (!PlayerManager.Instance.Player.IsDrawing)
+            return;
+
+        if (isConnected)
+            return;
+
+        Connect();
+    }
+
+
     public void Connect()
     {
         isConnected = true;
+        pattern.TempPoints.Add(this);
+
+        pattern.SetLine();
+
         Debug.Log("Is Connected!");
     }
 
