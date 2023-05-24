@@ -4,7 +4,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
-    public Drawing Player;
+    public Player Player;
 
     void Awake()
     {
