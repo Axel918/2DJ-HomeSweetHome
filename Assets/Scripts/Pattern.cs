@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI.Extensions;
 
 public class Pattern : MonoBehaviour
 {
     [Header("References")]
-    public LineRenderer LineRenderer;                                           // Line Renderer GameObject Reference
+    public UILineRenderer UILineRenderer;                                       // Line Renderer GameObject Reference
     [SerializeField] private Transform dotHolder;                               // Dot Holder Parent
 
     public List<Dot> TempDots { get; private set; } = new();                    // List Of Temporary Dot Connection
     private Dot[] dots;                                                         // Correct Dot Sequence Code
-
+    private List<Vector2> dotPositions = new();                                 // List of Dot Positions
+    private bool isEvaluating;                                                  // Indicates if Drawn Pattern is Being Evaluated
+    
     // Start is called before the first frame update
     void Start()
     {
         dots = dotHolder.GetComponentsInChildren<Dot>();
+        isEvaluating = false;
     }
 
     // Update is called once per frame
@@ -23,6 +27,9 @@ public class Pattern : MonoBehaviour
         // On Left Mouse Button Released
         if (Input.GetMouseButtonUp(0))
         {
+            if (isEvaluating)
+                return;
+            
             // If Complete, Check if right or wrong
             // If not, restart
             if (TempDots.Count != dots.Length)
@@ -43,6 +50,8 @@ public class Pattern : MonoBehaviour
     /// <returns></returns>
     IEnumerator StartEvaluating()
     {
+        isEvaluating = true;
+        
         yield return new WaitForSeconds(0.5f);
         
         // Check Every Dot Segment
@@ -74,11 +83,14 @@ public class Pattern : MonoBehaviour
     /// </summary>
     void ResetDots()
     {
+        isEvaluating = false;
+
         // Clear Temporary Dot List
         TempDots.Clear();
-        
+        dotPositions.Clear();
+
         // Reset Line Segment Count
-        LineRenderer.positionCount = TempDots.Count;
+        UILineRenderer.Points = dotPositions.ToArray();
 
         // Disconnect All Dots
         for (int i = 0; i < dots.Length; i++)
@@ -88,16 +100,11 @@ public class Pattern : MonoBehaviour
     /// <summary>
     /// Updates Line Renderer to the Current Dot Count
     /// </summary>
-    public void SetLine()
+    public void SetLine(Vector2 pos)
     {
-        // For Every Dot in the TempDot List
-        for (int i = 0; i < TempDots.Count; i++)
-        {
-            // Set Total Line Renderer Segments to the Current TempDot List Count
-            LineRenderer.positionCount = TempDots.Count;
+        dotPositions.Add(pos);
 
-            // Set Segment Positions
-            LineRenderer.SetPosition(i, TempDots[i].transform.position);
-        }
+        // Set Total Line Renderer Segments to the Current TempDot List Count
+        UILineRenderer.Points = dotPositions.ToArray();
     }
 }
