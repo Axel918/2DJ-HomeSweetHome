@@ -6,6 +6,7 @@ using UnityEngine;
 public class Dot : MonoBehaviour
 {
     private bool isConnected;                                       // Connection Indicator
+    private bool onMouseOver;                                       // Indicator that the Cursor is Hovering this Object
     private Pattern pattern;                                        // Pattern Class Reference
 
     // Start is called before the first frame update
@@ -13,10 +14,15 @@ public class Dot : MonoBehaviour
     {
         isConnected = false;
         pattern = transform.GetComponentInParent<Pattern>();
+        onMouseOver = false;
     }
 
-    void OnMouseOver()
+    void Update()
     {
+        // Don't Connect if Cursor is not Hovering this Object
+        if (!onMouseOver)
+            return;
+
         // Don't Connect if Player is Not Drawing
         if (!PlayerManager.Instance.Player.Drawing.IsDrawing)
             return;
@@ -30,6 +36,15 @@ public class Dot : MonoBehaviour
     }
 
     /// <summary>
+    /// Set Mouse Hover Indicator
+    /// </summary>
+    /// <param name="value"></param>
+    public void SetMouseOver(bool value)
+    {
+        onMouseOver = value;
+    }
+
+    /// <summary>
     /// Connect this Dot to the Line Pattern
     /// </summary>
     public void Connect()
@@ -40,7 +55,7 @@ public class Dot : MonoBehaviour
         pattern.TempDots.Add(this);
 
         // Update the Line Pattern
-        pattern.SetLine();
+        pattern.SetLine(transform.localPosition);
     }
 
     /// <summary>
