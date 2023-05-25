@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingPanel: {fileID: 1403448356}
   transitionPanel: {fileID: 401385470}
-  firstSceneId: 
+  firstSceneId: MainMenuScene
 --- !u!1 &914339127
 GameObject:
   m_ObjectHideFlags: 0
