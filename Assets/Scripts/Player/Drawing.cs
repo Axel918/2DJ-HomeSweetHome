@@ -13,6 +13,9 @@ public class Drawing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PatternMiniGame.Instance.CanDraw)
+            return;
+        
         if (Input.GetMouseButtonDown(0))
         {
             IsDrawing = true;
