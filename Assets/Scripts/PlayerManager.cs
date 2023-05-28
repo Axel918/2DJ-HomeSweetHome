@@ -6,7 +6,6 @@ public class PlayerManager : MonoBehaviour
 
     public Player Player;
 
-    #region Singleton
     void Awake()
     {
         if (Instance == null)
@@ -14,5 +13,4 @@ public class PlayerManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-    #endregion
 }
