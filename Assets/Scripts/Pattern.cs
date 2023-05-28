@@ -19,6 +19,9 @@ public class Pattern : MonoBehaviour
     {
         dots = dotHolder.GetComponentsInChildren<Dot>();
         isEvaluating = false;
+
+        for (int i = 0; i < dots.Length; i++)
+            dots[i].SetDotNumber(i + 1);
     }
 
     // Update is called once per frame
@@ -52,7 +55,7 @@ public class Pattern : MonoBehaviour
     {
         isEvaluating = true;
         
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         
         // Check Every Dot Segment
         for (int i = 0; i < dots.Length; i++)
@@ -61,7 +64,7 @@ public class Pattern : MonoBehaviour
             {
                 // Declare Drawn Pattern as Wrong
                 Debug.Log("WRONG");
-                yield return new WaitForSeconds(1f);
+                //yield return new WaitForSeconds(1f);
 
                 // Reset Dots and End Evaluation
                 ResetDots();
@@ -72,10 +75,13 @@ public class Pattern : MonoBehaviour
         // Declare Drawn Pattern as Correct
         Debug.Log("CORRECT");
 
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
         
         // Reset the Dots After Slight Delay
-        ResetDots();
+        // ResetDots();
+        yield return null;
+
+        PatternMiniGame.Instance.NextPattern();
     }
 
     /// <summary>

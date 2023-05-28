@@ -1,10 +1,14 @@
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// Refers to a Specific Segment in a Line
 /// </summary>
 public class Dot : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] private TextMeshProUGUI dotNumber;
+    
     private bool isConnected;                                       // Connection Indicator
     private bool onMouseOver;                                       // Indicator that the Cursor is Hovering this Object
     private Pattern pattern;                                        // Pattern Class Reference
@@ -33,6 +37,11 @@ public class Dot : MonoBehaviour
 
         // Start Connecting
         Connect();
+    }
+
+    public void SetDotNumber(int value)
+    {
+        dotNumber.text = value.ToString("0");
     }
 
     /// <summary>
