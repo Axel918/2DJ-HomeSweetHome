@@ -405,8 +405,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patternData:
-  - {fileID: 4721652584833569940, guid: 4913d33af7b35794f8568c51e5679aab, type: 3}
-  - {fileID: 4721652584833569940, guid: 7da230fcf6362ff40a46ebc1a2927ba1, type: 3}
+  - {fileID: 1757044565534129747, guid: 4913d33af7b35794f8568c51e5679aab, type: 3}
+  - {fileID: 1757044565534129747, guid: f38d281a5b4467843aad94f8a1d4b774, type: 3}
+  - {fileID: 1757044565534129747, guid: f1b2d6b580867b44c86150430d60d8db, type: 3}
+  - {fileID: 1757044565534129747, guid: aa6ae805ced7d204fb794dd99e7f0d6f, type: 3}
 --- !u!4 &736523946
 Transform:
   m_ObjectHideFlags: 0
