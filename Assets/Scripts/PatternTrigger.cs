@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PatternTrigger : MonoBehaviour
 {
-    [Header("Pattern")]
+    [Header("Gesture Pattern Library")]
     [SerializeField] private GameObject[] patternData;
 
     private bool isComplete;
@@ -17,7 +17,7 @@ public class PatternTrigger : MonoBehaviour
         isComplete = false;
     }
 
-    private void Update()
+    void Update()
     {
         if (isComplete)
             return;
