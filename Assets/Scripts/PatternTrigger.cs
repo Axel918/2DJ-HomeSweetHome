@@ -9,8 +9,6 @@ public class PatternTrigger : MonoBehaviour
 
     private bool isComplete;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +29,6 @@ public class PatternTrigger : MonoBehaviour
     void EnablePatternMiniGame()
     {
         PatternMiniGame.Instance.Initialize(patternData, this);
-        isComplete = true;
     }
 
     public void Completed()

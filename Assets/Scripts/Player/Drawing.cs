@@ -14,7 +14,10 @@ public class Drawing : MonoBehaviour
     void Update()
     {
         if (!PatternMiniGame.Instance.CanDraw)
+        {
+            IsDrawing = false;
             return;
+        }
         
         if (Input.GetMouseButtonDown(0))
         {
