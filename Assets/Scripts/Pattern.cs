@@ -13,15 +13,22 @@ public class Pattern : MonoBehaviour
     private Dot[] dots;                                                         // Correct Dot Sequence Code
     private List<Vector2> dotPositions = new();                                 // List of Dot Positions
     private bool isEvaluating;                                                  // Indicates if Drawn Pattern is Being Evaluated
-    
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         dots = dotHolder.GetComponentsInChildren<Dot>();
+
         isEvaluating = false;
 
         for (int i = 0; i < dots.Length; i++)
             dots[i].SetDotNumber(i + 1);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+        
     }
 
     // Update is called once per frame

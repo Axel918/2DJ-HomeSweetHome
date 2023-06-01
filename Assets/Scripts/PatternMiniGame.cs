@@ -57,6 +57,7 @@ public class PatternMiniGame : MonoBehaviour
         if (currentPatternIndex >= currentPatternData.Length)
         {
             Debug.Log("FINISHED");
+            CanDraw = false;
             return;
         }
 
