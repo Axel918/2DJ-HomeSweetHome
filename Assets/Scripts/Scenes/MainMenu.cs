@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnPlayButtonClicked()
     {
-        string[] scenes = { "GameScene" };
+        string[] scenes = { "GameScene", "GameUIScene", "Level1" };
         
         SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
     }

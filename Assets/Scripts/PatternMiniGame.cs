@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PatternMiniGame : MonoBehaviour
 {
     public static PatternMiniGame Instance;
 
-    [SerializeField] Transform patternHolder;
+    [Header("References")]
+    [SerializeField] private Transform patternHolder;
+    [SerializeField] private Image timerBar;
 
     private GameObject[] currentPatternData;
     private PatternTrigger patternTrigger;
@@ -15,6 +18,8 @@ public class PatternMiniGame : MonoBehaviour
     private List<GameObject> patterns = new();
 
     public bool CanDraw { get; private set; }
+
+    private float timer = 10f;
 
     #region Singleton
     void Awake()
@@ -26,18 +31,13 @@ public class PatternMiniGame : MonoBehaviour
     }
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        CanDraw = true;
-    }
-
     public void Initialize(GameObject[] data, PatternTrigger reference)
     {
         CanDraw = true;
         currentPatternData = data;
         patternTrigger = reference;
         currentPatternIndex = 0;
+        StartCoroutine(StartTimer());
 
         for (int i = 0; i < currentPatternData.Length; i++)
         {
@@ -52,23 +52,47 @@ public class PatternMiniGame : MonoBehaviour
 
     public void NextPattern()
     {
+        if (!CanDraw)
+            return;
+        
         currentPatternIndex++;
 
         if (currentPatternIndex >= currentPatternData.Length)
         {
             Debug.Log("FINISHED");
             CanDraw = false;
+            StopAllCoroutines();
+            patternTrigger.Completed();
             return;
         }
 
         ActivatePattern();
     }
 
+    void ClearData()
+    {
+
+    }
+
     void ActivatePattern()
     {
         for (int i = 0; i < patterns.Count; i++)
-        {
             patterns[i].SetActive(i == currentPatternIndex);
+    }
+
+    IEnumerator StartTimer()
+    {
+        float currentTime = timer;
+        
+        while (currentTime > 0f)
+        {
+            Debug.Log(currentTime);
+            yield return new WaitForSeconds(1f);
+            currentTime--;
+            timerBar.fillAmount = currentTime / timer;
         }
+
+        Debug.Log("Time's Up!");
+        CanDraw = false;
     }
 }
