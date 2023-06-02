@@ -63,6 +63,8 @@ public class PatternMiniGame : MonoBehaviour
             CanDraw = false;
             StopAllCoroutines();
             patternTrigger.Completed();
+            PanelManager.Instance.ActivatePanel("Game UI");
+            PlayerEvents.Instance.SetPlayerMovement(true);
             return;
         }
 
