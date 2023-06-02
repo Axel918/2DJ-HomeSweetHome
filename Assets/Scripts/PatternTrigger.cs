@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PatternTrigger : MonoBehaviour
@@ -15,15 +13,28 @@ public class PatternTrigger : MonoBehaviour
         isComplete = false;
     }
 
-    void Update()
+    void OnMouseEnter()
     {
         if (isComplete)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            EnablePatternMiniGame();
-        }
+        GetComponent<Renderer>().material.color = Color.red;
+    }
+
+    private void OnMouseExit()
+    {
+        if (isComplete)
+            return;
+
+        GetComponent<Renderer>().material.color = Color.white;
+    }
+
+    private void OnMouseDown()
+    {
+        if (isComplete)
+            return;
+
+        EnablePatternMiniGame();
     }
 
     void EnablePatternMiniGame()
@@ -36,5 +47,6 @@ public class PatternTrigger : MonoBehaviour
     public void Completed()
     {
         isComplete = true;
+        GetComponent<Renderer>().material.color = Color.gray;
     }
 }
