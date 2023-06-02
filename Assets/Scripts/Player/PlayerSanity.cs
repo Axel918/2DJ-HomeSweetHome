@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSanity : MonoBehaviour
@@ -11,13 +9,12 @@ public class PlayerSanity : MonoBehaviour
 
     void Awake()
     {
-        currentSanity = defaultSanity;
+        Initialize();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Initialize()
     {
-        
+        currentSanity = defaultSanity;
     }
 
     void TakeDamage(float damage)
