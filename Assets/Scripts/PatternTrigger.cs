@@ -28,6 +28,7 @@ public class PatternTrigger : MonoBehaviour
 
     void EnablePatternMiniGame()
     {
+        PanelManager.Instance.ActivatePanel("Pattern Mini-Game");
         PatternMiniGame.Instance.Initialize(patternData, this);
     }
 
