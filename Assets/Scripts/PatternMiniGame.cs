@@ -33,10 +33,13 @@ public class PatternMiniGame : MonoBehaviour
 
     public void Initialize(GameObject[] data, PatternFurniture reference)
     {
+        ClearData();
+        
         CanDraw = true;
         currentPatternData = data;
         patternTrigger = reference;
         currentPatternIndex = 0;
+        timerBar.fillAmount = 1f;
         StartCoroutine(StartTimer());
 
         for (int i = 0; i < currentPatternData.Length; i++)
@@ -63,6 +66,7 @@ public class PatternMiniGame : MonoBehaviour
             CanDraw = false;
             StopAllCoroutines();
             patternTrigger.Completed();
+            ClearData();
             PanelManager.Instance.ActivatePanel("Game UI");
             PlayerEvents.Instance.SetPlayerMovement(true);
             return;
@@ -73,7 +77,13 @@ public class PatternMiniGame : MonoBehaviour
 
     void ClearData()
     {
+        foreach(GameObject go in patterns)
+            Destroy(go);
+      
+        patterns.Clear();
 
+        currentPatternData = null;
+        patternTrigger = null;
     }
 
     void ActivatePattern()
@@ -94,7 +104,14 @@ public class PatternMiniGame : MonoBehaviour
             timerBar.fillAmount = currentTime / timer;
         }
 
+        // TO BE REMOVED!!!
+        patternTrigger.InProgress = false;
+        
+        
+        ClearData();
         Debug.Log("Time's Up!");
         CanDraw = false;
+        PanelManager.Instance.ActivatePanel("Game UI");
+        PlayerEvents.Instance.SetPlayerMovement(true);
     }
 }

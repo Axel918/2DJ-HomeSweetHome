@@ -9,12 +9,12 @@ public class PatternFurniture : MonoBehaviour
     [SerializeField] private GameObject[] patternData;
 
     public bool IsComplete { get; set; }
-    private bool inProgress;
+    public bool InProgress { get; set; }
 
     void Awake()
     {
         IsComplete = false;
-        inProgress = false;
+        InProgress = false;
     }
 
     void OnMouseEnter()
@@ -22,7 +22,7 @@ public class PatternFurniture : MonoBehaviour
         if (IsComplete)
             return;
 
-        if (inProgress)
+        if (InProgress)
             return;
 
         GetComponent<Renderer>().material.color = Color.red;
@@ -33,7 +33,7 @@ public class PatternFurniture : MonoBehaviour
         if (IsComplete)
             return;
 
-        if (inProgress)
+        if (InProgress)
             return;
 
         GetComponent<Renderer>().material.color = Color.white;
@@ -50,7 +50,7 @@ public class PatternFurniture : MonoBehaviour
 
     public void EnablePatternMiniGame()
     {
-        inProgress = true;
+        InProgress = true;
         PlayerEvents.Instance.SetPlayerMovement(false);
         PanelManager.Instance.ActivatePanel("Pattern Mini-Game");
         PatternMiniGame.Instance.Initialize(patternData, this);
@@ -59,7 +59,7 @@ public class PatternFurniture : MonoBehaviour
     public void Completed()
     {
         IsComplete = true;
-        inProgress = false;
+        InProgress = false;
         Destroy(patternTriggerPoint.gameObject);
         GetComponent<Renderer>().material.color = Color.gray;
     }
