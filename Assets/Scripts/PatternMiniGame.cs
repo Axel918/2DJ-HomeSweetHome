@@ -12,7 +12,7 @@ public class PatternMiniGame : MonoBehaviour
     [SerializeField] private Image timerBar;
 
     private GameObject[] currentPatternData;
-    private PatternTrigger patternTrigger;
+    private PatternFurniture patternTrigger;
     private int currentPatternIndex;
 
     private List<GameObject> patterns = new();
@@ -31,7 +31,7 @@ public class PatternMiniGame : MonoBehaviour
     }
     #endregion
 
-    public void Initialize(GameObject[] data, PatternTrigger reference)
+    public void Initialize(GameObject[] data, PatternFurniture reference)
     {
         CanDraw = true;
         currentPatternData = data;
