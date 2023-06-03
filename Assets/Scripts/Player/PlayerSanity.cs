@@ -7,6 +7,16 @@ public class PlayerSanity : MonoBehaviour
 
     private float currentSanity;
 
+    void OnEnable()
+    {
+        PlayerEvents.Instance.OnPlayerDamaged += TakeDamage;
+    }
+
+    void OnDisable()
+    {
+        PlayerEvents.Instance.OnPlayerDamaged -= TakeDamage;
+    }
+
     void Awake()
     {
         Initialize();
@@ -21,6 +31,8 @@ public class PlayerSanity : MonoBehaviour
     {
         currentSanity -= damage;
 
+        Debug.Log(currentSanity);
+
         if (currentSanity <= 0f)
             OnDeath();
     }
@@ -28,5 +40,10 @@ public class PlayerSanity : MonoBehaviour
     void OnDeath()
     {
         Debug.Log("Dead");
+    }
+
+    public float GetSanityRatio()
+    {
+        return currentSanity / defaultSanity;
     }
 }
