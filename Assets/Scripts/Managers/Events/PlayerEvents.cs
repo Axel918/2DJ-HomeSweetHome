@@ -5,9 +5,9 @@ public class PlayerEvents : MonoBehaviour
 {
     public static PlayerEvents Instance;
 
-
     public event Action<float> OnPlayerDamaged;                                             // Called When Player Takes Damage
-    public event Action<bool> OnSetPlayerMovement;                                          // Player Movement
+    public event Action<bool> OnSetPlayerMovement;                                          // Activates/Deactivates Player Movement
+    public event Action OnPlayerStabilized;                                                 // Called When Player Finishes Sanity Stabilization
 
     #region Singleton
     void Awake()
@@ -27,5 +27,10 @@ public class PlayerEvents : MonoBehaviour
     public void SetPlayerMovement(bool condition)
     {
         OnSetPlayerMovement?.Invoke(condition);
+    }
+
+    public void PlayerStabilized()
+    {
+        OnPlayerStabilized?.Invoke();
     }
 }

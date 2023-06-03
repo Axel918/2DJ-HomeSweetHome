@@ -9,12 +9,12 @@ public class PlayerSanity : MonoBehaviour
 
     void OnEnable()
     {
-        PlayerEvents.Instance.OnPlayerDamaged += TakeDamage;
+        PlayerEvents.Instance.OnPlayerDamaged += DecreaseSanity;
     }
 
     void OnDisable()
     {
-        PlayerEvents.Instance.OnPlayerDamaged -= TakeDamage;
+        PlayerEvents.Instance.OnPlayerDamaged -= DecreaseSanity;
     }
 
     void Awake()
@@ -22,26 +22,41 @@ public class PlayerSanity : MonoBehaviour
         Initialize();
     }
 
-    public void Initialize()
+    /// <summary>
+    /// Initialize Values 
+    /// </summary>
+    void Initialize()
     {
         currentSanity = defaultSanity;
     }
 
-    void TakeDamage(float damage)
+    /// <summary>
+    /// Decreases Player's Sanity Based on Given Amount
+    /// </summary>
+    /// <param name="amount"></param>
+    void DecreaseSanity(float amount)
     {
-        currentSanity -= damage;
-
-        Debug.Log(currentSanity);
+        currentSanity -= amount;
 
         if (currentSanity <= 0f)
-            OnDeath();
+        {
+            currentSanity = 0f;
+            OnInsane();
+        }
     }
 
-    void OnDeath()
+    /// <summary>
+    /// Gets Triggered when
+    /// </summary>
+    void OnInsane()
     {
-        Debug.Log("Dead");
+        Debug.Log("Player is Insane");
     }
 
+    /// <summary>
+    /// Returns a Quotient of the Player's Current Sanity Level Over the Total/Default Sanity
+    /// </summary>
+    /// <returns></returns>
     public float GetSanityRatio()
     {
         return currentSanity / defaultSanity;

@@ -1,21 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine;
+using DG.Tweening;
 
 public class SanityIndicator : MonoBehaviour
 {
-    private PostProcessVolume volume;
-    private Vignette vignette;
+    [SerializeField] private float easeDuration;                        // Duration of the Float Easing
+    
+    private PostProcessVolume volume;                                   // Post-Process Volume Component Reference
+    private Vignette vignette;                                          // Vignette Refernce
 
     void OnEnable()
     {
-        PlayerEvents.Instance.OnPlayerDamaged += SetVignette;
+        PlayerEvents.Instance.OnPlayerDamaged += SetVignetteIntensity;
     }
 
     void OnDisable()
     {
-        PlayerEvents.Instance.OnPlayerDamaged -= SetVignette;
+        PlayerEvents.Instance.OnPlayerDamaged -= SetVignetteIntensity;
     }
 
     // Start is called before the first frame update
@@ -25,17 +27,30 @@ public class SanityIndicator : MonoBehaviour
         volume.profile.TryGetSettings(out vignette);
     }
 
-    void SetVignette(float value)
+    /// <summary>
+    /// Sets the Intensity Value of the Vignette
+    /// </summary>
+    /// <param name="value"></param>
+    void SetVignetteIntensity(float value)
     {
-        StartCoroutine(SetDelay());
+        // Don't Execute If Vignette Intensity Has Reached Max Value
+        if (vignette.intensity.value.Equals(1f))
+            return;
         
+        StartCoroutine(EaseValue());
     }
 
-    IEnumerator SetDelay()
+    /// <summary>
+    /// Set Float Value Gradually
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator EaseValue()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.01f);
 
-        vignette.intensity.value = (1f - PlayerManager.Instance.Player.PlayerSanity.GetSanityRatio());
-        Debug.Log(1f - PlayerManager.Instance.Player.PlayerSanity.GetSanityRatio());
+        float endValue = 1f - PlayerManager.Instance.Player.PlayerSanity.GetSanityRatio();
+        
+        DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, endValue, 1f);
+        Debug.Log("Set Vignette");
     }
 }
