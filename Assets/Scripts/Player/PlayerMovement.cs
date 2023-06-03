@@ -4,10 +4,10 @@ using UnityEngine.AI;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Camera cam;                            // Main Camera Reference
-    
-    private NavMeshAgent navMeshAgent;                              // NavMesh Agent Component Reference
-    private bool canMove;                                           // Indicates if Player Can Move
+    [SerializeField] private Camera cam;                                        // Main Camera Reference
+
+    private Player playerSetup;                                                 // Player Class Reference
+    private bool canMove;                                                       // Indicates if Player Can Move
 
     void OnEnable()
     {
@@ -19,12 +19,11 @@ public class PlayerMovement : MonoBehaviour
         PlayerEvents.Instance.OnSetPlayerMovement -= value => canMove = value;
     }
 
-
-    void Awake()
+    void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        playerSetup = GetComponent<Player>();
+        playerSetup.NavMeshAgent.updateRotation = false;
         canMove = true;
-        navMeshAgent.updateRotation = false;
     }
 
     // Update is called once per frame
@@ -61,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="target"></param>
     public void SetTargetPosition(Vector3 target)
     {
-        navMeshAgent.SetDestination(target);
+        playerSetup.NavMeshAgent.SetDestination(target);
+        playerSetup.NavMeshAgent.destination = target;
     }
 }
