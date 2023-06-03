@@ -3,18 +3,22 @@ using UnityEngine;
 public class PatternFurniture : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private Transform patternTriggerPoint;
+    [SerializeField] private Transform patternTriggerPoint;                             // Pattern Trigger Reference
 
     [Header("Gesture Pattern Library")]
-    [SerializeField] private GameObject[] patternData;
+    [SerializeField] private GameObject[] patternData;                                  // Collection of Pattern Prefabs
 
-    public bool IsComplete { get; set; }
-    public bool InProgress { get; set; }
+    [Header("Properties")]
+    [SerializeField] private float timer = 10f;                                         // Timer Value
+
+    public bool IsComplete { get; set; }                                                // Indicates if thie Mini-Game Instance is Completed
+    private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
+                                                                                        // Being Played
 
     void Awake()
     {
         IsComplete = false;
-        InProgress = false;
+        inProgress = false;
     }
 
     void OnMouseEnter()
@@ -22,18 +26,18 @@ public class PatternFurniture : MonoBehaviour
         if (IsComplete)
             return;
 
-        if (InProgress)
+        if (inProgress)
             return;
 
         GetComponent<Renderer>().material.color = Color.red;
     }
 
-    private void OnMouseExit()
+    void OnMouseExit()
     {
         if (IsComplete)
             return;
 
-        if (InProgress)
+        if (inProgress)
             return;
 
         GetComponent<Renderer>().material.color = Color.white;
@@ -48,19 +52,33 @@ public class PatternFurniture : MonoBehaviour
         PlayerManager.Instance.Player.PlayerMovement.SetTargetPosition(patternTriggerPoint.position);
     }
 
+    /// <summary>
+    /// Initiates Pattern Mini-Game
+    /// </summary>
     public void EnablePatternMiniGame()
     {
-        InProgress = true;
+        inProgress = true;
         PlayerEvents.Instance.SetPlayerMovement(false);
         PanelManager.Instance.ActivatePanel("Pattern Mini-Game");
-        PatternMiniGame.Instance.Initialize(patternData, this);
+        PatternMiniGame.Instance.Initialize(patternData, this, timer);
     }
 
+    /// <summary>
+    /// Sets this Mini-Game Instance as Completed
+    /// </summary>
     public void Completed()
     {
         IsComplete = true;
-        InProgress = false;
         Destroy(patternTriggerPoint.gameObject);
         GetComponent<Renderer>().material.color = Color.gray;
+    }
+
+    /// <summary>
+    /// inProgress Setter
+    /// </summary>
+    /// <param name="value"></param>
+    public void SetInProgress(bool value)
+    {
+        inProgress = value;
     }
 }

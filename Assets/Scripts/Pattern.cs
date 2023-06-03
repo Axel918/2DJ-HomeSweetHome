@@ -16,10 +16,12 @@ public class Pattern : MonoBehaviour
 
     void Awake()
     {
+        // Get All Dots in the Dot Holder
         dots = dotHolder.GetComponentsInChildren<Dot>();
 
         isEvaluating = false;
 
+        // Assign Indexes for Every Dot in the Array
         for (int i = 0; i < dots.Length; i++)
             dots[i].SetDotNumber(i + 1);
     }

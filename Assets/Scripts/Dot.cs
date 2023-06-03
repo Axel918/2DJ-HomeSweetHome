@@ -7,11 +7,11 @@ using TMPro;
 public class Dot : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private TextMeshProUGUI dotNumber;
-    
+    [SerializeField] private TextMeshProUGUI dotNumber;             // Dot Number Text Reference
+    private Pattern pattern;                                        // Pattern Class Reference
+
     private bool isConnected;                                       // Connection Indicator
     private bool onMouseOver;                                       // Indicator that the Cursor is Hovering this Object
-    private Pattern pattern;                                        // Pattern Class Reference
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,10 @@ public class Dot : MonoBehaviour
         Connect();
     }
 
+    /// <summary>
+    /// Set Dot Index
+    /// </summary>
+    /// <param name="value"></param>
     public void SetDotNumber(int value)
     {
         dotNumber.text = value.ToString("0");
