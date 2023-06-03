@@ -111,6 +111,7 @@ public class PatternMiniGame : MonoBehaviour
         ClearData();
         Debug.Log("Time's Up!");
         CanDraw = false;
+        PlayerEvents.Instance.PlayerDamaged(20f);
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerMovement(true);
     }

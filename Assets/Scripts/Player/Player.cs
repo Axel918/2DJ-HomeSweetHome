@@ -3,10 +3,10 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-    public Drawing Drawing { get; private set; }
-    public PlayerMovement PlayerMovement { get; private set; }
-    public PlayerSanity PlayerSanity { get; private set; }
-    public NavMeshAgent NavMeshAgent { get; private set; }
+    public Drawing Drawing { get; private set; }                                // Drawing Class Reference
+    public PlayerMovement PlayerMovement { get; private set; }                  // PlayerMovement Class Reference
+    public PlayerSanity PlayerSanity { get; private set; }                      // PlayerSanity Class Reference
+    public NavMeshAgent NavMeshAgent { get; private set; }                      // NavMeshAgent Component Reference
 
     void OnEnable()
     {
