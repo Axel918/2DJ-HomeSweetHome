@@ -224,3 +224,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternTriggerPoint: {fileID: 6814803667733995668}
   patternData: []
+  timer: 10
