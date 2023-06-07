@@ -1105,13 +1105,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 2057968014}
     m_Modifications:
     - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: timer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: patternData.Array.size
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: patternData.Array.data[0]
       value: 
-      objectReference: {fileID: 1757044565534129747, guid: 4913d33af7b35794f8568c51e5679aab, type: 3}
+      objectReference: {fileID: 1886690854476102256, guid: f96423d6c63770a47ab29c955bcd9672, type: 3}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.data[1]
+      value: 
+      objectReference: {fileID: 1886690854476102256, guid: 9866152d00e427143aea6ab412fe4f27, type: 3}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.data[2]
+      value: 
+      objectReference: {fileID: 1886690854476102256, guid: 3da4353b7e6f2ad4d9f0b550474ce1b1, type: 3}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.data[3]
+      value: 
+      objectReference: {fileID: 1886690854476102256, guid: 757a2de4be8726949a5a1fac04d28bc6, type: 3}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.data[4]
+      value: 
+      objectReference: {fileID: 1886690854476102256, guid: 962ce1df084287d438a2b6cc5066563b, type: 3}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.data[6]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_RootOrder
       value: 0
