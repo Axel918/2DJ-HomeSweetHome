@@ -14,21 +14,16 @@ public class Pattern : MonoBehaviour
     private List<Vector2> dotPositions = new();                                 // List of Dot Positions
     private bool isEvaluating;                                                  // Indicates if Drawn Pattern is Being Evaluated
 
-    private void Awake()
+    void Awake()
     {
+        // Get All Dots in the Dot Holder
         dots = dotHolder.GetComponentsInChildren<Dot>();
 
         isEvaluating = false;
 
+        // Assign Indexes for Every Dot in the Array
         for (int i = 0; i < dots.Length; i++)
             dots[i].SetDotNumber(i + 1);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
     }
 
     // Update is called once per frame
@@ -62,8 +57,6 @@ public class Pattern : MonoBehaviour
     {
         isEvaluating = true;
         
-        //yield return new WaitForSeconds(0.5f);
-        
         // Check Every Dot Segment
         for (int i = 0; i < dots.Length; i++)
         {
@@ -71,7 +64,6 @@ public class Pattern : MonoBehaviour
             {
                 // Declare Drawn Pattern as Wrong
                 Debug.Log("WRONG");
-                //yield return new WaitForSeconds(1f);
 
                 // Reset Dots and End Evaluation
                 ResetDots();
@@ -81,11 +73,7 @@ public class Pattern : MonoBehaviour
 
         // Declare Drawn Pattern as Correct
         Debug.Log("CORRECT");
-
-        //yield return new WaitForSeconds(1f);
         
-        // Reset the Dots After Slight Delay
-        // ResetDots();
         yield return null;
 
         PatternMiniGame.Instance.NextPattern();

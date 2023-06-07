@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatternData : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -10,9 +10,8 @@ public class PatternData : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDeath()
     {
-        
+
     }
 }
