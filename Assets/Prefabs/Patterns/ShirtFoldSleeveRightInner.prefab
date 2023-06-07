@@ -109,9 +109,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1886690855812957695}
     m_Modifications:
+    - target: {fileID: 4043418531402313997, guid: 552020bcdde73db47bb18a13de2a2db4, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4043418531662513524, guid: 552020bcdde73db47bb18a13de2a2db4, type: 3}
       propertyPath: m_Name
-      value: Dot
+      value: Dot0
       objectReference: {fileID: 0}
     - target: {fileID: 4043418531662513527, guid: 552020bcdde73db47bb18a13de2a2db4, type: 3}
       propertyPath: m_Pivot.x
@@ -206,9 +210,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1886690855812957695}
     m_Modifications:
+    - target: {fileID: 4043418531402313997, guid: 552020bcdde73db47bb18a13de2a2db4, type: 3}
+      propertyPath: m_text
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4043418531662513524, guid: 552020bcdde73db47bb18a13de2a2db4, type: 3}
       propertyPath: m_Name
-      value: Dot (1)
+      value: Dot1
       objectReference: {fileID: 0}
     - target: {fileID: 4043418531662513527, guid: 552020bcdde73db47bb18a13de2a2db4, type: 3}
       propertyPath: m_Pivot.x
