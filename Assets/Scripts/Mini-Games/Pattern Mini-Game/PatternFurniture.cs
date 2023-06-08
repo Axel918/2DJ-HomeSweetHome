@@ -4,6 +4,7 @@ public class PatternFurniture : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform patternTriggerPoint;                             // Pattern Trigger Reference
+    [SerializeField] private GameObject patternCamera;
 
     [Header("Gesture Pattern Library")]
     [SerializeField] private GameObject[] patternData;                                  // Collection of Pattern Prefabs
@@ -19,6 +20,7 @@ public class PatternFurniture : MonoBehaviour
     {
         IsComplete = false;
         inProgress = false;
+        patternCamera.SetActive(false);
     }
 
     void OnMouseEnter()
@@ -61,6 +63,7 @@ public class PatternFurniture : MonoBehaviour
         PlayerEvents.Instance.SetPlayerMovement(false);
         PanelManager.Instance.ActivatePanel("Pattern Mini-Game");
         PatternMiniGame.Instance.Initialize(patternData, this, timer);
+        patternCamera.SetActive(true);
     }
 
     /// <summary>
@@ -68,17 +71,15 @@ public class PatternFurniture : MonoBehaviour
     /// </summary>
     public void Completed()
     {
+        inProgress = false;
         IsComplete = true;
         Destroy(patternTriggerPoint.gameObject);
         GetComponent<Renderer>().material.color = Color.gray;
+        patternCamera.SetActive(false);
     }
 
-    /// <summary>
-    /// inProgress Setter
-    /// </summary>
-    /// <param name="value"></param>
-    public void SetInProgress(bool value)
+    public void Failed()
     {
-        inProgress = value;
+        inProgress = false;
     }
 }

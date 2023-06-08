@@ -44,7 +44,6 @@ public class PatternMiniGame : MonoBehaviour
         currentPatternData = data;
         currentPatternFurniture = reference;
         currentTimer = timerDuration;
-        currentPatternFurniture.SetInProgress(true);
         currentPatternIndex = 0;
         timerBar.fillAmount = 1f;
 
@@ -129,8 +128,9 @@ public class PatternMiniGame : MonoBehaviour
         
         while (currentTime > 0f)
         {
-            yield return new WaitForSeconds(1f);
-            currentTime--;
+            yield return new WaitForSeconds(0.01f);
+            //currentTime--;
+            currentTime -= 0.01f;
 
             // Update Timer Bar
             timerBar.fillAmount = currentTime / currentTimer;
@@ -148,7 +148,6 @@ public class PatternMiniGame : MonoBehaviour
         CanDraw = false;
         StopAllCoroutines();
         currentPatternFurniture.Completed();
-        currentPatternFurniture.SetInProgress(false);
         ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerMovement(true);
@@ -159,11 +158,11 @@ public class PatternMiniGame : MonoBehaviour
     /// </summary>
     void OnFail()
     {
-        currentPatternFurniture.SetInProgress(false);
-        ClearData();
         CanDraw = false;
+        currentPatternFurniture.Failed();
+        ClearData();
         PlayerEvents.Instance.PlayerDamaged(20f);
-        PlayerEvents.Instance.SetPlayerMovement(true);
         PanelManager.Instance.ActivatePanel("Game UI");
+        PlayerEvents.Instance.SetPlayerMovement(true);
     }
 }
