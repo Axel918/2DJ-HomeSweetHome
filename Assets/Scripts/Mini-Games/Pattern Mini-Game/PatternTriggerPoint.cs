@@ -19,6 +19,6 @@ public class PatternTriggerPoint : MonoBehaviour
 
         if (other.CompareTag("Player"))
             // Execute Pattern Mini-Game Upon Collision
-            patternFurniture.EnablePatternMiniGame();
+            StartCoroutine(patternFurniture.EnablePatternMiniGame());
     }
 }
