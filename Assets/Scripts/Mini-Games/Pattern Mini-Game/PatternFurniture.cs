@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
+using Cinemachine;
 
 public class PatternFurniture : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform patternTriggerPoint;                             // Pattern Trigger Reference
+    [SerializeField] private GameObject patternCamera;
 
     [Header("Gesture Pattern Library")]
     [SerializeField] private GameObject[] patternData;                                  // Collection of Pattern Prefabs
@@ -14,11 +17,14 @@ public class PatternFurniture : MonoBehaviour
     public bool IsComplete { get; set; }                                                // Indicates if thie Mini-Game Instance is Completed
     private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
+    private float miniGameStartTime;                                                    // Time Delay for Starting the Mini-Game
 
     void Awake()
     {
         IsComplete = false;
         inProgress = false;
+        patternCamera.SetActive(false);
+        miniGameStartTime = Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.BlendTime;
     }
 
     void OnMouseEnter()
@@ -29,7 +35,7 @@ public class PatternFurniture : MonoBehaviour
         if (inProgress)
             return;
 
-        GetComponent<Renderer>().material.color = Color.red;
+        //GetComponent<Renderer>().material.color = Color.red;
     }
 
     void OnMouseExit()
@@ -40,7 +46,7 @@ public class PatternFurniture : MonoBehaviour
         if (inProgress)
             return;
 
-        GetComponent<Renderer>().material.color = Color.white;
+        //GetComponent<Renderer>().material.color = Color.white;
     }
 
     void OnMouseDown()
@@ -55,10 +61,15 @@ public class PatternFurniture : MonoBehaviour
     /// <summary>
     /// Initiates Pattern Mini-Game
     /// </summary>
-    public void EnablePatternMiniGame()
+    public IEnumerator EnablePatternMiniGame()
     {
         inProgress = true;
         PlayerEvents.Instance.SetPlayerMovement(false);
+        patternCamera.SetActive(true);
+        Debug.Log("COLLIDED");
+
+        yield return new WaitForSeconds(miniGameStartTime);
+
         PanelManager.Instance.ActivatePanel("Pattern Mini-Game");
         PatternMiniGame.Instance.Initialize(patternData, this, timer);
     }
@@ -68,17 +79,15 @@ public class PatternFurniture : MonoBehaviour
     /// </summary>
     public void Completed()
     {
+        inProgress = false;
         IsComplete = true;
         Destroy(patternTriggerPoint.gameObject);
-        GetComponent<Renderer>().material.color = Color.gray;
+        //GetComponent<Renderer>().material.color = Color.gray;
+        patternCamera.SetActive(false);
     }
 
-    /// <summary>
-    /// inProgress Setter
-    /// </summary>
-    /// <param name="value"></param>
-    public void SetInProgress(bool value)
+    public void Failed()
     {
-        inProgress = value;
+        inProgress = false;
     }
 }
