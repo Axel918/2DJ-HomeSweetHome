@@ -35,7 +35,7 @@ public class PatternFurniture : MonoBehaviour
         if (inProgress)
             return;
 
-        GetComponent<Renderer>().material.color = Color.red;
+        //GetComponent<Renderer>().material.color = Color.red;
     }
 
     void OnMouseExit()
@@ -46,7 +46,7 @@ public class PatternFurniture : MonoBehaviour
         if (inProgress)
             return;
 
-        GetComponent<Renderer>().material.color = Color.white;
+        //GetComponent<Renderer>().material.color = Color.white;
     }
 
     void OnMouseDown()
@@ -66,6 +66,7 @@ public class PatternFurniture : MonoBehaviour
         inProgress = true;
         PlayerEvents.Instance.SetPlayerMovement(false);
         patternCamera.SetActive(true);
+        Debug.Log("COLLIDED");
 
         yield return new WaitForSeconds(miniGameStartTime);
 
@@ -81,7 +82,7 @@ public class PatternFurniture : MonoBehaviour
         inProgress = false;
         IsComplete = true;
         Destroy(patternTriggerPoint.gameObject);
-        GetComponent<Renderer>().material.color = Color.gray;
+        //GetComponent<Renderer>().material.color = Color.gray;
         patternCamera.SetActive(false);
     }
 
