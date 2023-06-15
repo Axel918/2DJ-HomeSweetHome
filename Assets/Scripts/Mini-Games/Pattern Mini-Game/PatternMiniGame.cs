@@ -70,13 +70,14 @@ public class PatternMiniGame : MonoBehaviour
     /// <summary>
     /// Go to the Next Pattern
     /// </summary>
-    public void NextPattern()
+    public IEnumerator NextPattern()
     {
         if (!CanDraw)
-            return;
+            yield break;
         
         // Increment Current Pattern Index
         currentPatternIndex++;
+        
 
         // Check if the Next Pattern is the Last Pattern
         if (currentPatternIndex >= currentPatternData.Length)
@@ -84,9 +85,22 @@ public class PatternMiniGame : MonoBehaviour
             // Mini-Game Finished Successfully,
             // Terminate Mini-Game
             Debug.Log("FINISHED");
+
+            // TO BE REMOVED!!!
+            currentPatternFurniture.TriggerAnimation(currentPatternIndex);
+            Debug.Log(currentPatternIndex);
+
+            yield return new WaitForSeconds(1f);
+
+            currentPatternFurniture.TriggerAnimation(currentPatternIndex + 1);
             OnSuccess();
-            return;
+            yield break;
         }
+
+        // TO BE REMOVED!!!
+        currentPatternFurniture.TriggerAnimation(currentPatternIndex);
+
+        yield return new WaitForSeconds(1f);
 
         // Proceed to the Next Pattern
         ActivatePattern();

@@ -279,6 +279,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: timer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 8457880568670503793}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -325,12 +333,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164255, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_Name
-      value: ToyBox
+      value: ToyBox Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8607303929918109968, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2be6ca71b0478a44a8f6ef808a708048, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
 --- !u!4 &6829700210564771224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6689214223156828153, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+  m_PrefabInstance: {fileID: 149503632048355937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8457880568670503793 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8607303929918109968, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
   m_PrefabInstance: {fileID: 149503632048355937}
   m_PrefabAsset: {fileID: 0}

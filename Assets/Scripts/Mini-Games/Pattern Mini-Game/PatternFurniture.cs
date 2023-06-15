@@ -7,6 +7,7 @@ public class PatternFurniture : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform patternTriggerPoint;                             // Pattern Trigger Reference
     [SerializeField] private GameObject patternCamera;
+    public Animator Animator;
 
     [Header("Gesture Pattern Library")]
     [SerializeField] private GameObject[] patternData;                                  // Collection of Pattern Prefabs
@@ -66,7 +67,6 @@ public class PatternFurniture : MonoBehaviour
         inProgress = true;
         PlayerEvents.Instance.SetPlayerMovement(false);
         patternCamera.SetActive(true);
-        Debug.Log("COLLIDED");
 
         yield return new WaitForSeconds(miniGameStartTime);
 
@@ -89,5 +89,10 @@ public class PatternFurniture : MonoBehaviour
     public void Failed()
     {
         inProgress = false;
+    }
+
+    public void TriggerAnimation(float value)
+    {
+        Animator.SetTrigger(value.ToString());
     }
 }
