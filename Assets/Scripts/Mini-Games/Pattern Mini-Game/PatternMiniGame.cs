@@ -48,7 +48,6 @@ public class PatternMiniGame : MonoBehaviour
         currentTimer = timerDuration;
         currentPatternIndex = 0;
         timerBar.fillAmount = 1f;
-        //canvasGroup.alpha = 1f;
 
         // Start the Timer
         StartCoroutine(StartTimer());
