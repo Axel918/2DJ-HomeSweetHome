@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening;
 
 public class PatternFurniture : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PatternFurniture : MonoBehaviour
     [SerializeField] private Transform patternTriggerPoint;                             // Pattern Trigger Reference
     [SerializeField] private GameObject patternCamera;
     public Animator Animator;
+    [SerializeField] private GameObject arrow;
 
     [Header("Gesture Pattern Library")]
     [SerializeField] private GameObject[] patternData;                                  // Collection of Pattern Prefabs
@@ -26,6 +28,8 @@ public class PatternFurniture : MonoBehaviour
         inProgress = false;
         patternCamera.SetActive(false);
         miniGameStartTime = Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.BlendTime;
+
+        arrow.transform.DOMoveY(1.25f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 
     void OnMouseEnter()
@@ -82,6 +86,7 @@ public class PatternFurniture : MonoBehaviour
         inProgress = false;
         IsComplete = true;
         Destroy(patternTriggerPoint.gameObject);
+        arrow.SetActive(false);
         //GetComponent<Renderer>().material.color = Color.gray;
         patternCamera.SetActive(false);
     }
@@ -89,10 +94,11 @@ public class PatternFurniture : MonoBehaviour
     public void Failed()
     {
         inProgress = false;
+        TriggerAnimation(0);
     }
 
-    public void TriggerAnimation(float value)
+    public void TriggerAnimation(int value)
     {
-        Animator.SetTrigger(value.ToString());
+        Animator.SetInteger("furnitureStatus", value);
     }
 }

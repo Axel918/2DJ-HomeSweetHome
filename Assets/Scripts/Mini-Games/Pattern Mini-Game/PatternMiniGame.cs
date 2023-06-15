@@ -82,6 +82,8 @@ public class PatternMiniGame : MonoBehaviour
 
         canvasGroup.alpha = 0f;
 
+        currentPatternFurniture.TriggerAnimation(currentPatternIndex);
+
         // Check if the Next Pattern is the Last Pattern
         if (currentPatternIndex >= currentPatternData.Length)
         {
@@ -89,16 +91,13 @@ public class PatternMiniGame : MonoBehaviour
             // Terminate Mini-Game
             Debug.Log("FINISHED");
 
-            // TO BE REMOVED!!!
-            currentPatternFurniture.TriggerAnimation(currentPatternIndex);
-
             yield return new WaitForSeconds(1f);
 
             OnSuccess();
             yield break;
         }
 
-        currentPatternFurniture.TriggerAnimation(currentPatternIndex);
+        
 
         yield return new WaitForSeconds(1f);
 
