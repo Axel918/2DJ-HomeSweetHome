@@ -322,6 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternTriggerPoint: {fileID: 6814803667733995668}
   patternCamera: {fileID: 9062050995656229457}
+  Animator: {fileID: 0}
   patternData:
   - {fileID: 1886690854476102256, guid: c836a82f51158a1418ea13cc45c4a6fb, type: 3}
   - {fileID: 1886690854476102256, guid: fa2b6b5b034cf854cabcf88315e74fd1, type: 3}

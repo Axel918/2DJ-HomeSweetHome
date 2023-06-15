@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &850538846913970190
+--- !u!1 &2545197511597722074
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6450911669260042025}
-  - component: {fileID: 9062814681076355177}
+  - component: {fileID: 1113770344619376826}
+  - component: {fileID: 709848534720907459}
   m_Layer: 0
-  m_Name: BedSprite
+  m_Name: TeddyBearSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6450911669260042025
+--- !u!4 &1113770344619376826
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850538846913970190}
+  m_GameObject: {fileID: 2545197511597722074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.123, z: 0}
-  m_LocalScale: {x: 0.18660697, y: 0.18660697, z: 0.18660697}
+  m_LocalPosition: {x: 0, y: 0.032, z: 0}
+  m_LocalScale: {x: 0.074545205, y: 0.074545205, z: 0.074545205}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6829700210564771224}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9062814681076355177
+--- !u!212 &709848534720907459
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850538846913970190}
+  m_GameObject: {fileID: 2545197511597722074}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1904523851, guid: 67ec447aa02f4404e9160f791558c2f7, type: 3}
+  m_Sprite: {fileID: 875272278, guid: b2926fef38898544b8d44f960ee4b950, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.99, y: 5.92}
+  m_Size: {x: 5.46, y: 6.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -94,6 +94,10 @@ PrefabInstance:
     - target: {fileID: 2808639578980335576, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.138
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808639578980335576, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.332
       objectReference: {fileID: 0}
     - target: {fileID: 2808639578980335576, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -112,8 +116,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667733995668, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814803667733995668, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.475
+      value: -0.523
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814803667733995668, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.332
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: timer
@@ -125,31 +137,27 @@ PrefabInstance:
       objectReference: {fileID: 8457880568670503793}
     - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: patternData.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: patternData.Array.data[0]
       value: 
-      objectReference: {fileID: 1886690854476102256, guid: b97411189ee98764ca74319d417520fd, type: 3}
-    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
-      propertyPath: patternData.Array.data[1]
-      value: 
-      objectReference: {fileID: 1886690854476102256, guid: 96e0c3155cb1ce648b910f0031985307, type: 3}
+      objectReference: {fileID: 1886690854476102256, guid: 757a2de4be8726949a5a1fac04d28bc6, type: 3}
     - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: patternData.Array.data[2]
       value: 
       objectReference: {fileID: 1886690854476102256, guid: 746e87c4fc644b741a948993b60bc621, type: 3}
     - target: {fileID: 6814803667956164252, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_Size.x
-      value: 2.3
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164252, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_Size.y
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164252, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_Size.z
-      value: 1.1
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_RootOrder
@@ -157,15 +165,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.499
+      value: 1.856
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.599
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.879
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -197,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164255, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_Name
-      value: Bed Variant
+      value: TeddyBear Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8607303929918109968, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_Controller
