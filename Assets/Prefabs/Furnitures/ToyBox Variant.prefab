@@ -287,6 +287,14 @@ PrefabInstance:
       propertyPath: Animator
       value: 
       objectReference: {fileID: 8457880568670503793}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814803667956164193, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: patternData.Array.data[2]
+      value: 
+      objectReference: {fileID: 1886690854476102256, guid: 746e87c4fc644b741a948993b60bc621, type: 3}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_RootOrder
       value: 0

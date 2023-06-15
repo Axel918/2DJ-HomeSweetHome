@@ -10,12 +10,14 @@ public class PatternMiniGame : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform patternHolder;                                   // Pattern Holder Point Reference
     [SerializeField] private Image timerBar;                                            // Timer Bar Reference
+    [SerializeField] private CanvasGroup canvasGroup;                                   // Canvas Group Component Reference
     private GameObject[] currentPatternData;                                            // Pattern Data Array
     private PatternFurniture currentPatternFurniture;                                   // PatternFurniture Instance Class Reference
 
     private int currentPatternIndex;                                                    // Current Pattern Index Number
     private List<GameObject> patterns = new();                                          // Pattern Instance List
     private float currentTimer;                                                         // Mini-Game Timer
+
 
     public bool CanDraw { get; private set; }                                           // Indicates if Player Can Draw
 
@@ -46,6 +48,7 @@ public class PatternMiniGame : MonoBehaviour
         currentTimer = timerDuration;
         currentPatternIndex = 0;
         timerBar.fillAmount = 1f;
+        //canvasGroup.alpha = 1f;
 
         // Start the Timer
         StartCoroutine(StartTimer());
@@ -77,7 +80,8 @@ public class PatternMiniGame : MonoBehaviour
         
         // Increment Current Pattern Index
         currentPatternIndex++;
-        
+
+        canvasGroup.alpha = 0f;
 
         // Check if the Next Pattern is the Last Pattern
         if (currentPatternIndex >= currentPatternData.Length)
@@ -88,19 +92,18 @@ public class PatternMiniGame : MonoBehaviour
 
             // TO BE REMOVED!!!
             currentPatternFurniture.TriggerAnimation(currentPatternIndex);
-            Debug.Log(currentPatternIndex);
 
             yield return new WaitForSeconds(1f);
 
-            currentPatternFurniture.TriggerAnimation(currentPatternIndex + 1);
             OnSuccess();
             yield break;
         }
 
-        // TO BE REMOVED!!!
         currentPatternFurniture.TriggerAnimation(currentPatternIndex);
 
         yield return new WaitForSeconds(1f);
+
+        canvasGroup.alpha = 1f;
 
         // Proceed to the Next Pattern
         ActivatePattern();
