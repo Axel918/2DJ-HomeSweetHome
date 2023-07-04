@@ -3,13 +3,10 @@ using UnityEngine;
 using Cinemachine;
 using DG.Tweening;
 
-public class PatternFurniture : MonoBehaviour
+public class Furniture : Interactable
 {
     [Header("References")]
-    [SerializeField] private Transform patternTriggerPoint;                             // Pattern Trigger Reference
-    [SerializeField] private GameObject patternCamera;
     public Animator Animator;
-    [SerializeField] private GameObject arrow;
 
     [Header("Gesture Pattern Library")]
     [SerializeField] private GameObject[] patternData;                                  // Collection of Pattern Prefabs
@@ -20,19 +17,16 @@ public class PatternFurniture : MonoBehaviour
     public bool IsComplete { get; set; }                                                // Indicates if thie Mini-Game Instance is Completed
     private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
-    private float miniGameStartTime;                                                    // Time Delay for Starting the Mini-Game
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         IsComplete = false;
         inProgress = false;
-        patternCamera.SetActive(false);
-        miniGameStartTime = Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.BlendTime;
-
-        arrow.transform.DOMoveY(1.25f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
     }
 
-    void OnMouseEnter()
+    /*void OnMouseEnter()
     {   
         if (IsComplete)
             return;
@@ -52,25 +46,30 @@ public class PatternFurniture : MonoBehaviour
             return;
 
         //GetComponent<Renderer>().material.color = Color.white;
-    }
+    }*/
 
-    void OnMouseDown()
+    protected override void Examine()
     {
+        base.Examine();
+
         if (IsComplete)
             return;
 
-        patternTriggerPoint.gameObject.SetActive(true);
-        PlayerManager.Instance.Player.PlayerMovement.SetTargetPosition(patternTriggerPoint.position);
+        
+
+        triggerPoint.SetActive(true);
+        PlayerManager.Instance.Player.PlayerMovement.SetTargetPosition(triggerPoint.transform.position);
     }
 
     /// <summary>
     /// Initiates Pattern Mini-Game
     /// </summary>
-    public IEnumerator EnablePatternMiniGame()
+
+    public override IEnumerator Activate()
     {
+        StartCoroutine(base.Activate());
+
         inProgress = true;
-        PlayerEvents.Instance.SetPlayerMovement(false);
-        patternCamera.SetActive(true);
 
         yield return new WaitForSeconds(miniGameStartTime);
 
@@ -85,10 +84,9 @@ public class PatternFurniture : MonoBehaviour
     {
         inProgress = false;
         IsComplete = true;
-        Destroy(patternTriggerPoint.gameObject);
-        arrow.SetActive(false);
+        Destroy(triggerPoint.gameObject);
         //GetComponent<Renderer>().material.color = Color.gray;
-        patternCamera.SetActive(false);
+        Cam.SetActive(false);
     }
 
     public void Failed()

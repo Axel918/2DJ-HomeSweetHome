@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 6814803667733995675}
   - component: {fileID: 6814803667733995672}
   m_Layer: 0
-  m_Name: PatternTriggerPoint
+  m_Name: TriggerPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b966f0e8e63294dbf45dc441092f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternFurniture: {fileID: 6814803667956164193}
+  interactable: {fileID: 6814803667956164193}
 --- !u!1 &6814803667956164255
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,10 +405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d667dc32a2d1d4e9af8465064ac1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patternTriggerPoint: {fileID: 6814803667733995668}
-  patternCamera: {fileID: 9062050995656229457}
+  triggerPoint: {fileID: 6814803667733995669}
+  Cam: {fileID: 9062050995656229457}
   Animator: {fileID: 8607303929918109968}
-  arrow: {fileID: 6414708505722663154}
   patternData:
   - {fileID: 1886690854476102256, guid: c836a82f51158a1418ea13cc45c4a6fb, type: 3}
   - {fileID: 1886690854476102256, guid: fa2b6b5b034cf854cabcf88315e74fd1, type: 3}

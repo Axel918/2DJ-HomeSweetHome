@@ -12,7 +12,7 @@ public class PatternMiniGame : MonoBehaviour
     [SerializeField] private Image timerBar;                                            // Timer Bar Reference
     [SerializeField] private CanvasGroup canvasGroup;                                   // Canvas Group Component Reference
     private GameObject[] currentPatternData;                                            // Pattern Data Array
-    private PatternFurniture currentPatternFurniture;                                   // PatternFurniture Instance Class Reference
+    private Furniture currentPatternFurniture;                                   // PatternFurniture Instance Class Reference
 
     private int currentPatternIndex;                                                    // Current Pattern Index Number
     private List<GameObject> patterns = new();                                          // Pattern Instance List
@@ -36,7 +36,7 @@ public class PatternMiniGame : MonoBehaviour
     /// </summary>
     /// <param name="data"></param>
     /// <param name="reference"></param>
-    public void Initialize(GameObject[] data, PatternFurniture reference, float timerDuration)
+    public void Initialize(GameObject[] data, Furniture reference, float timerDuration)
     {
         // Preparatory Clean-up
         ClearData();
