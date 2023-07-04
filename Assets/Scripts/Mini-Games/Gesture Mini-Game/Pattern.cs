@@ -77,7 +77,7 @@ public class Pattern : MonoBehaviour
         yield return null;
 
         // TO BE REPLACED!!!
-        StartCoroutine(PatternMiniGame.Instance.NextPattern());
+        StartCoroutine(GestureMiniGame.Instance.NextPattern());
     }
 
     /// <summary>

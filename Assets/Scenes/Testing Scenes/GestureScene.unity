@@ -451,6 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6962d3318e44194ebeb07382ff1186d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 0}
 --- !u!1 &736523944
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternHolder: {fileID: 959099932}
   timerBar: {fileID: 487874838}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1453932622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,7 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80db68dc613acb47a79a77747b8400d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 569097443}
+  PlayerData: {fileID: 0}
 --- !u!4 &1936295904
 Transform:
   m_ObjectHideFlags: 0

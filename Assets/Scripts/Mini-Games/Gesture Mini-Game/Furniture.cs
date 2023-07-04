@@ -8,8 +8,8 @@ public class Furniture : Interactable
     [Header("References")]
     public Animator Animator;
 
-    [Header("Gesture Pattern Library")]
-    [SerializeField] private GameObject[] patternData;                                  // Collection of Pattern Prefabs
+    [Header("Gesture Library")]
+    [SerializeField] private GameObject[] gestureData;                                  // Collection of Gesture Prefabs
 
     [Header("Properties")]
     [SerializeField] private float timer = 10f;                                         // Timer Value
@@ -55,7 +55,8 @@ public class Furniture : Interactable
         if (IsComplete)
             return;
 
-        
+        if (inProgress)
+            return;
 
         triggerPoint.SetActive(true);
         PlayerManager.Instance.Player.PlayerMovement.SetTargetPosition(triggerPoint.transform.position);
@@ -73,8 +74,8 @@ public class Furniture : Interactable
 
         yield return new WaitForSeconds(miniGameStartTime);
 
-        PanelManager.Instance.ActivatePanel("Pattern Mini-Game");
-        PatternMiniGame.Instance.Initialize(patternData, this, timer);
+        PanelManager.Instance.ActivatePanel("Gesture Mini-Game");
+        GestureMiniGame.Instance.Initialize(gestureData, this, timer);
     }
 
     /// <summary>

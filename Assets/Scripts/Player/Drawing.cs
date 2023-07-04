@@ -13,7 +13,7 @@ public class Drawing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PatternMiniGame.Instance.CanDraw)
+        if (!GestureMiniGame.Instance.CanDraw)
         {
             IsDrawing = false;
             return;

@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PatternMiniGame : MonoBehaviour
+public class GestureMiniGame : MonoBehaviour
 {
-    public static PatternMiniGame Instance;
+    public static GestureMiniGame Instance;
 
     [Header("References")]
     [SerializeField] private Transform patternHolder;                                   // Pattern Holder Point Reference
     [SerializeField] private Image timerBar;                                            // Timer Bar Reference
     [SerializeField] private CanvasGroup canvasGroup;                                   // Canvas Group Component Reference
     private GameObject[] currentPatternData;                                            // Pattern Data Array
-    private Furniture currentPatternFurniture;                                   // PatternFurniture Instance Class Reference
+    private Furniture currentPatternFurniture;                                          // PatternFurniture Instance Class Reference
 
     private int currentPatternIndex;                                                    // Current Pattern Index Number
     private List<GameObject> patterns = new();                                          // Pattern Instance List
@@ -20,6 +20,8 @@ public class PatternMiniGame : MonoBehaviour
 
 
     public bool CanDraw { get; private set; }                                           // Indicates if Player Can Draw
+
+    private bool isPaused;
 
     #region Singleton
     void Awake()
@@ -48,6 +50,7 @@ public class PatternMiniGame : MonoBehaviour
         currentTimer = timerDuration;
         currentPatternIndex = 0;
         timerBar.fillAmount = 1f;
+        isPaused = false;
 
         // Start the Timer
         StartCoroutine(StartTimer());
@@ -84,6 +87,8 @@ public class PatternMiniGame : MonoBehaviour
 
         currentPatternFurniture.TriggerAnimation(currentPatternIndex);
 
+        isPaused = true;
+
         // Check if the Next Pattern is the Last Pattern
         if (currentPatternIndex >= currentPatternData.Length)
         {
@@ -93,6 +98,7 @@ public class PatternMiniGame : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
 
+            isPaused = false;
             OnSuccess();
             yield break;
         }
@@ -102,6 +108,7 @@ public class PatternMiniGame : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         canvasGroup.alpha = 1f;
+        isPaused = false;
 
         // Proceed to the Next Pattern
         ActivatePattern();
@@ -144,11 +151,15 @@ public class PatternMiniGame : MonoBehaviour
         while (currentTime > 0f)
         {
             yield return new WaitForSeconds(0.01f);
-            //currentTime--;
-            currentTime -= 0.01f;
+            
+            if (!isPaused)
+            {
+                //currentTime--;
+                currentTime -= 0.01f;
 
-            // Update Timer Bar
-            timerBar.fillAmount = currentTime / currentTimer;
+                // Update Timer Bar
+                timerBar.fillAmount = currentTime / currentTimer;
+            }
         }
 
         Debug.Log("Time's Up!");
