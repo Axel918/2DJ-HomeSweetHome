@@ -1597,11 +1597,11 @@ PrefabInstance:
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.data[1]
       value: 
-      objectReference: {fileID: 1886690854476102256, guid: fa2b6b5b034cf854cabcf88315e74fd1, type: 3}
+      objectReference: {fileID: 879305711948412920, guid: ed9f01fd01a353f47aee23aab2e5fb95, type: 3}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.data[2]
       value: 
-      objectReference: {fileID: 1886690854476102256, guid: 746e87c4fc644b741a948993b60bc621, type: 3}
+      objectReference: {fileID: 7781148011127278173, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
     - target: {fileID: 6665379222230473982, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: m_Name
       value: ToyBox

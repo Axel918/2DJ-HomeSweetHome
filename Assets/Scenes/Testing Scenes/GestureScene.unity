@@ -411,7 +411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &569097441
 Transform:
   m_ObjectHideFlags: 0
@@ -461,31 +461,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 736523946}
-  - component: {fileID: 736523945}
   m_Layer: 0
   m_Name: PatternTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &736523945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736523944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ceeede2e8a5f8145bb8082d627fc4ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patternData:
-  - {fileID: 1757044565534129747, guid: 4913d33af7b35794f8568c51e5679aab, type: 3}
-  - {fileID: 1757044565534129747, guid: f38d281a5b4467843aad94f8a1d4b774, type: 3}
-  - {fileID: 1757044565534129747, guid: f1b2d6b580867b44c86150430d60d8db, type: 3}
-  - {fileID: 1757044565534129747, guid: aa6ae805ced7d204fb794dd99e7f0d6f, type: 3}
+  m_IsActive: 0
 --- !u!4 &736523946
 Transform:
   m_ObjectHideFlags: 0
@@ -716,7 +698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1453932620
 RectTransform:
   m_ObjectHideFlags: 0

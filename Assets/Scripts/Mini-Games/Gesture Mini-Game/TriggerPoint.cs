@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TriggerPoint : MonoBehaviour
 {
-    [SerializeField] private Interactable interactable;
+    [SerializeField] private Interactable interactable;                             // Interactable Object Class Reference
 
     void Update()
     {
@@ -14,10 +14,8 @@ public class TriggerPoint : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // Interact with Object Upon Collision
         if (other.CompareTag("Player"))
             StartCoroutine(interactable.Activate());
-
-        // Execute Pattern Mini-Game Upon Collision
-        //StartCoroutine(patternFurniture.EnablePatternMiniGame());
     }
 }

@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CircleButton : MonoBehaviour
 {
-    private CircleManager circleManager;
+    private CircleManager circleManager;                                // CircleManager Class Reference
     
     void Start()
     {
@@ -13,7 +11,10 @@ public class CircleButton : MonoBehaviour
 
     public void OnCircleButtonClicked()
     {
+        // Update to the CircleManager
         circleManager.Evaluate();
+
+        // Deactivate
         gameObject.SetActive(false);
     }
 }
