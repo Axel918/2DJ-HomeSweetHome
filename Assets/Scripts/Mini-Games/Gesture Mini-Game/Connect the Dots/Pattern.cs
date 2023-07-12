@@ -14,6 +14,8 @@ public class Pattern : MonoBehaviour
     private List<Vector2> dotPositions = new();                                 // List of Dot Positions
     private bool isEvaluating;                                                  // Indicates if Drawn Pattern is Being Evaluated
 
+    public bool IsDrawing { get; private set; }
+
     void Awake()
     {
         // Get All Dots in the Dot Holder
@@ -29,9 +31,18 @@ public class Pattern : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            IsDrawing = true;
+            Debug.Log(IsDrawing);
+        }
+        
         // On Left Mouse Button Released
         if (Input.GetMouseButtonUp(0))
         {
+            IsDrawing = false;
+            Debug.Log(IsDrawing);
+
             if (isEvaluating)
                 return;
             

@@ -27,7 +27,7 @@ public class Dot : MonoBehaviour
             return;
 
         // Don't Connect if Player is Not Drawing
-        if (!PlayerManager.Instance.Player.Drawing.IsDrawing)
+        if (!pattern.IsDrawing)
             return;
 
         // Don't Connect if Dot has been Connected

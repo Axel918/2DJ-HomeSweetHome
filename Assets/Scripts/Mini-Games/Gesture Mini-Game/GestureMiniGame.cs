@@ -18,10 +18,7 @@ public class GestureMiniGame : MonoBehaviour
     private List<GameObject> patterns = new();                                          // Pattern Instance List
     private float currentTimer;                                                         // Mini-Game Timer
 
-
-    public bool CanDraw { get; private set; }                                           // Indicates if Player Can Draw
-
-    private bool isPaused;
+    private bool isPaused;                                                              // Pause Timer Indicator
 
     #region Singleton
     void Awake()
@@ -44,7 +41,6 @@ public class GestureMiniGame : MonoBehaviour
         ClearData();
         
         // Initialize Variables
-        CanDraw = true;
         currentPatternData = data;
         currentPatternFurniture = reference;
         currentTimer = timerDuration;
@@ -76,10 +72,7 @@ public class GestureMiniGame : MonoBehaviour
     /// Go to the Next Pattern
     /// </summary>
     public IEnumerator NextPattern()
-    {
-        if (!CanDraw)
-            yield break;
-        
+    {        
         // Increment Current Pattern Index
         currentPatternIndex++;
 
@@ -102,8 +95,6 @@ public class GestureMiniGame : MonoBehaviour
             OnSuccess();
             yield break;
         }
-
-        
 
         yield return new WaitForSeconds(1f);
 
@@ -171,7 +162,6 @@ public class GestureMiniGame : MonoBehaviour
     /// </summary>
     void OnSuccess()
     {
-        CanDraw = false;
         StopAllCoroutines();
         currentPatternFurniture.Completed();
         ClearData();
@@ -184,7 +174,6 @@ public class GestureMiniGame : MonoBehaviour
     /// </summary>
     void OnFail()
     {
-        CanDraw = false;
         currentPatternFurniture.Failed();
         ClearData();
         PlayerEvents.Instance.PlayerDamaged(20f);
