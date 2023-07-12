@@ -1,16 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DragSlider : MonoBehaviour
+public class StraightSlider : MonoBehaviour
 {
     private Slider slider;                                                  // Slider Component Reference
     private float currentAmount = 0f;                                       // Slider Amount Tracker
 
-
     void Awake()
     {
         slider = GetComponent<Slider>();
-        currentAmount = 0f;
     }
 
     /// <summary>
@@ -19,15 +17,9 @@ public class DragSlider : MonoBehaviour
     public void Clamp()
     {
         if (currentAmount < slider.value)
-        {
             currentAmount = slider.value;
-        }
         else if (currentAmount > slider.value)
-        {
             slider.value = currentAmount;
-        }
-
-        Debug.Log(currentAmount);
     }
 
     /// <summary>
