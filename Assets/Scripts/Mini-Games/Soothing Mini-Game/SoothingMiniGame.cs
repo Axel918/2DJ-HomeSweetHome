@@ -78,6 +78,7 @@ public class SoothingMiniGame : MonoBehaviour
             ClearData();
 
             Debug.Log("Player Stabilized");
+            PlayerEvents.Instance.PlayerStabilized();
             PanelManager.Instance.ActivatePanel("Game UI");
             PlayerEvents.Instance.SetPlayerMovement(true);
         }
