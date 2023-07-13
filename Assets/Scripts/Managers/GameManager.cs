@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum GameStates
+    {
+        
+        MONSTER_PRESENT
+    }
+    
     public static GameManager Instance;
 
     #region Singleton

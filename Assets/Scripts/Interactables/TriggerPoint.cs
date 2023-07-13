@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PatternTriggerPoint : MonoBehaviour
+public class TriggerPoint : MonoBehaviour
 {
-    [SerializeField] private PatternFurniture patternFurniture;             // PatternFurniture Class Reference
+    [SerializeField] private Interactable interactable;                             // Interactable Object Class Reference
 
     void Update()
     {
@@ -14,11 +14,8 @@ public class PatternTriggerPoint : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (patternFurniture.IsComplete)
-            return;
-
+        // Interact with Object Upon Collision
         if (other.CompareTag("Player"))
-            // Execute Pattern Mini-Game Upon Collision
-            StartCoroutine(patternFurniture.EnablePatternMiniGame());
+            StartCoroutine(interactable.Activate());
     }
 }

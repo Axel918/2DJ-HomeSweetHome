@@ -13,8 +13,7 @@ public class Dot : MonoBehaviour
     private bool isConnected;                                       // Connection Indicator
     private bool onMouseOver;                                       // Indicator that the Cursor is Hovering this Object
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         isConnected = false;
         pattern = transform.GetComponentInParent<Pattern>();
@@ -28,7 +27,7 @@ public class Dot : MonoBehaviour
             return;
 
         // Don't Connect if Player is Not Drawing
-        if (!PlayerManager.Instance.Player.Drawing.IsDrawing)
+        if (!pattern.IsDrawing)
             return;
 
         // Don't Connect if Dot has been Connected
