@@ -9,11 +9,13 @@ public class PlayerSanity : MonoBehaviour
 
     void OnEnable()
     {
+        PlayerEvents.Instance.OnPlayerStabilized += Initialize;
         PlayerEvents.Instance.OnPlayerDamaged += DecreaseSanity;
     }
 
     void OnDisable()
     {
+        PlayerEvents.Instance.OnPlayerStabilized -= Initialize;
         PlayerEvents.Instance.OnPlayerDamaged -= DecreaseSanity;
     }
 
