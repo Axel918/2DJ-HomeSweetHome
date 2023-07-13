@@ -5,6 +5,8 @@ public class GameEvents : MonoBehaviour
 {
     public static GameEvents Instance;
 
+
+
     #region Singleton
     void Awake()
     {

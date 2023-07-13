@@ -60,6 +60,5 @@ public class PlayerMovement : MonoBehaviour
     public void SetTargetPosition(Vector3 target)
     {
         playerSetup.NavMeshAgent.SetDestination(target);
-        playerSetup.NavMeshAgent.destination = target;
     }
 }

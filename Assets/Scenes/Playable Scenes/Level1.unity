@@ -279,7 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d792d3ca07adad34ea207b6e17972c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easeDuration: 1
 --- !u!1 &251686983
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,8 +357,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251686983}
-  m_LocalRotation: {x: 0.07910336, y: -0.6961758, z: 0.07764382, w: 0.70926255}
-  m_LocalPosition: {x: 9.217003, y: 1.5384151, z: -9.398999}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 5.8, y: 1.117, z: -9.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1091,6 +1090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeddyBear Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6665379222230473982, guid: b6d17c5e413192444a6d392491518886, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6665379222230473983, guid: b6d17c5e413192444a6d392491518886, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1144,6 +1147,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: gestureData.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: gestureData.Array.data[0]
+      value: 
+      objectReference: {fileID: 1886690854476102256, guid: c836a82f51158a1418ea13cc45c4a6fb, type: 3}
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: gestureData.Array.data[1]
+      value: 
+      objectReference: {fileID: 879305711948412920, guid: ed9f01fd01a353f47aee23aab2e5fb95, type: 3}
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: gestureData.Array.data[2]
+      value: 
+      objectReference: {fileID: 8959765338650378863, guid: 5b4f86c480244be4f9f3b3e8ec4c4b97, type: 3}
     - target: {fileID: 6665379222230473982, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: m_Name
       value: ToyBox
@@ -1192,8 +1211,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6665379223090174713, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: interactable
+      value: 
+      objectReference: {fileID: 1386451250397365465}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+--- !u!114 &1386451250397365465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+  m_PrefabInstance: {fileID: 1386451250397365464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d667dc32a2d1d4e9af8465064ac1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6665981690848768804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,7 +1341,6 @@ GameObject:
   - component: {fileID: 6665981691736781805}
   - component: {fileID: 6665981691736781806}
   - component: {fileID: 6665981691736781804}
-  - component: {fileID: 6665981691736781808}
   - component: {fileID: 6665981691736781809}
   - component: {fileID: 6665981691736781800}
   - component: {fileID: 6665981691736781810}
@@ -1462,18 +1495,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &6665981691736781808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6665981691736781781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1d5f4354daa19e4aa76b30cc64f68a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6665981691736781809
 MonoBehaviour:
   m_ObjectHideFlags: 0
