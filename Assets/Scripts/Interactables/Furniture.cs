@@ -12,11 +12,18 @@ public class Furniture : Interactable
     [SerializeField] private GameObject[] gestureData;                                  // Collection of Gesture Prefabs
 
     [Header("Properties")]
+    [SerializeField] private string furnitureId;                                        // Distinct Furniture ID
     [SerializeField] private float timer = 10f;                                         // Timer Value
 
     public bool IsComplete { get; set; }                                                // Indicates if thie Mini-Game Instance is Completed
     private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
+
+    private void OnEnable()
+    {
+        if (PlayerManager.Instance.PlayerData.FurnitureList.Contains(furnitureId))
+            Completed();
+    }
 
     protected override void Awake()
     {
@@ -79,6 +86,14 @@ public class Furniture : Interactable
     }
 
     /// <summary>
+    /// Adds ID of this Furniture to the Furniture List to Indicate Completion Status
+    /// </summary>
+    public void Register()
+    {
+        PlayerManager.Instance.PlayerData.AddId(furnitureId);
+    }
+
+    /// <summary>
     /// Sets this Mini-Game Instance as Completed
     /// </summary>
     public void Completed()
@@ -86,7 +101,6 @@ public class Furniture : Interactable
         inProgress = false;
         IsComplete = true;
         Destroy(triggerPoint.gameObject);
-        //GetComponent<Renderer>().material.color = Color.gray;
         Cam.SetActive(false);
     }
 

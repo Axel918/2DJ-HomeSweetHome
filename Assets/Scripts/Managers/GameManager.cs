@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public enum GameStates
+    public enum GameState
     {
-        
+        NO_MONSTER,
         MONSTER_PRESENT
     }
     
     public static GameManager Instance;
+
+    public GameState State { get; private set; } = GameState.NO_MONSTER;               // Current Game Status Indicator
 
     #region Singleton
     void Awake()
@@ -22,9 +24,12 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Sets the Game Status
+    /// </summary>
+    /// <param name="value"></param>
+    public void SetGameState(GameState value)
     {
-        
+        State = value;
     }
 }

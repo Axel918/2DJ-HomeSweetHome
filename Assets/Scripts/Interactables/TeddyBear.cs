@@ -17,6 +17,9 @@ public class TeddyBear : Interactable
     {
         base.Examine();
 
+        if (GameManager.Instance.State != GameManager.GameState.MONSTER_PRESENT)
+            return;
+
         if (IsBeingUsed)
             return;
 

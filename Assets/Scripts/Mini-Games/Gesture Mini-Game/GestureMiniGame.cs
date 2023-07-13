@@ -157,16 +157,20 @@ public class GestureMiniGame : MonoBehaviour
         OnFail();
     }
 
+    #region Winning Conditions
     /// <summary>
     /// Gets Executed If Player Wins the Mini-Game
     /// </summary>
     void OnSuccess()
     {
         StopAllCoroutines();
+
+        currentPatternFurniture.Register();
         currentPatternFurniture.Completed();
+
         ClearData();
-        PanelManager.Instance.ActivatePanel("Game UI");
-        PlayerEvents.Instance.SetPlayerMovement(true);
+
+        ReturnToOverworld();
     }
 
     /// <summary>
@@ -175,8 +179,19 @@ public class GestureMiniGame : MonoBehaviour
     void OnFail()
     {
         currentPatternFurniture.Failed();
+        
         ClearData();
+        
         PlayerEvents.Instance.PlayerDamaged(20f);
+        ReturnToOverworld();
+    }
+    #endregion
+
+    /// <summary>
+    /// Enables Player Movement and Shifts Camera Back to World View
+    /// </summary>
+    void ReturnToOverworld()
+    {
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerMovement(true);
     }

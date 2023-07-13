@@ -9,10 +9,10 @@ public class SpawnTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StartCountdown());
+        StartCoroutine(MonsterCountdown());
     }
 
-    IEnumerator StartCountdown()
+    IEnumerator MonsterCountdown()
     {
         float currentTimer = timer;
 
@@ -41,11 +41,12 @@ public class SpawnTimer : MonoBehaviour
         if (probability > randomNumber)
         {
             Debug.Log("There's A Monster!");
+            GameManager.Instance.SetGameState(GameManager.GameState.MONSTER_PRESENT);
         }
         else
         {
             Debug.Log("You're Safe!");
-            StartCoroutine(StartCountdown());
+            StartCoroutine(MonsterCountdown());
         }
     }
 }
