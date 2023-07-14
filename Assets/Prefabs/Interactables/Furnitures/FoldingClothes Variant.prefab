@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &572218169
 Transform:
   m_ObjectHideFlags: 0
@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.484
       objectReference: {fileID: 0}
+    - target: {fileID: 6814803667956164252, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6814803667956164254, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -331,6 +335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoldingClothes Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8607303929918109968, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2f78c4274e7629147842f15732f44aa8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
 --- !u!4 &1697685923252565391 stripped
