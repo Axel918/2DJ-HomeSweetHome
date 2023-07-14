@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TeddyBear : Interactable
@@ -16,6 +15,9 @@ public class TeddyBear : Interactable
     protected override void Examine()
     {
         base.Examine();
+
+        if (GameManager.Instance.State != GameManager.GameState.MONSTER_PRESENT)
+            return;
 
         if (IsBeingUsed)
             return;
