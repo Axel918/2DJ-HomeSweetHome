@@ -43,7 +43,7 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual IEnumerator Activate()
     {
-        PlayerEvents.Instance.SetPlayerMovement(false);
+        PlayerEvents.Instance.SetPlayerEnable(false);
         Cam.SetActive(true);
 
         Debug.Log("ACTIVATE");

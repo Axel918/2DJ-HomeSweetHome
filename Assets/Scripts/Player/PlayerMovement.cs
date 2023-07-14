@@ -10,12 +10,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnEnable()
     {
-        PlayerEvents.Instance.OnSetPlayerMovement += value => canMove = value;
+        PlayerEvents.Instance.OnSetPlayerEnable += value => canMove = value;
     }
 
     void OnDisable()
     {
-        PlayerEvents.Instance.OnSetPlayerMovement -= value => canMove = value;
+        PlayerEvents.Instance.OnSetPlayerEnable -= value => canMove = value;
     }
 
     void Start()
