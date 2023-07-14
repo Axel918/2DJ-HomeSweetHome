@@ -6,8 +6,26 @@ public class SpawnTimer : MonoBehaviour
     [Header("Properties")]
     [SerializeField] private float timer = 10f;
 
+    void OnEnable()
+    {
+        PlayerEvents.Instance.OnPlayerStabilized += InitiateCountdown;
+    }
+
+    void OnDisable()
+    {
+        PlayerEvents.Instance.OnPlayerStabilized -= InitiateCountdown;
+    }
+
     // Start is called before the first frame update
     void Start()
+    {
+        InitiateCountdown();
+    }
+
+    /// <summary>
+    /// Start Countdown for Monster Spawning
+    /// </summary>
+    void InitiateCountdown()
     {
         StartCoroutine(MonsterCountdown());
     }

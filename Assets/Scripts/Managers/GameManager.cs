@@ -32,4 +32,20 @@ public class GameManager : MonoBehaviour
     {
         State = value;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RestartGame();
+        }
+            
+    }
+
+    public void RestartGame()
+    {
+        string[] scenes = { "GameScene", "GameUIScene", "Level" + PlayerManager.Instance.PlayerData.CurrentLevel };
+
+        SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
+    }
 }

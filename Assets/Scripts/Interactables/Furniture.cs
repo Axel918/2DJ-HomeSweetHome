@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Cinemachine;
-using DG.Tweening;
 
 public class Furniture : Interactable
 {
@@ -19,11 +17,11 @@ public class Furniture : Interactable
     private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         if (PlayerManager.Instance.PlayerData.FurnitureList.Contains(furnitureId))
             Completed();
-    }
+    }*/
 
     protected override void Awake()
     {
@@ -58,6 +56,9 @@ public class Furniture : Interactable
     protected override void Examine()
     {
         base.Examine();
+
+        if (GameManager.Instance.State == GameManager.GameState.MONSTER_PRESENT)
+            return;
 
         if (IsComplete)
             return;
@@ -100,6 +101,7 @@ public class Furniture : Interactable
     {
         inProgress = false;
         IsComplete = true;
+        // Animator.SetTrigger("isComplete");
         Destroy(triggerPoint.gameObject);
         Cam.SetActive(false);
     }

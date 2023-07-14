@@ -145,7 +145,7 @@ public class GestureMiniGame : MonoBehaviour
             
             if (!isPaused)
             {
-                //currentTime--;
+                // Decrease Timer Gradually
                 currentTime -= 0.01f;
 
                 // Update Timer Bar
@@ -165,7 +165,7 @@ public class GestureMiniGame : MonoBehaviour
     {
         StopAllCoroutines();
 
-        currentPatternFurniture.Register();
+        // currentPatternFurniture.Register();
         currentPatternFurniture.Completed();
 
         ClearData();

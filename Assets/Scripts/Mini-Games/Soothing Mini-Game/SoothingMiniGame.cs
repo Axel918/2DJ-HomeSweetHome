@@ -8,16 +8,15 @@ public class SoothingMiniGame : MonoBehaviour
 
     [Header("Properties")]
     [SerializeField] private GameObject[] controlType;
-    
+    [SerializeField] private float reqAmount = 20f;
+
     [Header("References")]
     [SerializeField] private Image stabilizeBar;
 
-
     private TeddyBear teddyBear;
-    private float reqAmount = 20f;
     private float currentAmount = 0f;
     private bool isPlaying = false;
-    private int currentRandomIndex = 0;
+    private int currentRandomIndex = -1;
 
     #region Singleton
     void Awake()
