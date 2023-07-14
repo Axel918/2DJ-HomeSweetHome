@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameUIController : MonoBehaviour
 {
     public static GameUIController Instance;
-    
+
+    [SerializeField] private Animator transitionAnimator;
+
     #region Singleton
     void Awake()
     {
@@ -20,5 +20,11 @@ public class GameUIController : MonoBehaviour
     void Start()
     {
         PanelManager.Instance.ActivatePanel("Game UI");
+        transitionAnimator.gameObject.SetActive(true);
+    }
+
+    public void SetAnimation(string id)
+    {
+        transitionAnimator.SetTrigger(id);
     }
 }

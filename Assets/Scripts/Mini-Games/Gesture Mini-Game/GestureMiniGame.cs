@@ -193,6 +193,6 @@ public class GestureMiniGame : MonoBehaviour
     void ReturnToOverworld()
     {
         PanelManager.Instance.ActivatePanel("Game UI");
-        PlayerEvents.Instance.SetPlayerMovement(true);
+        PlayerEvents.Instance.SetPlayerEnable(true);
     }
 }

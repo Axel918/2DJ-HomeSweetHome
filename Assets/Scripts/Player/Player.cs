@@ -15,13 +15,13 @@ public class Player : MonoBehaviour
     void OnEnable()
     {
         PlayerManager.Instance.Player = this;
-        PlayerEvents.Instance.OnSetPlayerMovement += SetCameraActive;
+        PlayerEvents.Instance.OnSetPlayerEnable += SetCameraActive;
     }
 
     void OnDisable()
     {
         PlayerManager.Instance.Player = null;
-        PlayerEvents.Instance.OnSetPlayerMovement -= SetCameraActive;
+        PlayerEvents.Instance.OnSetPlayerEnable -= SetCameraActive;
     }
 
     void Awake()

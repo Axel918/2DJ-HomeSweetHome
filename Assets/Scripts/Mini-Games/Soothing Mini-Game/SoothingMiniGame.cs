@@ -92,7 +92,7 @@ public class SoothingMiniGame : MonoBehaviour
             GameManager.Instance.SetGameState(GameManager.GameState.NO_MONSTER);
             PlayerEvents.Instance.PlayerStabilized();
             PanelManager.Instance.ActivatePanel("Game UI");
-            PlayerEvents.Instance.SetPlayerMovement(true);
+            PlayerEvents.Instance.SetPlayerEnable(true);
         }
     }
 
