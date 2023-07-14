@@ -35,6 +35,6 @@ public class MementoGazing : MonoBehaviour
         ClearData();
 
         PanelManager.Instance.ActivatePanel("Game UI");
-        PlayerEvents.Instance.SetPlayerMovement(true);
+        PlayerEvents.Instance.SetPlayerEnable(true);
     }
 }

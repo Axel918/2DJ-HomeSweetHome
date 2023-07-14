@@ -8,15 +8,15 @@ public class SoothingMiniGame : MonoBehaviour
 
     [Header("Properties")]
     [SerializeField] private GameObject[] controlType;
-    
+    [SerializeField] private float reqAmount = 20f;
+
     [Header("References")]
     [SerializeField] private Image stabilizeBar;
 
-
     private TeddyBear teddyBear;
-    private float reqAmount = 20f;
     private float currentAmount = 0f;
     private bool isPlaying = false;
+    private int currentRandomIndex = -1;
 
     #region Singleton
     void Awake()
@@ -33,16 +33,27 @@ public class SoothingMiniGame : MonoBehaviour
         teddyBear = reference;
         stabilizeBar.fillAmount = 0f;
 
-        //int randomNumber = Random.Range(0, controlType.Length);
-
-        int randomNumber = 0;
-
-        Debug.Log("Random Number: " + randomNumber);
-
-        for (int i = 0; i < controlType.Length; i++)
-            controlType[i].SetActive(i == randomNumber);
+        RandomizeControlType();
 
         StartCoroutine(DecreaseGradually());
+    }
+
+    void RandomizeControlType()
+    {
+        // Initialize Random Number
+        int randomIndex = Random.Range(0, controlType.Length);
+
+        // Keep on Randomizing until randomIndex Value is Different from the Previous Value
+        while (currentRandomIndex == randomIndex)
+            randomIndex = Random.Range(0, controlType.Length);
+
+        // Set Current Random Index to the Chosen Random Number Index
+        currentRandomIndex = randomIndex;
+
+        Debug.Log("Random Number: " + randomIndex);
+
+        for (int i = 0; i < controlType.Length; i++)
+            controlType[i].SetActive(i == randomIndex);
     }
 
     IEnumerator DecreaseGradually()
@@ -78,9 +89,10 @@ public class SoothingMiniGame : MonoBehaviour
             ClearData();
 
             Debug.Log("Player Stabilized");
+            GameManager.Instance.SetGameState(GameManager.GameState.NO_MONSTER);
             PlayerEvents.Instance.PlayerStabilized();
             PanelManager.Instance.ActivatePanel("Game UI");
-            PlayerEvents.Instance.SetPlayerMovement(true);
+            PlayerEvents.Instance.SetPlayerEnable(true);
         }
     }
 
