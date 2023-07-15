@@ -1,14 +1,15 @@
 using System.Collections;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 using UnityEngine;
 using DG.Tweening;
 
 public class SanityIndicator : MonoBehaviour
 {
-    [SerializeField] private float easeDuration;                        // Duration of the Float Easing
+    //[SerializeField] private float easeDuration;                        // Duration of the Float Easing
     
-    private PostProcessVolume volume;                                   // Post-Process Volume Component Reference
+    /*private PostProcessVolume volume;                                   // Post-Process Volume Component Reference
     private Vignette vignette;                                          // Vignette Refernce
+    private Animator animator;                                          // Animator Component Reference
 
     void OnEnable()
     {
@@ -25,6 +26,7 @@ public class SanityIndicator : MonoBehaviour
     {
         volume = GetComponent<PostProcessVolume>();
         volume.profile.TryGetSettings(out vignette);
+        animator = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -36,8 +38,11 @@ public class SanityIndicator : MonoBehaviour
         // Don't Execute If Vignette Intensity Has Reached Max Value
         if (vignette.intensity.value.Equals(1f))
             return;
+
+        //StartCoroutine(EaseValue());
         
-        StartCoroutine(EaseValue());
+        // THIS IS THE FINALIZED ONE. TO BE ADDED ONCE ANIMATOR CONTROLLER IS PRESENT
+        //animator.SetInteger();
     }
 
     /// <summary>
@@ -52,5 +57,5 @@ public class SanityIndicator : MonoBehaviour
         
         DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, endValue, 1f);
         Debug.Log("Set Vignette");
-    }
+    }*/
 }

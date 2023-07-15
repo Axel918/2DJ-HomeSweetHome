@@ -9,11 +9,11 @@ public class IntroductionCutscene : MonoBehaviour
     IEnumerator Start()
     {
         mirrorCamera.SetActive(true);
-        PlayerEvents.Instance.SetPlayerMovement(false);
+        PlayerEvents.Instance.SetPlayerEnable(false);
         
         yield return new WaitForSeconds(3f);
 
         mirrorCamera.SetActive(false);
-        PlayerEvents.Instance.SetPlayerMovement(true);
+        PlayerEvents.Instance.SetPlayerEnable(true);
     }
 }
