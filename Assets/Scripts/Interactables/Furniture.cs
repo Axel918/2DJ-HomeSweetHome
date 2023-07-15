@@ -73,7 +73,6 @@ public class Furniture : Interactable
     /// <summary>
     /// Initiates Pattern Mini-Game
     /// </summary>
-
     public override IEnumerator Activate()
     {
         StartCoroutine(base.Activate());

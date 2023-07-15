@@ -1,5 +1,5 @@
 using System.Collections;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 using UnityEngine;
 using DG.Tweening;
 
@@ -7,7 +7,7 @@ public class SanityIndicator : MonoBehaviour
 {
     //[SerializeField] private float easeDuration;                        // Duration of the Float Easing
     
-    private PostProcessVolume volume;                                   // Post-Process Volume Component Reference
+    /*private PostProcessVolume volume;                                   // Post-Process Volume Component Reference
     private Vignette vignette;                                          // Vignette Refernce
     private Animator animator;                                          // Animator Component Reference
 
@@ -57,5 +57,5 @@ public class SanityIndicator : MonoBehaviour
         
         DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, endValue, 1f);
         Debug.Log("Set Vignette");
-    }
+    }*/
 }
