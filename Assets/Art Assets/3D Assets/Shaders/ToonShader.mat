@@ -87,7 +87,7 @@ Material:
     - _AcuteStartDot: 0
     - _BumpScale: 1
     - _CelFade: 0
-    - _CelShading: 75
+    - _CelShading: 55
     - _Cutoff: 0.5
     - _DepthStrength: 0
     - _DepthThreshold: 0
