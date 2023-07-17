@@ -4,40 +4,56 @@ using UnityEngine;
 public class SpawnTimer : MonoBehaviour
 {
     [Header("Properties")]
-    [SerializeField] private float timer = 10f;
+    [SerializeField] private float monsterTimer = 10f;
+    [SerializeField] private float insanityTimer = 10f;
+
+    private bool isTransitioning;
 
     void OnEnable()
     {
-        PlayerEvents.Instance.OnPlayerStabilized += InitiateCountdown;
+        PlayerEvents.Instance.OnPlayerStabilized += InitiateMonsterCountdown;
+        PlayerEvents.Instance.OnPlayerInsane += InitiateInsanityTimer;
+        GameEvents.Instance.OnPauseSpawnTimer += SetIsTransitioning;
     }
 
     void OnDisable()
     {
-        PlayerEvents.Instance.OnPlayerStabilized -= InitiateCountdown;
+        PlayerEvents.Instance.OnPlayerStabilized -= InitiateMonsterCountdown;
+        PlayerEvents.Instance.OnPlayerInsane -= InitiateInsanityTimer;
+        GameEvents.Instance.OnPauseSpawnTimer -= SetIsTransitioning;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        InitiateCountdown();
+        InitiateMonsterCountdown();
     }
 
+    #region Monster Management
     /// <summary>
     /// Start Countdown for Monster Spawning
     /// </summary>
-    void InitiateCountdown()
+    void InitiateMonsterCountdown()
     {
-        StartCoroutine(MonsterCountdown());
+        // Cancels Coroutines if There Are Any
+        StopAllCoroutines();
+
+        // Start the Monster Countdown
+        StartCoroutine(MonsterTimer());
     }
 
-    IEnumerator MonsterCountdown()
+    IEnumerator MonsterTimer()
     {
-        float currentTimer = timer;
+        float currentTimer = monsterTimer;
 
         while (currentTimer > 0f)
         {
             yield return new WaitForSeconds(1f);
-            currentTimer--;
+
+            if (!isTransitioning)
+            {
+                currentTimer--;
+            }
         }
 
         CheckMonster();
@@ -50,7 +66,7 @@ public class SpawnTimer : MonoBehaviour
     {
         // Random Number Generation
         int randomNumber = Random.Range(1, 101);
-        
+
         // Get the Probability Based on Player's Current Sanity
         float probability = (1f - PlayerManager.Instance.Player.PlayerSanity.GetSanityRatio()) * 100f;
 
@@ -60,11 +76,52 @@ public class SpawnTimer : MonoBehaviour
         {
             Debug.Log("There's A Monster!");
             GameManager.Instance.SetGameState(GameManager.GameState.MONSTER_PRESENT);
+            PlayerEvents.Instance.PlayerInsane();
         }
         else
         {
             Debug.Log("You're Safe!");
-            StartCoroutine(MonsterCountdown());
+            StartCoroutine(MonsterTimer());
+
+            // Add 40/60 Chance of Monster Scaring the Player
+            // 40 - Scare
+            // 60 - Nothing
         }
     }
+    #endregion
+
+    #region Player Insanity Management
+    void InitiateInsanityTimer()
+    {
+        StopAllCoroutines();
+
+        StartCoroutine(InsanityTimer());
+    }
+
+    IEnumerator InsanityTimer()
+    {
+        float currentTimer = insanityTimer;
+
+        while (currentTimer > 0f)
+        {
+            yield return new WaitForSeconds(1f);
+            
+
+            if (!isTransitioning)
+            {
+                currentTimer--;
+            }
+        }
+
+        // Monster Gets Player
+        // GAME OVER
+        Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
+    }
+    #endregion
+
+    void SetIsTransitioning(bool value)
+    {
+        isTransitioning = value;
+    }
+
 }

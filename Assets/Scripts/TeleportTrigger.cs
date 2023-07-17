@@ -35,6 +35,9 @@ public class TeleportTrigger : MonoBehaviour
             // Trigger Fade Transition
             GameUIController.Instance.SetAnimation("isFading");
 
+            // Pause the Spawn Timer
+            GameEvents.Instance.PauseSpawnTimer(true);
+
             yield return new WaitForSeconds(1f);
 
             // Declare Player As Teleported from this Point
@@ -43,6 +46,9 @@ public class TeleportTrigger : MonoBehaviour
             // Teleport the Player to the Designated Position
             other.transform.position = targetTeleportTrigger.transform.position;
             PlayerManager.Instance.Player.PlayerMovement.SetTargetPosition(targetTeleportTrigger.transform.position);
+
+            // Unpause the Spawn Timer
+            GameEvents.Instance.PauseSpawnTimer(false);
         }
     }
 }
