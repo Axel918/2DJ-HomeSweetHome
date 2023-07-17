@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4249191483407935498}
   - component: {fileID: 4249191483407935499}
+  - component: {fileID: 949168331457393586}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -47,5 +48,26 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: cc71c9dac6a4dc54498cdf5bdc91d89a, type: 2}
+--- !u!95 &949168331457393586
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249191483407935496}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f56889f7be789b499bd7153416e7d10, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
