@@ -5,7 +5,8 @@ public class GameEvents : MonoBehaviour
 {
     public static GameEvents Instance;
 
-
+    public event Action<bool> OnPauseSpawnTimer;                                     // Pauses the SpawnTimer Upon Transitioning from One
+                                                                                     // Room to the Other
 
     #region Singleton
     void Awake()
@@ -16,4 +17,9 @@ public class GameEvents : MonoBehaviour
             Destroy(gameObject);
     }
     #endregion
+
+    public void PauseSpawnTimer(bool value)
+    {
+        OnPauseSpawnTimer?.Invoke(value);
+    }
 }

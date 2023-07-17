@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance;
 
-    public GameState State { get; private set; } = GameState.MONSTER_PRESENT;               // Current Game Status Indicator
+    public GameState State { get; private set; } = GameState.NO_MONSTER;               // Current Game Status Indicator
 
     #region Singleton
     void Awake()
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         State = value;
     }
 
+    // TO BE REMOVED!!!
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

@@ -53,6 +53,7 @@ public class PlayerSanity : MonoBehaviour
     void OnInsane()
     {
         Debug.Log("Player is Insane");
+        PlayerEvents.Instance.PlayerInsane();
     }
 
     /// <summary>
