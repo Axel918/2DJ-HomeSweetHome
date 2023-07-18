@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basin Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8607303929918109968, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 12069aff2a3d8c64783d9700cebb1833, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55f15f1193e9dfb449cf159e184d565f, type: 3}
 --- !u!4 &9030932571501209987 stripped
