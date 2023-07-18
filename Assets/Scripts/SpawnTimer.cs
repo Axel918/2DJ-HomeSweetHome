@@ -86,6 +86,7 @@ public class SpawnTimer : MonoBehaviour
             // Add 40/60 Chance of Monster Scaring the Player
             // 40 - Scare
             // 60 - Nothing
+
         }
     }
     #endregion
@@ -126,4 +127,11 @@ public class SpawnTimer : MonoBehaviour
     {
         isTransitioning = value;
     }
+    #endregion
+
+    void SetIsTransitioning(bool value)
+    {
+        isTransitioning = value;
+    }
+
 }

@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public NavMeshAgent NavMeshAgent { get; private set; }                      // NavMeshAgent Component Reference
     public Rigidbody Rb { get; private set; }                                   // RigidBody Component Reference
 
-
     [Header("References")]
     public CinemachineVirtualCamera PlayerCamera;                               // Player Camera Reference
     public Animator Animator;                                                   // Animator Component Reference
