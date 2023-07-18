@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private Player playerSetup;                                                 // Player Class Reference
     private bool canMove;                                                       // Indicates if Player Can Move
 
+    private Vector3 moveDirection;                                              // Current Movement Direction
+    private Vector3 lastMoveDirection;                                          // Latest Movement Direction
+
     void OnEnable()
     {
         PlayerEvents.Instance.OnSetPlayerEnable += value => canMove = value;
@@ -28,9 +31,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Animate();
+        
         if (!canMove)
             return;
 
+        // Go to Location where the Player Clicked
         if (Input.GetMouseButtonDown(0))
             PointAndClick();
     }
@@ -51,6 +57,30 @@ public class PlayerMovement : MonoBehaviour
             if (hit.collider.CompareTag("Ground"))
                 SetTargetPosition(hit.point);
         }
+    }
+
+    /// <summary>
+    /// Executes Player Animation
+    /// </summary>
+    void Animate()
+    {
+        // Set Value of Latest Move Direction
+        if ((playerSetup.NavMeshAgent.velocity.x == 0f && playerSetup.NavMeshAgent.velocity.z == 0f) && playerSetup.NavMeshAgent.velocity.x != 0f || playerSetup.NavMeshAgent.velocity.z != 0f)
+            lastMoveDirection = moveDirection;
+
+        // Set-Up and Normalize Movement Direction
+        moveDirection = new Vector3(playerSetup.NavMeshAgent.velocity.x, 0f, playerSetup.NavMeshAgent.velocity.z).normalized;
+        
+        // Modify Move Directions in X and Z-Axis
+        playerSetup.Animator.SetFloat("moveX", moveDirection.x);
+        playerSetup.Animator.SetFloat("moveZ", moveDirection.z);
+
+        // Indicate if Player is Moving or Not
+        playerSetup.Animator.SetFloat("moveMagnitude", moveDirection.sqrMagnitude);
+
+        // Modify Latest Move Direction
+        playerSetup.Animator.SetFloat("lastMoveX", lastMoveDirection.x);
+        playerSetup.Animator.SetFloat("lastMoveZ", lastMoveDirection.z);
     }
 
     /// <summary>
