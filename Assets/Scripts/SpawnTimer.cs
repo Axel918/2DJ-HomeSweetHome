@@ -115,6 +115,7 @@ public class SpawnTimer : MonoBehaviour
 
         // Monster Gets Player
         // GAME OVER
+        StartCoroutine(GameManager.Instance.GameOver());
         Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
     }
     #endregion
@@ -123,5 +124,4 @@ public class SpawnTimer : MonoBehaviour
     {
         isTransitioning = value;
     }
-
 }
