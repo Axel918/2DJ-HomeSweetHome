@@ -115,6 +115,8 @@ public class SpawnTimer : MonoBehaviour
 
         // Monster Gets Player
         // GAME OVER
+        // To be Replaced!
+        // Add Invoke Event Here for Game Over
         StartCoroutine(GameManager.Instance.GameOver());
         Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
     }
