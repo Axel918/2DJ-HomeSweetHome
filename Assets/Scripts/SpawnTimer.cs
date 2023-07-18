@@ -127,11 +127,4 @@ public class SpawnTimer : MonoBehaviour
     {
         isTransitioning = value;
     }
-    #endregion
-
-    void SetIsTransitioning(bool value)
-    {
-        isTransitioning = value;
-    }
-
 }
