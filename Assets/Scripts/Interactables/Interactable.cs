@@ -5,10 +5,10 @@ using Cinemachine;
 public abstract class Interactable : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] protected GameObject triggerPoint;
-    public GameObject Cam;
+    [SerializeField] protected GameObject triggerPoint;                         // TriggerPoint GameObject Reference
+    public GameObject Cam;                                                      // Child Camera Reference
 
-    protected float miniGameStartTime;
+    protected float miniGameStartTime;                                          // Start Delay Based on Camera Transition Duration
 
     protected virtual void Awake()
     {
@@ -29,12 +29,11 @@ public abstract class Interactable : MonoBehaviour
 
     void OnMouseDown()
     {
-        // TO BE REMOVED!!!
         Examine();
     }
 
     /// <summary>
-    /// TO BE REMOVED!!!
+    /// Player Goes to this Object to Examine It
     /// </summary>
     protected virtual void Examine()
     {
@@ -45,8 +44,6 @@ public abstract class Interactable : MonoBehaviour
     {
         PlayerEvents.Instance.SetPlayerEnable(false);
         Cam.SetActive(true);
-
-        Debug.Log("ACTIVATE");
 
         yield return null;
     }

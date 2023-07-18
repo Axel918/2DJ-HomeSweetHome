@@ -7,9 +7,11 @@ public class Player : MonoBehaviour
     public PlayerMovement PlayerMovement { get; private set; }                  // PlayerMovement Class Reference
     public PlayerSanity PlayerSanity { get; private set; }                      // PlayerSanity Class Reference
     public NavMeshAgent NavMeshAgent { get; private set; }                      // NavMeshAgent Component Reference
+    public Rigidbody Rb { get; private set; }                                   // RigidBody Component Reference
 
     [Header("References")]
     public CinemachineVirtualCamera PlayerCamera;                               // Player Camera Reference
+    public Animator Animator;                                                   // Animator Component Reference
 
     void OnEnable()
     {
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
         PlayerMovement = GetComponent<PlayerMovement>();
         PlayerSanity = GetComponent<PlayerSanity>();
         NavMeshAgent = GetComponent<NavMeshAgent>();
+        Rb = GetComponent<Rigidbody>();
         SetCameraActive(true);
     }
 

@@ -86,6 +86,7 @@ public class SpawnTimer : MonoBehaviour
             // Add 40/60 Chance of Monster Scaring the Player
             // 40 - Scare
             // 60 - Nothing
+
         }
     }
     #endregion
@@ -115,7 +116,16 @@ public class SpawnTimer : MonoBehaviour
 
         // Monster Gets Player
         // GAME OVER
+        // To be Replaced!
+        // Add Invoke Event Here for Game Over
+        StartCoroutine(GameManager.Instance.GameOver());
         Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
+    }
+    #endregion
+
+    void SetIsTransitioning(bool value)
+    {
+        isTransitioning = value;
     }
     #endregion
 
