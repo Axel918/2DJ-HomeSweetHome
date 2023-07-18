@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 3093074390376270796}
   - component: {fileID: 3093074390376270801}
   - component: {fileID: 3093074390376270792}
-  - component: {fileID: 3093074390376270802}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -189,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 8533931802722470995}
+  Animator: {fileID: 8305088431271001499}
 --- !u!114 &3093074390376270798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,19 +249,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3093074390376270802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3093074390376270837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7cf7189e74474cbc2e581ef375ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteTransform: {fileID: 3093074391132162843}
 --- !u!1 &3093074391132162820
 GameObject:
   m_ObjectHideFlags: 0

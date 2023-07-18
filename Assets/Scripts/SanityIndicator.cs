@@ -1,31 +1,25 @@
-using System.Collections;
-//using UnityEngine.Rendering.PostProcessing;
 using UnityEngine;
-using DG.Tweening;
 
 public class SanityIndicator : MonoBehaviour
 {
-    //[SerializeField] private float easeDuration;                        // Duration of the Float Easing
-    
-    /*private PostProcessVolume volume;                                   // Post-Process Volume Component Reference
-    private Vignette vignette;                                          // Vignette Refernce
-    private Animator animator;                                          // Animator Component Reference
+    private Animator animator;                                  // Animator Component Reference
+
+    private int sanityLevel = 0;
 
     void OnEnable()
     {
         PlayerEvents.Instance.OnPlayerDamaged += SetVignetteIntensity;
+        PlayerEvents.Instance.OnPlayerStabilized += ResetVignette;
     }
 
     void OnDisable()
     {
         PlayerEvents.Instance.OnPlayerDamaged -= SetVignetteIntensity;
+        PlayerEvents.Instance.OnPlayerStabilized -= ResetVignette;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        volume = GetComponent<PostProcessVolume>();
-        volume.profile.TryGetSettings(out vignette);
         animator = GetComponent<Animator>();
     }
 
@@ -35,27 +29,18 @@ public class SanityIndicator : MonoBehaviour
     /// <param name="value"></param>
     void SetVignetteIntensity(float value)
     {
-        // Don't Execute If Vignette Intensity Has Reached Max Value
-        if (vignette.intensity.value.Equals(1f))
-            return;
+        sanityLevel++;
 
-        //StartCoroutine(EaseValue());
-        
-        // THIS IS THE FINALIZED ONE. TO BE ADDED ONCE ANIMATOR CONTROLLER IS PRESENT
-        //animator.SetInteger();
+        animator.SetInteger("sanityLevel", sanityLevel);
     }
 
     /// <summary>
-    /// Set Float Value Gradually
+    /// Reset Vignette Upon Player Stabilization
     /// </summary>
-    /// <returns></returns>
-    IEnumerator EaseValue()
+    void ResetVignette()
     {
-        yield return new WaitForSeconds(0.01f);
+        sanityLevel = 0;
 
-        float endValue = 1f - PlayerManager.Instance.Player.PlayerSanity.GetSanityRatio();
-        
-        DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, endValue, 1f);
-        Debug.Log("Set Vignette");
-    }*/
+        animator.SetInteger("sanityLevel", sanityLevel);
+    }
 }

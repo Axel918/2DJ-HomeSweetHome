@@ -17,12 +17,6 @@ public class Furniture : Interactable
     private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
 
-    /*private void OnEnable()
-    {
-        if (PlayerManager.Instance.PlayerData.FurnitureList.Contains(furnitureId))
-            Completed();
-    }*/
-
     protected override void Awake()
     {
         base.Awake();
@@ -100,7 +94,6 @@ public class Furniture : Interactable
     {
         inProgress = false;
         IsComplete = true;
-        // Animator.SetTrigger("isComplete");
         Destroy(triggerPoint.gameObject);
         Cam.SetActive(false);
     }

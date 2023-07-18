@@ -6,8 +6,9 @@ public class PlayerEvents : MonoBehaviour
     public static PlayerEvents Instance;
 
     public event Action<float> OnPlayerDamaged;                                             // Called When Player Takes Damage
-    public event Action<bool> OnSetPlayerEnable;                                          // Activates/Deactivates Player Movement
+    public event Action<bool> OnSetPlayerEnable;                                            // Activates/Deactivates Player Movement
     public event Action OnPlayerStabilized;                                                 // Called When Player Finishes Sanity Stabilization
+    public event Action OnPlayerInsane;                                                     // Triggered when Player Reaches 0 Sanity
 
     #region Singleton
     void Awake()
@@ -43,5 +44,13 @@ public class PlayerEvents : MonoBehaviour
     public void PlayerStabilized()
     {
         OnPlayerStabilized?.Invoke();
+    }
+
+    /// <summary>
+    /// Gets Called when Monster is Present (Player Loses Sanity)
+    /// </summary>
+    public void PlayerInsane()
+    {
+        OnPlayerInsane?.Invoke();
     }
 }
