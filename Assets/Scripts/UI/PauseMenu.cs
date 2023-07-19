@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    private bool GameIsPaused = false;
+    public bool GameIsPaused { get; private set; }
+
+    [SerializeField] private GameObject pausePanel;
+
+    private void Start()
+    {
+        pausePanel.SetActive(false);
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         if (GameIsPaused)
         {
+            if (!pausePanel.activeSelf) return;
+
             if (Input.GetKeyDown(KeyCode.M))
             {
                 Debug.Log("Going to Main Menu");
@@ -37,7 +47,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        PanelManager.Instance.ActivatePanel("Game UI");
+        pausePanel.SetActive(false);
         Debug.Log("Resume");
         GameIsPaused = false;
     }
@@ -46,7 +56,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        PanelManager.Instance.ActivatePanel("Pause Menu");
+        pausePanel.SetActive(true);
         Debug.Log("Pause");
         GameIsPaused = true;
     }
