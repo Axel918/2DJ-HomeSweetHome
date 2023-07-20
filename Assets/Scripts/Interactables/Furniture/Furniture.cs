@@ -20,6 +20,9 @@ public class Furniture : Interactable
     {
         base.Awake();
 
+        // TO BE REMOVED!!!
+        GameManager.Instance.TotalFurniture++;
+
         IsComplete = false;
         InProgress = false;
     }
@@ -91,6 +94,7 @@ public class Furniture : Interactable
     /// </summary>
     public void Completed()
     {
+        GameManager.Instance.CheckList();   // TO BE REMOVED!!!
         InProgress = false;
         IsComplete = true;
         Destroy(triggerPoint.gameObject);

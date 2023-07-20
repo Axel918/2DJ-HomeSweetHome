@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     [Header("Properties")]
     [SerializeField] private int maxLevel = 3;                                             // Maximum Level Amount
 
+    // TO BE REMOVED!!!
+    public int CurrentNumber { get; private set; }
+    public int TotalFurniture { get; set; }
+
     void OnEnable()
     {
         GameEvents.Instance.OnLevelFailed += GameOver;
@@ -73,6 +77,20 @@ public class GameManager : MonoBehaviour
 
             // Load the Scenes with Fade In Transition
             SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
+        }
+    }
+
+    /// <summary>
+    /// TO BE REMOVED!!!
+    /// </summary>
+    public void CheckList()
+    {
+        CurrentNumber++;
+        
+        if (CurrentNumber >= TotalFurniture)
+        {
+            SetGameState(GameState.LEVEL_COMPLETE);
+            RestartGame();
         }
     }
 
