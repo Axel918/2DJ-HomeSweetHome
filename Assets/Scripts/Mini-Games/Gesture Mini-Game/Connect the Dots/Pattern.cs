@@ -14,7 +14,7 @@ public class Pattern : MonoBehaviour
     private List<Vector2> dotPositions = new();                                 // List of Dot Positions
     private bool isEvaluating;                                                  // Indicates if Drawn Pattern is Being Evaluated
 
-    public bool IsDrawing { get; private set; }
+    public bool IsDrawing { get; private set; }                                 // Indicated if Player is Drawing or Not
 
     void Awake()
     {
@@ -31,6 +31,9 @@ public class Pattern : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameUIController.Instance.PauseMenu.GameIsPaused)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             IsDrawing = true;
@@ -87,7 +90,6 @@ public class Pattern : MonoBehaviour
         
         yield return null;
 
-        // TO BE REPLACED!!!
         StartCoroutine(GestureMiniGame.Instance.NextPattern());
     }
 

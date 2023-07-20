@@ -7,18 +7,19 @@ public class PlayerMovement : MonoBehaviour
 
     private Player playerSetup;                                                 // Player Class Reference
     private bool canMove;                                                       // Indicates if Player Can Move
-
     private Vector3 moveDirection;                                              // Current Movement Direction
     private Vector3 lastMoveDirection;                                          // Latest Movement Direction
 
     void OnEnable()
     {
         PlayerEvents.Instance.OnSetPlayerEnable += value => canMove = value;
+        GameEvents.Instance.OnLevelFailed += OnPlayerAttacked;
     }
 
     void OnDisable()
     {
         PlayerEvents.Instance.OnSetPlayerEnable -= value => canMove = value;
+        GameEvents.Instance.OnLevelFailed -= OnPlayerAttacked;
     }
 
     void Start()
@@ -31,6 +32,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameUIController.Instance.PauseMenu.GameIsPaused)
+            return;
+        
+        if (GameManager.Instance.State == GameManager.GameState.LEVEL_FAILED)
+            return;
+        
         Animate();
         
         if (!canMove)
@@ -90,5 +97,10 @@ public class PlayerMovement : MonoBehaviour
     public void SetTargetPosition(Vector3 target)
     {
         playerSetup.NavMeshAgent.SetDestination(target);
+    }
+
+    void OnPlayerAttacked()
+    {
+        playerSetup.Animator.SetTrigger("isAttacked");
     }
 }
