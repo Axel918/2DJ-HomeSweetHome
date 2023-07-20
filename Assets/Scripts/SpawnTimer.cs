@@ -6,7 +6,7 @@ public class SpawnTimer : MonoBehaviour
     [Header("Properties")]
     [SerializeField] private float monsterTimer = 10f;                                  // Countdown for Monster Spawning
     [SerializeField] private float insanityTimer = 10f;                                 // Countdown for When Player is Insane
-    [Range(1, 100)] [SerializeField] private int scareProbability = 40;                 // Probability for Monster Scare
+    [Range(1, 100)] [SerializeField] private int scareProbability = 20;                 // Probability for Monster Scare
     [SerializeField] private string[] scareIds;                                         // Scare ID Array
 
     private bool isTransitioning;                                                       // Indicates if Player is Transitioning from One Room
@@ -134,9 +134,8 @@ public class SpawnTimer : MonoBehaviour
         int randomNumberProbability = Random.Range(1, 101);
         int randomNumberScareIndex = Random.Range(0, scareIds.Length);
 
-        // Add 40/60 Chance of Monster Scaring the Player
-        // 40% - Scare
-        // 60% - Nothing
+        Debug.Log("Monster Scare Probability: " + randomNumberProbability);
+
         if (scareProbability > randomNumberProbability)
             GameUIController.Instance.SetAnimation(scareIds[randomNumberScareIndex]);
     }
