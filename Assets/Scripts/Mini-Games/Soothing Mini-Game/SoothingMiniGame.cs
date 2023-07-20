@@ -33,6 +33,8 @@ public class SoothingMiniGame : MonoBehaviour
         teddyBear = reference;
         stabilizeBar.fillAmount = 0f;
 
+        GameEvents.Instance.OnLevelFailed += ReturnToOverworld;
+
         RandomizeControlType();
 
         StartCoroutine(DecreaseGradually());
@@ -83,11 +85,6 @@ public class SoothingMiniGame : MonoBehaviour
     {
         if (currentAmount >= reqAmount)
         {
-            teddyBear.IsBeingUsed = false;
-            teddyBear.Cam.SetActive(false);
-
-            ClearData();
-
             Debug.Log("Player Stabilized");
             GameManager.Instance.SetGameState(GameManager.GameState.NO_MONSTER);
             PlayerEvents.Instance.PlayerStabilized();
@@ -98,6 +95,7 @@ public class SoothingMiniGame : MonoBehaviour
 
     void ReturnToOverworld()
     {
+        ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerEnable(true);
     }
@@ -105,7 +103,12 @@ public class SoothingMiniGame : MonoBehaviour
     void ClearData()
     {
         StopAllCoroutines();
-        
+
+        teddyBear.IsBeingUsed = false;
+        teddyBear.Cam.SetActive(false);
+
+        GameEvents.Instance.OnLevelFailed -= ReturnToOverworld;
+
         teddyBear = null;
         isPlaying = false;
         currentAmount = 0f;

@@ -48,6 +48,9 @@ public class GestureMiniGame : MonoBehaviour
         timerBar.fillAmount = 1f;
         isPaused = false;
 
+        // Subscribe Event
+        PlayerEvents.Instance.OnPlayerInsane += ReturnToOverworld;
+
         // Start the Timer
         StartCoroutine(StartTimer());
 
@@ -117,6 +120,9 @@ public class GestureMiniGame : MonoBehaviour
         // Clear the Pattern List
         patterns.Clear();
 
+        // Unsubscribe Event
+        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
+
         // Nullify All Data and References
         currentPatternData = null;
         currentPatternFurniture = null;
@@ -163,12 +169,8 @@ public class GestureMiniGame : MonoBehaviour
     /// </summary>
     void OnSuccess()
     {
-        StopAllCoroutines();
-
         // currentPatternFurniture.Register();
         currentPatternFurniture.Completed();
-
-        ClearData();
 
         ReturnToOverworld();
     }
@@ -180,8 +182,6 @@ public class GestureMiniGame : MonoBehaviour
     {
         currentPatternFurniture.Failed();
         
-        ClearData();
-        
         PlayerEvents.Instance.PlayerDamaged(20f);
         ReturnToOverworld();
     }
@@ -192,6 +192,9 @@ public class GestureMiniGame : MonoBehaviour
     /// </summary>
     void ReturnToOverworld()
     {
+        StopAllCoroutines();
+        currentPatternFurniture.InProgress = false;
+        ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerEnable(true);
     }
