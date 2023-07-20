@@ -442,6 +442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3093074390376270798, guid: f52cea68bdef66548b919ec29832286f, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 251686985}
     - target: {fileID: 3093074390376270837, guid: f52cea68bdef66548b919ec29832286f, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -511,6 +515,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterTimer: 10
   insanityTimer: 10
+  scareProbability: 20
+  scareIds:
+  - isSubtleJumpscare1
+  - isSubtleJumpscare2
+  - isSubtleJumpscare2
 --- !u!4 &624387381
 Transform:
   m_ObjectHideFlags: 0

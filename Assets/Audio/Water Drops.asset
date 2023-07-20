@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d62cc1265dd16148a573d1161bb0b75, type: 3}
   m_Name: Water Drops
   m_EditorClassIdentifier: 
-  id: 
+  id: Water Drops
   clip: {fileID: 8300000, guid: b36781f19e06ffc40a0decc6c43ff318, type: 3}
   type: 0
   priority: 0
