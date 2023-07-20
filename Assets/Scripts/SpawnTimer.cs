@@ -6,6 +6,8 @@ public class SpawnTimer : MonoBehaviour
     [Header("Properties")]
     [SerializeField] private float monsterTimer = 10f;                                  // Countdown for Monster Spawning
     [SerializeField] private float insanityTimer = 10f;                                 // Countdown for When Player is Insane
+    [Range(1, 100)] [SerializeField] private int scareProbability = 20;                 // Probability for Monster Scare
+    [SerializeField] private string[] scareIds;                                         // Scare ID Array
 
     private bool isTransitioning;                                                       // Indicates if Player is Transitioning from One Room
                                                                                         // to Another
@@ -52,9 +54,7 @@ public class SpawnTimer : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
             if (!isTransitioning)
-            {
                 currentTimer--;
-            }
         }
 
         CheckMonster();
@@ -83,11 +83,7 @@ public class SpawnTimer : MonoBehaviour
         {
             Debug.Log("You're Safe!");
             StartCoroutine(MonsterTimer());
-
-            // Add 40/60 Chance of Monster Scaring the Player
-            // 40 - Scare
-            // 60 - Nothing
-
+            MonsterScare();
         }
     }
     #endregion
@@ -114,9 +110,9 @@ public class SpawnTimer : MonoBehaviour
 
         // Monster Gets Player
         // GAME OVER
+        Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
         GameManager.Instance.SetGameState(GameManager.GameState.LEVEL_FAILED);
         GameEvents.Instance.LevelFailed();
-        Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
     }
     #endregion
 
@@ -127,5 +123,20 @@ public class SpawnTimer : MonoBehaviour
     void SetIsTransitioning(bool value)
     {
         isTransitioning = value;
+    }
+
+    /// <summary>
+    /// Provides a Subtle Jumpscare for the Player
+    /// </summary>
+    void MonsterScare()
+    {
+        // Random Number Generation
+        int randomNumberProbability = Random.Range(1, 101);
+        int randomNumberScareIndex = Random.Range(0, scareIds.Length);
+
+        Debug.Log("Monster Scare Probability: " + randomNumberProbability);
+
+        if (scareProbability > randomNumberProbability)
+            GameUIController.Instance.SetAnimation(scareIds[randomNumberScareIndex]);
     }
 }
