@@ -18,4 +18,20 @@ public class MainMenu : MonoBehaviour
 
         SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
     }
+
+    public void OnCreditsButtonClicked()
+    {
+        PanelManager.Instance.ActivatePanel("Credits Menu");
+    }
+
+    public void OnGameExitButtonClicked()
+    {
+        Application.Quit();
+        Debug.Log("Game Exited");
+    }
+
+    public void OnReturnButtonClicked()
+    {
+        PanelManager.Instance.ActivatePanel("Main Menu");
+    }
 }
