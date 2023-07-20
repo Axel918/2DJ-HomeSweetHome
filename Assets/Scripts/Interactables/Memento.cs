@@ -16,9 +16,6 @@ public class Memento : Interactable
     {
         base.Examine();
 
-        if (GameManager.Instance.State == GameManager.GameState.MONSTER_PRESENT)
-            return;
-
         if (IsBeingGazed)
             return;
 
