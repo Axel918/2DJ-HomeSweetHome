@@ -17,7 +17,7 @@ public class PlayerAttackedAnimationEvent : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        GameUIController.Instance.SetAnimation("isJumpscare");
+        GameUIController.Instance.SetAnimation("isMajorJumpscare");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
