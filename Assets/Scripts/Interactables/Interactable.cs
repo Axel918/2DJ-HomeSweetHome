@@ -19,16 +19,30 @@ public abstract class Interactable : MonoBehaviour
 
     void OnMouseEnter()
     {
-        
+        if (GameUIController.Instance.PauseMenu.GameIsPaused)
+            return;
+
+        if (GameManager.Instance.State == GameManager.GameState.LEVEL_FAILED)
+            return;
     }
 
     void OnMouseExit()
     {
-        
+        if (GameUIController.Instance.PauseMenu.GameIsPaused)
+            return;
+
+        if (GameManager.Instance.State == GameManager.GameState.LEVEL_FAILED)
+            return;
     }
 
     void OnMouseDown()
     {
+        if (GameUIController.Instance.PauseMenu.GameIsPaused)
+            return;
+
+        if (GameManager.Instance.State == GameManager.GameState.LEVEL_FAILED)
+            return;
+        
         Examine();
     }
 
