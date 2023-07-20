@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     public GameState State { get; private set; } = GameState.NO_MONSTER;               // Current Game Status Indicator
 
+    [Header("Properties")]
+    [SerializeField] private int maxLevel = 3;                                             // Maximum Level Amount
+
     void OnEnable()
     {
         GameEvents.Instance.OnLevelFailed += GameOver;
@@ -55,11 +58,22 @@ public class GameManager : MonoBehaviour
         if (State == GameState.LEVEL_COMPLETE)
             PlayerManager.Instance.PlayerData.CurrentLevel++;
 
-        // Load All Necessary Scenes for Gameplay
-        string[] scenes = { "GameScene", "GameUIScene", "Level" + PlayerManager.Instance.PlayerData.CurrentLevel };
+        if (PlayerManager.Instance.PlayerData.CurrentLevel < maxLevel)
+        {
+            // Load All Necessary Scenes for Gameplay
+            string[] scenes = { "GameScene", "GameUIScene", "Level" + PlayerManager.Instance.PlayerData.CurrentLevel };
 
-        // Load the Scenes with Fade In Transition
-        SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
+            // Load the Scenes with Fade In Transition
+            SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
+        }
+        else
+        {
+            // Load All Necessary Scenes for Gameplay
+            string[] scenes = { "EndingScene" };
+
+            // Load the Scenes with Fade In Transition
+            SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
+        }
     }
 
     void GameOver()
