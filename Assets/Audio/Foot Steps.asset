@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d62cc1265dd16148a573d1161bb0b75, type: 3}
   m_Name: Foot Steps
   m_EditorClassIdentifier: 
-  id: 
+  id: Footsteps
   clip: {fileID: 8300000, guid: 1303b07e66dca634a8f13207dbc9784f, type: 3}
   type: 1
   priority: 0

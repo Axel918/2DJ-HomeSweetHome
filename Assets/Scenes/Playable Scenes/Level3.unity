@@ -316,8 +316,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251686983}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -5.748274, y: 0.644, z: -30.45}
+  m_LocalRotation: {x: 0.07910337, y: -0.6961759, z: 0.077643834, w: 0.70926255}
+  m_LocalPosition: {x: 7.880002, y: 1.2174151, z: -9.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -442,6 +442,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3093074390376270798, guid: f52cea68bdef66548b919ec29832286f, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 251686985}
     - target: {fileID: 3093074390376270837, guid: f52cea68bdef66548b919ec29832286f, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -963,6 +967,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterTimer: 10
   insanityTimer: 10
+  scareProbability: 20
+  scareIds:
+  - isSubtleJumpscare1
+  - isSubtleJumpscare2
+  - isSubtleJumpscare3
 --- !u!4 &624387381
 Transform:
   m_ObjectHideFlags: 0
