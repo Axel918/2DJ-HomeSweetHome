@@ -14,14 +14,14 @@ public class Furniture : Interactable
     [SerializeField] private float timer = 10f;                                         // Timer Value
 
     public bool IsComplete { get; set; }                                                // Indicates if thie Mini-Game Instance is Completed
-    private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
+    public bool InProgress { get; set; }                                                // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
     protected override void Awake()
     {
         base.Awake();
 
         IsComplete = false;
-        inProgress = false;
+        InProgress = false;
     }
 
     /*void OnMouseEnter()
@@ -56,7 +56,7 @@ public class Furniture : Interactable
         if (IsComplete)
             return;
 
-        if (inProgress)
+        if (InProgress)
             return;
 
         triggerPoint.SetActive(true);
@@ -70,9 +70,9 @@ public class Furniture : Interactable
     {
         StartCoroutine(base.Activate());
 
-        inProgress = true;
+        InProgress = true;
 
-        yield return new WaitForSeconds(miniGameStartTime);
+        yield return new WaitForSeconds(miniGameStartTime); 
 
         PanelManager.Instance.ActivatePanel("Gesture Mini-Game");
         GestureMiniGame.Instance.Initialize(gestureData, this, timer);
@@ -91,7 +91,7 @@ public class Furniture : Interactable
     /// </summary>
     public void Completed()
     {
-        inProgress = false;
+        InProgress = false;
         IsComplete = true;
         Destroy(triggerPoint.gameObject);
         Cam.SetActive(false);
@@ -99,7 +99,7 @@ public class Furniture : Interactable
 
     public void Failed()
     {
-        inProgress = false;
+        InProgress = false;
         TriggerAnimation(0);
     }
 
