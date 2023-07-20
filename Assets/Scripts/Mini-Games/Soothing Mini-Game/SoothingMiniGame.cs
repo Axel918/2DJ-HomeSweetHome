@@ -91,15 +91,9 @@ public class SoothingMiniGame : MonoBehaviour
             Debug.Log("Player Stabilized");
             GameManager.Instance.SetGameState(GameManager.GameState.NO_MONSTER);
             PlayerEvents.Instance.PlayerStabilized();
-
-            ReturnToOverworld();
+            PanelManager.Instance.ActivatePanel("Game UI");
+            PlayerEvents.Instance.SetPlayerEnable(true);
         }
-    }
-
-    void ReturnToOverworld()
-    {
-        PanelManager.Instance.ActivatePanel("Game UI");
-        PlayerEvents.Instance.SetPlayerEnable(true);
     }
 
     void ClearData()

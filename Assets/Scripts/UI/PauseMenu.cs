@@ -6,10 +6,9 @@ public class PauseMenu : MonoBehaviour
 {
     public bool GameIsPaused { get; private set; }
 
-    [Header("References")]
     [SerializeField] private GameObject pausePanel;
 
-    void Awake()
+    private void Start()
     {
         pausePanel.SetActive(false);
     }
@@ -18,13 +17,9 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.State == GameManager.GameState.LEVEL_FAILED)
-            return;
-
         if (GameIsPaused)
         {
-            if (!pausePanel.activeSelf) 
-                return;
+            if (!pausePanel.activeSelf) return;
 
             if (Input.GetKeyDown(KeyCode.M))
             {
@@ -38,9 +33,13 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
+            {
                 Resume();
+            }
             else
+            {
                 Pause();
+            }
         }
     }
 

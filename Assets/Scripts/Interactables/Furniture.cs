@@ -16,6 +16,7 @@ public class Furniture : Interactable
     public bool IsComplete { get; set; }                                                // Indicates if thie Mini-Game Instance is Completed
     private bool inProgress;                                                            // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
+
     protected override void Awake()
     {
         base.Awake();
@@ -103,10 +104,6 @@ public class Furniture : Interactable
         TriggerAnimation(0);
     }
 
-    /// <summary>
-    /// Triggers an Animation Clip of this Furniture
-    /// </summary>
-    /// <param name="value"></param>
     public void TriggerAnimation(int value)
     {
         Animator.SetInteger("furnitureStatus", value);
