@@ -4,11 +4,10 @@ using UnityEngine;
 public class SpawnTimer : MonoBehaviour
 {
     [Header("Properties")]
-    [SerializeField] private float monsterTimer = 10f;                                  // Countdown for Monster Spawning
-    [SerializeField] private float insanityTimer = 10f;                                 // Countdown for When Player is Insane
+    [SerializeField] private float monsterTimer = 10f;
+    [SerializeField] private float insanityTimer = 10f;
 
-    private bool isTransitioning;                                                       // Indicates if Player is Transitioning from One Room
-                                                                                        // to Another
+    private bool isTransitioning;
 
     void OnEnable()
     {
@@ -107,23 +106,23 @@ public class SpawnTimer : MonoBehaviour
         while (currentTimer > 0f)
         {
             yield return new WaitForSeconds(1f);
-           
+            
+
             if (!isTransitioning)
+            {
                 currentTimer--;
+            }
         }
 
         // Monster Gets Player
         // GAME OVER
-        GameManager.Instance.SetGameState(GameManager.GameState.LEVEL_FAILED);
-        GameEvents.Instance.LevelFailed();
+        // To be Replaced!
+        // Add Invoke Event Here for Game Over
+        StartCoroutine(GameManager.Instance.GameOver());
         Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
     }
     #endregion
 
-    /// <summary>
-    /// IsTransitioning Boolean Setter
-    /// </summary>
-    /// <param name="value"></param>
     void SetIsTransitioning(bool value)
     {
         isTransitioning = value;

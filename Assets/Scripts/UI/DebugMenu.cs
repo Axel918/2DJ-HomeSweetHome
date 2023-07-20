@@ -13,11 +13,6 @@ public class DebugMenu : MonoBehaviour
 
     private TextMeshProUGUI debugMenuTitle;
 
-    void Awake()
-    {
-        debugPanel.SetActive(false);
-    }
-
     public void SetDebugMenuTitle(TextMeshProUGUI value)
     {
         debugMenuTitle = value;

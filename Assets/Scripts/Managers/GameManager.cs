@@ -16,16 +16,6 @@ public class GameManager : MonoBehaviour
 
     public GameState State { get; private set; } = GameState.NO_MONSTER;               // Current Game Status Indicator
 
-    void OnEnable()
-    {
-        GameEvents.Instance.OnLevelFailed += GameOver;
-    }
-
-    void OnDisable()
-    {
-        GameEvents.Instance.OnLevelFailed -= GameOver;
-    }
-
     #region Singleton
     void Awake()
     {
@@ -45,6 +35,16 @@ public class GameManager : MonoBehaviour
         State = value;
     }
 
+    // TO BE REMOVED!!!
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RestartGame();
+        }
+            
+    }
+
     /// <summary>
     /// Resets Entire Level
     /// </summary>
@@ -62,9 +62,13 @@ public class GameManager : MonoBehaviour
         SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
     }
 
-    void GameOver()
+    public IEnumerator GameOver()
     {
         SetGameState(GameState.LEVEL_FAILED);
-        PanelManager.Instance.ActivatePanel("");
+        PlayerEvents.Instance.SetPlayerEnable(false);
+
+        yield return null;
+
+        RestartGame();
     }
 }
