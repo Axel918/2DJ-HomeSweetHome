@@ -85,10 +85,10 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BruisedPlayer_Walking Blend Tree
+  m_Name: BruisedPlayer2_Walking Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: d9cac4f4e7fcce945970d3c389a21f6b, type: 2}
+    m_Motion: {fileID: 7400000, guid: 76e8bb3e432db214abc78a170d2c7ba6, type: 2}
     m_Threshold: 1
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -96,7 +96,7 @@ BlendTree:
     m_DirectBlendParameter: moveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 49bb3bfae6b3b624dad289a68744e95f, type: 2}
+    m_Motion: {fileID: 7400000, guid: 565800c9fa7bf7948b84f87f32f72276, type: 2}
     m_Threshold: 1
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -104,7 +104,7 @@ BlendTree:
     m_DirectBlendParameter: moveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 62f54f4f08ac0cb42a526816c6f35b01, type: 2}
+    m_Motion: {fileID: 7400000, guid: c4ee09b25fb55d0468821c1c6d5e442c, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -112,7 +112,7 @@ BlendTree:
     m_DirectBlendParameter: moveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: bd873b30a1d551e4c9149e6284af7924, type: 2}
+    m_Motion: {fileID: 7400000, guid: 685c9e02dbb6fc944b72f7ac16da7b89, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -290,7 +290,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BruisedPlayer_Idle Blend Tree
+  m_Name: BruisedPlayer2_Idle Blend Tree
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -354,10 +354,10 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BruisedPlayer_Idle Blend Tree
+  m_Name: BruisedPlayer2_Idle Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 7130786b04f521f48b7f9f1abf4ae565, type: 2}
+    m_Motion: {fileID: 7400000, guid: 5598147184538a54ab22433164fb8d9d, type: 2}
     m_Threshold: 0
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -365,7 +365,7 @@ BlendTree:
     m_DirectBlendParameter: directionX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 18dddffa32e3902468c5c97d4e55b934, type: 2}
+    m_Motion: {fileID: 7400000, guid: 753342c8b82b1fc44915f1d4ee0f52b7, type: 2}
     m_Threshold: 0.25
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -373,7 +373,7 @@ BlendTree:
     m_DirectBlendParameter: directionX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e2663ca95cce460408f8d0d55b8660b0, type: 2}
+    m_Motion: {fileID: 7400000, guid: a39721fbf186be746ba556b2fbc34240, type: 2}
     m_Threshold: 0.5
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -381,7 +381,7 @@ BlendTree:
     m_DirectBlendParameter: directionX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e70ef67bf69cee54da2ace4a13be5d8f, type: 2}
+    m_Motion: {fileID: 7400000, guid: e301ee1ae0cda3543b6aee0f58cb8c36, type: 2}
     m_Threshold: 0.75
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -389,7 +389,7 @@ BlendTree:
     m_DirectBlendParameter: directionX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e2663ca95cce460408f8d0d55b8660b0, type: 2}
+    m_Motion: {fileID: 7400000, guid: a39721fbf186be746ba556b2fbc34240, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -512,7 +512,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BruisedCharacter_Attacked
+  m_Name: BruisedCharacter2_Attacked
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -527,7 +527,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 345d0566d72f2064bbbf83f7ff9146b7, type: 2}
+  m_Motion: {fileID: 7400000, guid: d5593a565f57ded4caa8bb7490ba06fe, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -592,7 +592,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BruisedPlayer_Walking Blend Tree
+  m_Name: BruisedPlayer2_Walking Blend Tree
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
