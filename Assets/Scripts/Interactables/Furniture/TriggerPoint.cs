@@ -16,6 +16,9 @@ public class TriggerPoint : MonoBehaviour
     {
         // Interact with Object Upon Collision
         if (other.CompareTag("Player"))
-            StartCoroutine(interactable.Activate());
+        {
+            if (GameManager.Instance.State != GameManager.GameState.LEVEL_FAILED)
+                StartCoroutine(interactable.Activate());
+        }
     }
 }
