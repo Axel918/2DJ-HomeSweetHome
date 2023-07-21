@@ -938,6 +938,7 @@ GameObject:
   - component: {fileID: 5387660958536239301}
   - component: {fileID: 2965301743764561862}
   - component: {fileID: 804953948662110011}
+  - component: {fileID: 6754955367679851013}
   m_Layer: 6
   m_Name: hatch_door
   m_TagString: Untagged
@@ -1012,6 +1013,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6754955367679851013
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884012096602810966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -389213120627757124, guid: c004e07d419bc1e46a544796929497c1, type: 3}
 --- !u!1 &4890538236783502138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1255,7 @@ GameObject:
   - component: {fileID: 4682442547992609166}
   - component: {fileID: 8598703356485652011}
   - component: {fileID: 5814231149942782689}
+  - component: {fileID: 2596385576226476140}
   m_Layer: 6
   m_Name: tv_table
   m_TagString: Untagged
@@ -1312,6 +1328,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2596385576226476140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454052786422815540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3134710487177347351, guid: d3db629e5a9bb4f4b90de6699512a3c3, type: 3}
 --- !u!1 &7086476736532067332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,6 +2340,7 @@ GameObject:
   - component: {fileID: 8652198596287213948}
   - component: {fileID: 5745769991758298841}
   - component: {fileID: 7519291830069545491}
+  - component: {fileID: 8477770273259864604}
   m_Layer: 6
   m_Name: Chair_Big
   m_TagString: Untagged
@@ -2382,6 +2413,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8477770273259864604
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8311701407940307910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7825289430055562144, guid: 056e50143c62e6848bfc3be8ca348a68, type: 3}
 --- !u!1 &8311701408171204768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,6 +2819,7 @@ GameObject:
   - component: {fileID: 8652198596914539907}
   - component: {fileID: 5745769990036283942}
   - component: {fileID: 7519291831635842796}
+  - component: {fileID: 8731625616382264313}
   m_Layer: 6
   m_Name: Mirror
   m_TagString: Untagged
@@ -2848,6 +2894,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8731625616382264313
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8311701408513079097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6550935796324834295, guid: 5a73957f7c823ec489e700d9305afc21, type: 3}
 --- !u!1 &8311701408589306262
 GameObject:
   m_ObjectHideFlags: 0
