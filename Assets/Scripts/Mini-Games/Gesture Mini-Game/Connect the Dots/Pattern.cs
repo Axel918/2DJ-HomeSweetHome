@@ -37,14 +37,12 @@ public class Pattern : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             IsDrawing = true;
-            Debug.Log(IsDrawing);
         }
         
         // On Left Mouse Button Released
         if (Input.GetMouseButtonUp(0))
         {
             IsDrawing = false;
-            Debug.Log(IsDrawing);
 
             if (isEvaluating)
                 return;
