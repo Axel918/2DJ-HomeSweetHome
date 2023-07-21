@@ -120,9 +120,6 @@ public class GestureMiniGame : MonoBehaviour
         // Clear the Pattern List
         patterns.Clear();
 
-        // Unsubscribe Event
-        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
-
         // Nullify All Data and References
         currentPatternData = null;
         currentPatternFurniture = null;
@@ -171,6 +168,13 @@ public class GestureMiniGame : MonoBehaviour
     {
         // currentPatternFurniture.Register();
         currentPatternFurniture.Completed();
+        currentPatternFurniture.InProgress = false;
+
+        // Player Chime SFX
+        AudioManager.Instance.PlayOneShot("Mini Game C Chime");
+
+        // Unsubscribe Event
+        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
 
         ReturnToOverworld();
     }
@@ -181,8 +185,13 @@ public class GestureMiniGame : MonoBehaviour
     void OnFail()
     {
         currentPatternFurniture.Failed();
-        
+        currentPatternFurniture.InProgress = false;
+
         PlayerEvents.Instance.PlayerDamaged(20f);
+
+        // Unsubscribe Event
+        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
+
         ReturnToOverworld();
     }
     #endregion
@@ -193,7 +202,6 @@ public class GestureMiniGame : MonoBehaviour
     void ReturnToOverworld()
     {
         StopAllCoroutines();
-        currentPatternFurniture.InProgress = false;
         ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerEnable(true);

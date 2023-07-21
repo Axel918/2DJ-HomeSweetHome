@@ -38,13 +38,21 @@ public class TeleportTrigger : MonoBehaviour
             // Pause the Spawn Timer
             GameEvents.Instance.PauseSpawnTimer(true);
 
-            yield return new WaitForSeconds(1f);
+            AudioManager.Instance.Play("Wood Creaking");
 
             // Declare Player As Teleported from this Point
             targetTeleportTrigger.Teleported = true;
 
+            PlayerManager.Instance.Player.NavMeshAgent.enabled = false;
+
+            yield return new WaitForSeconds(1f);
+
             // Teleport the Player to the Designated Position
             other.transform.position = targetTeleportTrigger.transform.position;
+            
+            yield return null;
+
+            PlayerManager.Instance.Player.NavMeshAgent.enabled = true;
             PlayerManager.Instance.Player.PlayerMovement.SetTargetPosition(targetTeleportTrigger.transform.position);
 
             // Unpause the Spawn Timer
