@@ -32,6 +32,9 @@ public class SanityIndicator : MonoBehaviour
     {
         sanityLevel++;
 
+        if (sanityLevel > 0)
+            AudioManager.Instance.Play("Heatbeat Final");
+        
         animator.SetInteger("sanityLevel", sanityLevel);
     }
 
@@ -40,6 +43,7 @@ public class SanityIndicator : MonoBehaviour
     /// </summary>
     void ResetVignette()
     {
+        AudioManager.Instance.Stop("Heatbeat Final");
         sanityLevel = PlayerManager.Instance.PlayerData.CurrentLevel - 1;
         animator.SetInteger("sanityLevel", sanityLevel);
     }
