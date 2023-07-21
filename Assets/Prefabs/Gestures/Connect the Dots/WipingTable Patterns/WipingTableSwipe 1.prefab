@@ -287,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1757044565534129747, guid: 4913d33af7b35794f8568c51e5679aab, type: 3}
       propertyPath: m_Name
-      value: WipingTableSwipe
+      value: WipingTableSwipe 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4913d33af7b35794f8568c51e5679aab, type: 3}
