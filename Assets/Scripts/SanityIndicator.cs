@@ -4,7 +4,7 @@ public class SanityIndicator : MonoBehaviour
 {
     private Animator animator;                                  // Animator Component Reference
 
-    private int sanityLevel = 0;
+    private int sanityLevel;
 
     void OnEnable()
     {
@@ -20,6 +20,7 @@ public class SanityIndicator : MonoBehaviour
 
     void Awake()
     {
+        sanityLevel = PlayerManager.Instance.PlayerData.CurrentLevel - 1;
         animator = GetComponent<Animator>();
     }
 
@@ -39,8 +40,7 @@ public class SanityIndicator : MonoBehaviour
     /// </summary>
     void ResetVignette()
     {
-        sanityLevel = 0;
-
+        sanityLevel = PlayerManager.Instance.PlayerData.CurrentLevel - 1;
         animator.SetInteger("sanityLevel", sanityLevel);
     }
 }

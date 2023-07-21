@@ -4,7 +4,7 @@ public class MementoGazing : MonoBehaviour
 {
     public static MementoGazing Instance;
     
-    private Memento memento;
+    private Memento memento;                                        // Memento Class Reference
 
     #region Singleton
     void Awake()
@@ -19,12 +19,18 @@ public class MementoGazing : MonoBehaviour
     public void Initialize(Memento reference)
     {
         memento = reference;
+
+        // Subscribe to Events
+        PlayerEvents.Instance.OnPlayerInsane += OnReturnButtonClicked;
     }
 
     void ClearData()
     {
         // Nullify References
         memento = null;
+
+        // Unsubscribe Events
+        PlayerEvents.Instance.OnPlayerInsane -= OnReturnButtonClicked;
     }
 
     public void OnReturnButtonClicked()
