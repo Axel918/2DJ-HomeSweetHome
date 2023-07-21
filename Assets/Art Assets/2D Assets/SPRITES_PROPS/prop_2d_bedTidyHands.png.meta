@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67ec447aa02f4404e9160f791558c2f7
+guid: 9583d95f7e75d4d41b0dd249e842f24f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prop_2d_bedMessy_0
+      name: prop_2d_bedTidyHands_0
       rect:
         serializedVersion: 2
         x: 301
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 452026e5455b9a84baeafdf34ffd53bb
-      internalID: 1904523851
+      spriteID: a290f3f8418d01143a4fac380d013403
+      internalID: 992261417
       vertices: []
       indices: 
       edges: []
@@ -140,7 +140,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bf6242ef7cfb38f4782f1cce7065c19c
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      prop_2d_bedMessy_0: 1904523851
+      prop_2d_bedTidyHands_0: 992261417
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
