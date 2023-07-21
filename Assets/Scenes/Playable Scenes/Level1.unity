@@ -793,7 +793,7 @@ PrefabInstance:
     - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: gestureData.Array.data[3]
       value: 
-      objectReference: {fileID: 2126242518096823560, guid: e13b31fe0bfe16c4796cde9d693df779, type: 3}
+      objectReference: {fileID: 2126242518096823560, guid: 7f84c4cb9c2285a4bb7c4862525ff2a4, type: 3}
     - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: gestureData.Array.data[4]
       value: 
