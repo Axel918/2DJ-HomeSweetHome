@@ -13,12 +13,16 @@ public class SanityIndicator : MonoBehaviour
     {
         PlayerEvents.Instance.OnSetPlayerSanity += SetVignetteIntensity;
         PlayerEvents.Instance.OnPlayerStabilized += ResetVignette;
+        PlayerEvents.Instance.OnPlayerInsane += Maximize;
+        GameEvents.Instance.OnLevelFailed += Terminate;
     }
 
     void OnDisable()
     {
         PlayerEvents.Instance.OnSetPlayerSanity -= SetVignetteIntensity;
         PlayerEvents.Instance.OnPlayerStabilized -= ResetVignette;
+        PlayerEvents.Instance.OnPlayerInsane -= Maximize;
+        GameEvents.Instance.OnLevelFailed -= Terminate;
     }
 
     void Awake()
@@ -75,5 +79,20 @@ public class SanityIndicator : MonoBehaviour
 
         // Clamps Sanity Level to Min-Max Values
         currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
+    }
+
+    void Maximize()
+    {
+        currentSanityLevel = maxSanityLevel;
+
+        // Clamps Sanity Level to Min-Max Values
+        currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
+        animator.SetInteger("sanityLevel", currentSanityLevel);
+    }
+
+    void Terminate()
+    {
+        currentSanityLevel = 0;
+        animator.SetInteger("sanityLevel", currentSanityLevel);
     }
 }

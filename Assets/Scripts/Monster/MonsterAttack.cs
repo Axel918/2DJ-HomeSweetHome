@@ -45,6 +45,11 @@ public class MonsterAttack : MonoBehaviour
                 currentTimer--;
         }
 
+        // Prevent Monster from Attacking the Player when Playing
+        // the Soothing Mini-Game
+        if (SoothingMiniGame.Instance.IsPlaying)
+            yield break;
+
         // Monster Gets Player. GAME OVER!!!
         Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
         GameManager.Instance.SetGameState(GameManager.GameState.LEVEL_FAILED);

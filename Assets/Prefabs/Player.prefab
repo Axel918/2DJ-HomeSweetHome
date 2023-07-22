@@ -187,8 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6962d3318e44194ebeb07382ff1186d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCamera: {fileID: 8533931802722470995}
-  Animator: {fileID: 8305088431271001499}
+  <PlayerCamera>k__BackingField: {fileID: 8533931802722470995}
+  <Animator>k__BackingField: {fileID: 8305088431271001499}
   <PlayerSpriteTransform>k__BackingField: {fileID: 3093074391132162843}
 --- !u!114 &3093074390376270798
 MonoBehaviour:
@@ -215,7 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4700aec8f1d80a94cabf14896a9ddade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSanity: 100
+  minSanityLevel: 0
+  maxSanityLevel: 0
 --- !u!114 &3093074390376270801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +418,7 @@ GameObject:
   - component: {fileID: 8533931804053090079}
   - component: {fileID: 8533931804053090078}
   - component: {fileID: 8533931804053090077}
+  - component: {fileID: 5175980152392515500}
   m_Layer: 3
   m_Name: cm
   m_TagString: Untagged
@@ -500,3 +502,20 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &5175980152392515500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533931804053090075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
