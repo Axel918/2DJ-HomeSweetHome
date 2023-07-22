@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9ff748b631c8a854fb7d5966cf60acc1
+guid: 3586a0df73320ba459cbb8e3009d7e44
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -103,28 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: 2d_anim_rug08_0
-      rect:
-        serializedVersion: 2
-        x: 233
-        y: 59
-        width: 450
-        height: 776
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ede5a0deabd1fa54c899b3b2c7fb854a
-      internalID: -2019149764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -135,8 +114,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      2d_anim_rug08_0: -2019149764
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
