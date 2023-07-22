@@ -3,54 +3,58 @@ using UnityEngine;
 public class PlayerSanity : MonoBehaviour
 {
     [Header("Properties")]
-    [SerializeField] private float defaultSanity;
+    [Range(0, 5)][SerializeField] private int minSanityLevel;                  // Minimum Sanity Level
+    [Range(0, 5)][SerializeField] private int maxSanityLevel;                  // Maximum Sanity Level
 
-    private float currentSanity;
+    private float currentSanityLevel;
 
     void OnEnable()
     {
-        PlayerEvents.Instance.OnPlayerStabilized += Initialize;
+        PlayerEvents.Instance.OnPlayerStabilized += ResetSanity;
         PlayerEvents.Instance.OnSetPlayerSanity += DecreaseSanity;
     }
 
     void OnDisable()
     {
-        PlayerEvents.Instance.OnPlayerStabilized -= Initialize;
+        PlayerEvents.Instance.OnPlayerStabilized -= ResetSanity;
         PlayerEvents.Instance.OnSetPlayerSanity -= DecreaseSanity;
     }
 
-    void Awake()
+    void Start()
     {
-        Initialize();
+        currentSanityLevel = minSanityLevel;
     }
 
     /// <summary>
-    /// Initialize Values 
+    /// Reset Sanity Values
     /// </summary>
-    void Initialize()
+    void ResetSanity()
     {
-        // Set Current Sanity Based on Default Sanity
-        // Decrease Value of Default Sanity based on Current Level
-        currentSanity = defaultSanity;
+        currentSanityLevel = minSanityLevel;
+
+        // Clamps Sanity Level to Min-Max Values
+        currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
     }
 
     /// <summary>
     /// Decreases Player's Sanity Based on Given Amount
     /// </summary>
     /// <param name="amount"></param>
-    void DecreaseSanity(float amount)
+    void DecreaseSanity(int amount)
     {
-        currentSanity -= amount;
+        currentSanityLevel += amount;
 
-        if (currentSanity <= 0f)
+        if (currentSanityLevel >= maxSanityLevel)
         {
-            currentSanity = 0f;
+            // Clamps Sanity Level to Min-Max Values
+            currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
+
             OnInsane();
         }
     }
 
     /// <summary>
-    /// Gets Triggered when
+    /// Gets Triggered when Player Reaches Max Sanity
     /// </summary>
     void OnInsane()
     {
@@ -65,6 +69,6 @@ public class PlayerSanity : MonoBehaviour
     /// <returns></returns>
     public float GetSanityRatio()
     {
-        return currentSanity / defaultSanity;
+        return (float)currentSanityLevel / (float)maxSanityLevel;
     }
 }

@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class SanityIndicator : MonoBehaviour
 {
-    private Animator animator;                                  // Animator Component Reference
+    [Header("Properties")]
+    [Range(0, 5)] [SerializeField] private int minSanityLevel;                  // Minimum Sanity Level
+    [Range(0, 5)] [SerializeField] private int maxSanityLevel;                  // Maximum Sanity Level
 
-    private int sanityLevel;
+    private int currentSanityLevel = 0;
+    private Animator animator;                                                  // Animator Component Reference
 
     void OnEnable()
     {
@@ -20,22 +23,38 @@ public class SanityIndicator : MonoBehaviour
 
     void Awake()
     {
-        sanityLevel = PlayerManager.Instance.PlayerData.CurrentLevel - 1;
         animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        currentSanityLevel = minSanityLevel;
+        animator.SetInteger("sanityLevel", currentSanityLevel);
+
+        Debug.Log("Sanity Level: " + currentSanityLevel);
     }
 
     /// <summary>
     /// Sets the Intensity Value of the Vignette
     /// </summary>
     /// <param name="value"></param>
-    void SetVignetteIntensity(float value)
+    void SetVignetteIntensity(int value)
     {
-        sanityLevel++;
+        //if (currentSanityLevel > 0)
+            //AudioManager.Instance.Stop("Heatbeat Final");
 
-        if (sanityLevel > 0)
-            AudioManager.Instance.Play("Heatbeat Final");
+        // Increment Current Sanity Level
+        currentSanityLevel++;
         
-        animator.SetInteger("sanityLevel", sanityLevel);
+
+        // Play Heart Beat SFX if Current Sanity Level is Greater than 0
+        //if (currentSanityLevel > 0)
+            // AudioManager.Instance.Play("Heatbeat Final");
+        
+        animator.SetInteger("sanityLevel", currentSanityLevel);
+
+        // Clamps Sanity Level to Min-Max Values
+        currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
     }
 
     /// <summary>
@@ -43,8 +62,18 @@ public class SanityIndicator : MonoBehaviour
     /// </summary>
     void ResetVignette()
     {
-        AudioManager.Instance.Stop("Heatbeat Final");
-        sanityLevel = PlayerManager.Instance.PlayerData.CurrentLevel - 1;
-        animator.SetInteger("sanityLevel", sanityLevel);
+        // Stop Currently Playing Heartbeat SFX
+        //AudioManager.Instance.Stop("Heatbeat Final");
+        
+        currentSanityLevel = minSanityLevel;
+
+        // Play New HeartBeat SFX
+        //if (currentSanityLevel > 0)
+            // AudioManager.Instance.Play("Heatbeat Final");
+
+        animator.SetInteger("sanityLevel", currentSanityLevel);
+
+        // Clamps Sanity Level to Min-Max Values
+        currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
     }
 }
