@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 8533931802722470995}
   Animator: {fileID: 8305088431271001499}
+  <PlayerSpriteTransform>k__BackingField: {fileID: 3093074391132162843}
 --- !u!114 &3093074390376270798
 MonoBehaviour:
   m_ObjectHideFlags: 0

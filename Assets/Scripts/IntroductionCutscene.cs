@@ -21,13 +21,20 @@ public class IntroductionCutscene : MonoBehaviour
         mirrorCamera.SetActive(true);
         GameEvents.Instance.PauseSpawnTimer(true);
         PlayerEvents.Instance.SetPlayerEnable(false);
+        PlayerManager.Instance.Player.PlayerSpriteTransform.localEulerAngles = new Vector3 (0f, 270f, 0f);
         
         yield return new WaitForSeconds(3f);
 
+        // Provide a Smooth Transition upon Rotation 
+        GameUIController.Instance.SetAnimation("isFading");
+
+        yield return new WaitForSeconds(1f);
+
         // Enable Player Movement and Start the Game
+        PlayerManager.Instance.Player.PlayerSpriteTransform.localEulerAngles = new Vector3(0f, 180f, 0f);
         mirrorCamera.SetActive(false);
         PlayerEvents.Instance.SetPlayerEnable(true);
-
+        
         yield return new WaitForSeconds(spawnTimerStartDelay);
         
         // Start the Timer After Delay
