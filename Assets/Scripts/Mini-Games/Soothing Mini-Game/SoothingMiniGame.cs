@@ -15,7 +15,7 @@ public class SoothingMiniGame : MonoBehaviour
 
     private TeddyBear teddyBear;
     private float currentAmount = 0f;
-    private bool isPlaying = false;
+    public bool IsPlaying { get; private set; } = false;
     private int currentRandomIndex = -1;
 
     #region Singleton
@@ -60,9 +60,9 @@ public class SoothingMiniGame : MonoBehaviour
 
     IEnumerator DecreaseGradually()
     {
-        isPlaying = true;
+        IsPlaying = true;
         
-        while (isPlaying)
+        while (IsPlaying)
         {
             currentAmount -= 0.01f;
 
@@ -110,7 +110,7 @@ public class SoothingMiniGame : MonoBehaviour
         GameEvents.Instance.OnLevelFailed -= ReturnToOverworld;
 
         teddyBear = null;
-        isPlaying = false;
+        IsPlaying = false;
         currentAmount = 0f;
     }
 }
