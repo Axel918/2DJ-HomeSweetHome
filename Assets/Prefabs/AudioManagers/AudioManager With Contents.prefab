@@ -61,6 +61,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ebfb72cfdadf0d4886de71a40df1297, type: 2}
   - {fileID: 11400000, guid: 226966fe9f6cfb04e9ccf3b60ba46631, type: 2}
   - {fileID: 11400000, guid: 9a07f370379c56440843201efbff0528, type: 2}
+  - {fileID: 11400000, guid: 1fb403dc30ca3014bb50c35e9e38fe83, type: 2}
+  - {fileID: 11400000, guid: 6ad02c44ce1d7e04eb354e5a78392847, type: 2}
+  - {fileID: 11400000, guid: ad7a1a9387298c74aa6cb5f2a3f662ef, type: 2}
+  - {fileID: 11400000, guid: 83eef2a49e4669c4ea9a4c84f6dbe224, type: 2}
+  - {fileID: 11400000, guid: 1f225e12decdbbf4788b6bb4dc634af8, type: 2}
+  - {fileID: 11400000, guid: effbd501b5be31f44a2d03883236173b, type: 2}
+  - {fileID: 11400000, guid: 86369fd30d7e85c46bde5b00e9851b0f, type: 2}
+  - {fileID: 11400000, guid: 469f781d50be6d845a16e2f19ade4a66, type: 2}
+  - {fileID: 11400000, guid: 47121d58647c1b84282ac4455cb9efa7, type: 2}
+  - {fileID: 11400000, guid: 097194333f5f8c24ba8e98450e561803, type: 2}
   musicHolder: {fileID: 7431177636391865138}
   soundHolder: {fileID: 7431177637685785309}
 --- !u!1 &7431177636391865138
