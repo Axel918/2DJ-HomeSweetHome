@@ -8,13 +8,13 @@ public class SanityIndicator : MonoBehaviour
 
     void OnEnable()
     {
-        PlayerEvents.Instance.OnPlayerDamaged += SetVignetteIntensity;
+        PlayerEvents.Instance.OnSetPlayerSanity += SetVignetteIntensity;
         PlayerEvents.Instance.OnPlayerStabilized += ResetVignette;
     }
 
     void OnDisable()
     {
-        PlayerEvents.Instance.OnPlayerDamaged -= SetVignetteIntensity;
+        PlayerEvents.Instance.OnSetPlayerSanity -= SetVignetteIntensity;
         PlayerEvents.Instance.OnPlayerStabilized -= ResetVignette;
     }
 

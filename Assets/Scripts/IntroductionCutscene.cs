@@ -12,6 +12,9 @@ public class IntroductionCutscene : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
+        // Player Ambient Music
+        AudioManager.Instance.Play("Ambient Sound Final");
+
         spawnTimerStartDelay = Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.BlendTime;
 
         // Show Introduction
