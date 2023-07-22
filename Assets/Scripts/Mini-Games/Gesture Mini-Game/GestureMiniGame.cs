@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class GestureMiniGame : MonoBehaviour
 {
     public static GestureMiniGame Instance;
-
-    [field: SerializeField, Header("Properties")] 
-    public float PlayerDamage { get; private set; } = 20f;                              // Player Damage Amount
     
     [Header("References")]
     [SerializeField] private Transform patternHolder;                                   // Pattern Holder Point Reference
@@ -190,7 +187,7 @@ public class GestureMiniGame : MonoBehaviour
         currentPatternFurniture.Failed();
         currentPatternFurniture.InProgress = false;
 
-        PlayerEvents.Instance.SetPlayerSanity(PlayerDamage);
+        PlayerEvents.Instance.SetPlayerSanity(1);
 
         // Unsubscribe Event
         PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
