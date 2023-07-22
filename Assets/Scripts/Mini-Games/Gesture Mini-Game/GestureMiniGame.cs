@@ -7,8 +7,8 @@ public class GestureMiniGame : MonoBehaviour
 {
     public static GestureMiniGame Instance;
 
-    [Header("Properties")]
-    public float PlayerDamage;                                                          // Player Damage Amount
+    [field: SerializeField, Header("Properties")] 
+    public float PlayerDamage { get; private set; } = 20f;                              // Player Damage Amount
     
     [Header("References")]
     [SerializeField] private Transform patternHolder;                                   // Pattern Holder Point Reference
