@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d62cc1265dd16148a573d1161bb0b75, type: 3}
-  m_Name: Ambient Sound FInal
+  m_Name: Static lvl 4
   m_EditorClassIdentifier: 
-  id: Ambient Sound Final
-  clip: {fileID: 8300000, guid: 6c439c9db048d1a4db6e4fb3b994a82c, type: 3}
+  id: Static lvl 4
+  clip: {fileID: 8300000, guid: 2db2b0bf22ae5624ca527bde4d2dc73f, type: 3}
   type: 0
   priority: 0
-  volume: 0.221
+  volume: 0.3
   pitch: 1
   playOnAwake: 0
   loop: 1
