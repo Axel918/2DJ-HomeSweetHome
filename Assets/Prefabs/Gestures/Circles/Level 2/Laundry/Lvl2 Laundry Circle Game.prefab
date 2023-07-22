@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4273308294046486727, guid: 36a0b103b8b56c345b1b657983556a8d, type: 3}
       propertyPath: circleAmount
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36a0b103b8b56c345b1b657983556a8d, type: 3}
