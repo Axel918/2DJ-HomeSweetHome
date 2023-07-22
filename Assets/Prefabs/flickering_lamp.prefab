@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8155435357982053014}
   - component: {fileID: 1871537674672922479}
   - component: {fileID: 4339345384560002727}
+  - component: {fileID: 6736099370497322493}
+  - component: {fileID: 7012671386003283341}
   m_Layer: 6
   m_Name: flickering_lamp
   m_TagString: Untagged
@@ -85,6 +87,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &6736099370497322493
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590014027710531743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f18fff3395a2e244969982d2e6877f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7012671386003283341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2590014027710531743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30fc611c2060f8459a7a85f6106bc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTriggerTime: 2
+  maxTriggerTime: 3
 --- !u!1 &3237820257438458671
 GameObject:
   m_ObjectHideFlags: 0
