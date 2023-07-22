@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1956062902400245394
+--- !u!1001 &4283633708624304688
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -97,11 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011127278173, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_Name
-      value: StraightDrag Right Variant  2
+      value: CloseBox
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000014603138
+      value: -0.7071073
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalRotation.x
@@ -113,19 +113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 29
+      value: 0.7071063
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -180
+      value: -450
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011688489929, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_AnchorMax.y

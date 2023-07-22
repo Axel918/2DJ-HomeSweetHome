@@ -593,6 +593,10 @@ PrefabInstance:
       value: -0.259
       objectReference: {fileID: 0}
     - target: {fileID: 7916764670696279811, guid: da1cfb03d415db348be494cc758d7989, type: 3}
+      propertyPath: timer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916764670696279811, guid: da1cfb03d415db348be494cc758d7989, type: 3}
       propertyPath: gestureData.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -717,6 +721,10 @@ PrefabInstance:
     - target: {fileID: 609045034725545889, guid: 9ad56da73a7d16e499f2ee0112fa85e7, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 735234672556418617, guid: 9ad56da73a7d16e499f2ee0112fa85e7, type: 3}
+      propertyPath: timer
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 735234672556418617, guid: 9ad56da73a7d16e499f2ee0112fa85e7, type: 3}
       propertyPath: gestureData.Array.size
@@ -1306,15 +1314,15 @@ PrefabInstance:
     - target: {fileID: 1396354377158357713, guid: 63c08eed32b77fb46aa5e2ccb07868b9, type: 3}
       propertyPath: gestureData.Array.data[11]
       value: 
-      objectReference: {fileID: 8131640808305087695, guid: 11e78904c40499d4c849e8914b90d6e5, type: 3}
+      objectReference: {fileID: 8131640808305087695, guid: a8d78bce0643d7541b48e9039682ca89, type: 3}
     - target: {fileID: 1396354377158357713, guid: 63c08eed32b77fb46aa5e2ccb07868b9, type: 3}
       propertyPath: gestureData.Array.data[12]
       value: 
-      objectReference: {fileID: 8131640808305087695, guid: a8d78bce0643d7541b48e9039682ca89, type: 3}
+      objectReference: {fileID: 8131640808305087695, guid: 8f5f3f972516d7d4a96967c99cd31ef4, type: 3}
     - target: {fileID: 1396354377158357713, guid: 63c08eed32b77fb46aa5e2ccb07868b9, type: 3}
       propertyPath: gestureData.Array.data[13]
       value: 
-      objectReference: {fileID: 8131640808305087695, guid: 8f5f3f972516d7d4a96967c99cd31ef4, type: 3}
+      objectReference: {fileID: 8131640808305087695, guid: 11e78904c40499d4c849e8914b90d6e5, type: 3}
     - target: {fileID: 1510478675414164546, guid: 63c08eed32b77fb46aa5e2ccb07868b9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2148,6 +2156,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1499182246}
     m_Modifications:
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: timer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.size
       value: 7
