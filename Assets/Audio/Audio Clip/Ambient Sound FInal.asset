@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ambient Sound FInal
   m_EditorClassIdentifier: 
   id: Ambient Sound Final
-  clip: {fileID: 8300000, guid: 04e6edb8b531a0e48900a3e36e026989, type: 3}
+  clip: {fileID: 8300000, guid: 6c439c9db048d1a4db6e4fb3b994a82c, type: 3}
   type: 0
   priority: 0
-  volume: 1
+  volume: 0.221
   pitch: 1
   playOnAwake: 0
   loop: 1
