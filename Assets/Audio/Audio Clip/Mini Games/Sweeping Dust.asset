@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d62cc1265dd16148a573d1161bb0b75, type: 3}
-  m_Name: HeartBeat
+  m_Name: Sweeping Dust
   m_EditorClassIdentifier: 
-  id: Heartbeat Final
-  clip: {fileID: 8300000, guid: a48f56cb26ee7fa4b8ae2260d463efb4, type: 3}
-  type: 0
+  id: Sweeping Dust
+  clip: {fileID: 8300000, guid: 0fd112cda3c5fe943b335cc2cdc52a8d, type: 3}
+  type: 1
   priority: 0
   volume: 1
   pitch: 1
   playOnAwake: 0
-  loop: 1
+  loop: 0
   spatialBlend: 0
