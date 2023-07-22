@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameState State { get; private set; } = GameState.NO_MONSTER;               // Current Game Status Indicator
 
     [Header("Properties")]
-    [SerializeField] private int maxLevel = 3;                                             // Maximum Level Amount
+    [SerializeField] private int maxLevel = 3;                                         // Maximum Level Amount
 
     // TO BE REMOVED!!!
     public int CurrentNumber { get; private set; }

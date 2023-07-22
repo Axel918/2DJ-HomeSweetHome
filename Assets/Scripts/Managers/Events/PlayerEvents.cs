@@ -5,7 +5,7 @@ public class PlayerEvents : MonoBehaviour
 {
     public static PlayerEvents Instance;
 
-    public event Action<float> OnSetPlayerSanity;                                           // Called When Player Takes Damage
+    public event Action<int> OnSetPlayerSanity;                                           // Called When Player Takes Damage
     public event Action<bool> OnSetPlayerEnable;                                            // Activates/Deactivates Player Movement
     public event Action OnPlayerStabilized;                                                 // Called When Player Finishes Sanity Stabilization
     public event Action OnPlayerInsane;                                                     // Triggered when Player Reaches 0 Sanity
@@ -24,7 +24,7 @@ public class PlayerEvents : MonoBehaviour
     /// Gets Called when Player Fails a Furniture Mini-Game
     /// </summary>
     /// <param name="value"></param>
-    public void SetPlayerSanity(float value)
+    public void SetPlayerSanity(int value)
     {
         OnSetPlayerSanity?.Invoke(value);
     }

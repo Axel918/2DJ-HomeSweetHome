@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6312,6 +6312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367a89d043f857341b9bc91c7d2a4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <PlayerDamage>k__BackingField: 20
   patternHolder: {fileID: 6122983444718286725}
   timerBar: {fileID: 6122983445191271055}
   canvasGroup: {fileID: 6122983446454469593}

@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [Header("References")]
     public CinemachineVirtualCamera PlayerCamera;                               // Player Camera Reference
     public Animator Animator;                                                   // Animator Component Reference
+    [field : SerializeField] 
+    public Transform PlayerSpriteTransform { get; set; }                        // Player Sprite Transform Reference
 
     void OnEnable()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public abstract class Interactable : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public abstract class Interactable : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        
         if (GameUIController.Instance.PauseMenu.GameIsPaused)
             return;
 

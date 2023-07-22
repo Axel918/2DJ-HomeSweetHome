@@ -62,7 +62,7 @@ public class MonsterSpawn : MonoBehaviour
         int randomNumber = Random.Range(1, 101);
 
         // Get the Probability Based on Player's Current Sanity
-        float probability = (1f - PlayerManager.Instance.Player.PlayerSanity.GetSanityRatio()) * 100f;
+        float probability = (PlayerManager.Instance.Player.PlayerSanity.GetSanityRatio() * 100f);
 
         Debug.Log("Probability: " + probability + ", Random Number: " + randomNumber);
 
