@@ -7,6 +7,9 @@ public class GestureMiniGame : MonoBehaviour
 {
     public static GestureMiniGame Instance;
 
+    [field: SerializeField, Header("Properties")] 
+    public float PlayerDamage { get; private set; } = 20f;                              // Player Damage Amount
+    
     [Header("References")]
     [SerializeField] private Transform patternHolder;                                   // Pattern Holder Point Reference
     [SerializeField] private Image timerBar;                                            // Timer Bar Reference
@@ -187,7 +190,7 @@ public class GestureMiniGame : MonoBehaviour
         currentPatternFurniture.Failed();
         currentPatternFurniture.InProgress = false;
 
-        PlayerEvents.Instance.PlayerDamaged(20f);
+        PlayerEvents.Instance.SetPlayerSanity(PlayerDamage);
 
         // Unsubscribe Event
         PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
