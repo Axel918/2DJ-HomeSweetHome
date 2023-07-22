@@ -7,7 +7,7 @@ public class GameEvents : MonoBehaviour
 
     public event Action<bool> OnPauseSpawnTimer;                                     // Pauses the SpawnTimer Upon Transitioning from One
                                                                                      // Room to the Other
-
+    
     public event Action OnLevelFailed;                                               // Gets Called When Player Gets Caught by the Monster
 
     #region Singleton

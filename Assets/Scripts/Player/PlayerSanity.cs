@@ -10,13 +10,13 @@ public class PlayerSanity : MonoBehaviour
     void OnEnable()
     {
         PlayerEvents.Instance.OnPlayerStabilized += Initialize;
-        PlayerEvents.Instance.OnPlayerDamaged += DecreaseSanity;
+        PlayerEvents.Instance.OnSetPlayerSanity += DecreaseSanity;
     }
 
     void OnDisable()
     {
         PlayerEvents.Instance.OnPlayerStabilized -= Initialize;
-        PlayerEvents.Instance.OnPlayerDamaged -= DecreaseSanity;
+        PlayerEvents.Instance.OnSetPlayerSanity -= DecreaseSanity;
     }
 
     void Awake()
@@ -29,6 +29,8 @@ public class PlayerSanity : MonoBehaviour
     /// </summary>
     void Initialize()
     {
+        // Set Current Sanity Based on Default Sanity
+        // Decrease Value of Default Sanity based on Current Level
         currentSanity = defaultSanity;
     }
 
