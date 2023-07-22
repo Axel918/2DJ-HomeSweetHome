@@ -483,7 +483,7 @@ PrefabInstance:
       objectReference: {fileID: 251686985}
     - target: {fileID: 3093074390376270837, guid: f52cea68bdef66548b919ec29832286f, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3093074391132162842, guid: f52cea68bdef66548b919ec29832286f, type: 3}
       propertyPath: m_Materials.Array.data[0]
