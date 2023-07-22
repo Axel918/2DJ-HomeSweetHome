@@ -721,6 +721,10 @@ PrefabInstance:
       value: Broom Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9059899086520427185, guid: 3c9232a9c0f41a0479d38a913c02d0fa, type: 3}
+      propertyPath: timer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059899086520427185, guid: 3c9232a9c0f41a0479d38a913c02d0fa, type: 3}
       propertyPath: gestureData.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -773,6 +777,10 @@ PrefabInstance:
     - target: {fileID: 572218168, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
+      propertyPath: timer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: gestureData.Array.size
@@ -1066,6 +1074,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1499182246}
     m_Modifications:
     - target: {fileID: 6665379222230473728, guid: 8497de1cbcf7b2641975d6342dd7d547, type: 3}
+      propertyPath: timer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665379222230473728, guid: 8497de1cbcf7b2641975d6342dd7d547, type: 3}
       propertyPath: gestureData.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1218,27 +1230,39 @@ PrefabInstance:
     m_TransformParent: {fileID: 1499182246}
     m_Modifications:
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: timer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.data[0]
       value: 
-      objectReference: {fileID: 1886690854476102256, guid: c836a82f51158a1418ea13cc45c4a6fb, type: 3}
+      objectReference: {fileID: 1886690854476102256, guid: 46d6f508e6bc1c24cbe8f503db95b44b, type: 3}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.data[1]
       value: 
-      objectReference: {fileID: 5804777949593489517, guid: 444aa70ccd778f54b84734532296dd65, type: 3}
+      objectReference: {fileID: 5804777949593489517, guid: 719353c457ad97847a50788f22c4e72f, type: 3}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.data[2]
       value: 
-      objectReference: {fileID: 1886690854476102256, guid: fa2b6b5b034cf854cabcf88315e74fd1, type: 3}
+      objectReference: {fileID: 1886690854476102256, guid: c836a82f51158a1418ea13cc45c4a6fb, type: 3}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.data[3]
       value: 
-      objectReference: {fileID: 5804777949593489517, guid: 85353a0cdd0bebe43a5b291fc58cfd06, type: 3}
+      objectReference: {fileID: 5804777949593489517, guid: 444aa70ccd778f54b84734532296dd65, type: 3}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.data[4]
+      value: 
+      objectReference: {fileID: 1886690854476102256, guid: fa2b6b5b034cf854cabcf88315e74fd1, type: 3}
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: gestureData.Array.data[5]
+      value: 
+      objectReference: {fileID: 5804777949593489517, guid: 85353a0cdd0bebe43a5b291fc58cfd06, type: 3}
+    - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
+      propertyPath: gestureData.Array.data[6]
       value: 
       objectReference: {fileID: 5804777949593489517, guid: 86682e6d648285e45b9093c1cc67982b, type: 3}
     - target: {fileID: 6665379222230473982, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
