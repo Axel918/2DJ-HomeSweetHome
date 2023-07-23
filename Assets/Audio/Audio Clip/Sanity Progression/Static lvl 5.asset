@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d62cc1265dd16148a573d1161bb0b75, type: 3}
   m_Name: Static lvl 5
   m_EditorClassIdentifier: 
-  id: Static lvl  5
+  id: Static lvl 5
   clip: {fileID: 8300000, guid: 2db2b0bf22ae5624ca527bde4d2dc73f, type: 3}
   type: 0
   priority: 0

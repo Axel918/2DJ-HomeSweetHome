@@ -6171,7 +6171,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2061296538}
         m_TargetAssemblyTypeName: SoothingButton, Assembly-CSharp
-        m_MethodName: OnSootingButtonPressed
+        m_MethodName: OnSoothingButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

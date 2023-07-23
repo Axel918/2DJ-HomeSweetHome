@@ -7,6 +7,7 @@ public class SoothingSliderBox : MonoBehaviour
 
     public void OnHandleDrag()
     {
+        // AudioManager.Instance.Play("Circle Game Sound");
         SoothingMiniGame.Instance.IncreaseStabilizeBarValue(increaseAmount);
         SoothingMiniGame.Instance.Evaluate();
     }

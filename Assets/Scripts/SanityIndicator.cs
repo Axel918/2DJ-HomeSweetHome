@@ -44,16 +44,15 @@ public class SanityIndicator : MonoBehaviour
     /// <param name="value"></param>
     void SetVignetteIntensity(int value)
     {
-        //if (currentSanityLevel > 0)
-            //AudioManager.Instance.Stop("Heatbeat Final");
+        if (currentSanityLevel > 0)
+            AudioManager.Instance.Stop("Heartbeat lvl " + currentSanityLevel);
 
         // Increment Current Sanity Level
         currentSanityLevel++;
         
-
         // Play Heart Beat SFX if Current Sanity Level is Greater than 0
-        //if (currentSanityLevel > 0)
-            // AudioManager.Instance.Play("Heatbeat Final");
+        if (currentSanityLevel > 0)
+            AudioManager.Instance.Play("Heartbeat lvl " + currentSanityLevel);
         
         animator.SetInteger("sanityLevel", currentSanityLevel);
 
@@ -67,13 +66,13 @@ public class SanityIndicator : MonoBehaviour
     void ResetVignette()
     {
         // Stop Currently Playing Heartbeat SFX
-        //AudioManager.Instance.Stop("Heatbeat Final");
+        AudioManager.Instance.Stop("Heartbeat lvl " + currentSanityLevel);
         
         currentSanityLevel = minSanityLevel;
 
         // Play New HeartBeat SFX
-        //if (currentSanityLevel > 0)
-            // AudioManager.Instance.Play("Heatbeat Final");
+        if (currentSanityLevel > 0)
+            AudioManager.Instance.Play("Heartbeat lvl " + currentSanityLevel);
 
         animator.SetInteger("sanityLevel", currentSanityLevel);
 
@@ -83,7 +82,12 @@ public class SanityIndicator : MonoBehaviour
 
     void Maximize()
     {
+        // Stop Currently Playing Heartbeat SFX
+        AudioManager.Instance.Stop("Heartbeat lvl " + currentSanityLevel);
+
         currentSanityLevel = maxSanityLevel;
+
+        AudioManager.Instance.Play("Heartbeat lvl " + currentSanityLevel);
 
         // Clamps Sanity Level to Min-Max Values
         currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
@@ -92,6 +96,7 @@ public class SanityIndicator : MonoBehaviour
 
     void Terminate()
     {
+        AudioManager.Instance.Stop("Heartbeat lvl " + currentSanityLevel);
         currentSanityLevel = 0;
         animator.SetInteger("sanityLevel", currentSanityLevel);
     }

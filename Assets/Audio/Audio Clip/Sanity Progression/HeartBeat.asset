@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d62cc1265dd16148a573d1161bb0b75, type: 3}
   m_Name: HeartBeat
   m_EditorClassIdentifier: 
-  id: Heartbeat Final
+  id: Heartbeat lvl 1
   clip: {fileID: 8300000, guid: a48f56cb26ee7fa4b8ae2260d463efb4, type: 3}
   type: 0
   priority: 0
