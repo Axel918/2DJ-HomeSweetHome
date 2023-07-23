@@ -607,8 +607,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251686983}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 5.792389, y: 1.6770248, z: 23.727543}
+  m_LocalRotation: {x: -0.12714857, y: 0.69558126, z: -0.12094005, w: -0.6966875}
+  m_LocalPosition: {x: 2.6351118, y: 1.09774, z: -2.300459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -770,6 +770,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2140786427}
+    - target: {fileID: 8305088431271001499, guid: f52cea68bdef66548b919ec29832286f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8bfbaaad7085edb40bfdcbd43690651f, type: 2}
     - target: {fileID: 8533931802722470996, guid: f52cea68bdef66548b919ec29832286f, type: 3}
       propertyPath: m_LocalPosition.z
       value: -7.610001
@@ -809,7 +813,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7387511718047161444, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: monsterTimer
-      value: 50
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: -2037407389491517141, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: jumpscareTimer
@@ -1259,6 +1263,10 @@ PrefabInstance:
     - target: {fileID: 4336543245563247968, guid: 2a4b7a4c44ec9864bbe93a941234cf6b, type: 3}
       propertyPath: minSanityLevel
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336543245563247968, guid: 2a4b7a4c44ec9864bbe93a941234cf6b, type: 3}
+      propertyPath: maxStaticIntensity
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4336543245563247971, guid: 2a4b7a4c44ec9864bbe93a941234cf6b, type: 3}
       propertyPath: m_Name
