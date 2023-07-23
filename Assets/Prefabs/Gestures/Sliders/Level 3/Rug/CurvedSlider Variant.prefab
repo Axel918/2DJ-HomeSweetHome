@@ -21,27 +21,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 928.8694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 517.0181
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.999962
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_LocalRotation.x
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.008726558
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -89,11 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534595, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2469597619416534604, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
       propertyPath: m_Name
-      value: CurvedSlider
+      value: CurvedSlider Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf172fea587d7ec47a5a820e6e47eae4, type: 3}
