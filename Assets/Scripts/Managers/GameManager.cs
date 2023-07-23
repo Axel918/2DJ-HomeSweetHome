@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (State == GameState.LEVEL_COMPLETE)
             PlayerManager.Instance.PlayerData.CurrentLevel++;
 
-        if (PlayerManager.Instance.PlayerData.CurrentLevel < MaxLevel)
+        if (PlayerManager.Instance.PlayerData.CurrentLevel < MaxLevel + 1)
         {
             // Load Letter Scene
             string[] scenes = { "LetterScene" };
