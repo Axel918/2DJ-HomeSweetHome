@@ -5,6 +5,16 @@ public class Memento : Interactable
 {
     public bool IsBeingGazed { get; set; }
 
+    void OnEnable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane += Terminate;
+    }
+
+    void OnDisable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane -= Terminate;
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -36,5 +46,12 @@ public class Memento : Interactable
 
         PanelManager.Instance.ActivatePanel("Memento Gazing");
         MementoGazing.Instance.Initialize(this);
+    }
+
+    void Terminate()
+    {
+        StopAllCoroutines();
+        IsBeingGazed = false;
+        PlayerEvents.Instance.SetPlayerEnable(true);
     }
 }

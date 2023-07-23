@@ -20,6 +20,16 @@ public class GestureMiniGame : MonoBehaviour
 
     private bool isPaused;                                                              // Pause Timer Indicator
 
+    void OnEnable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane += ReturnToOverworld;
+    }
+
+    void OnDisable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
+    }
+
     #region Singleton
     void Awake()
     {
@@ -47,9 +57,6 @@ public class GestureMiniGame : MonoBehaviour
         currentPatternIndex = 0;
         timerBar.fillAmount = 1f;
         isPaused = false;
-
-        // Subscribe Event
-        PlayerEvents.Instance.OnPlayerInsane += ReturnToOverworld;
 
         // Start the Timer
         StartCoroutine(StartTimer());
@@ -173,9 +180,6 @@ public class GestureMiniGame : MonoBehaviour
         // Player Chime SFX
         AudioManager.Instance.PlayOneShot("Mini Game C Chime");
 
-        // Unsubscribe Event
-        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
-
         ReturnToOverworld();
     }
 
@@ -189,9 +193,6 @@ public class GestureMiniGame : MonoBehaviour
 
         PlayerEvents.Instance.SetPlayerSanity(1);
 
-        // Unsubscribe Event
-        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
-
         ReturnToOverworld();
     }
     #endregion
@@ -201,9 +202,11 @@ public class GestureMiniGame : MonoBehaviour
     /// </summary>
     void ReturnToOverworld()
     {
+        //currentPatternFurniture.InProgress = false;
         StopAllCoroutines();
         ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerEnable(true);
+        PlayerManager.Instance.Player.PlayerMovement.IsPlayingMiniGame = false;
     }
 }

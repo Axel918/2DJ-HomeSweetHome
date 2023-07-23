@@ -20,12 +20,16 @@ public class StaticEffect : MonoBehaviour
     {
         PlayerEvents.Instance.OnSetPlayerSanity += IncreaseStatic;
         PlayerEvents.Instance.OnPlayerStabilized += ResetStatic;
+        PlayerEvents.Instance.OnPlayerInsane += Maximize;
+        GameEvents.Instance.OnLevelFailed += Terminate;
     }
 
     void OnDisable()
     {
         PlayerEvents.Instance.OnSetPlayerSanity -= IncreaseStatic;
         PlayerEvents.Instance.OnPlayerStabilized -= ResetStatic;
+        PlayerEvents.Instance.OnPlayerInsane -= Maximize;
+        GameEvents.Instance.OnLevelFailed -= Terminate;
     }
 
     void Awake()
@@ -68,14 +72,36 @@ public class StaticEffect : MonoBehaviour
         // Sets the currentSanityLevel back to the Minimum Level
         currentSanityLevel = minSanityLevel;
 
+        currentStaticIntensity = 0f;
+
+        // Increase the CurrentStaticIntensity based on the player's insanity level
         for (int i = 0; i < currentSanityLevel; i++)
         {
-            currentStaticIntensity -= 0.1f;
+            currentStaticIntensity += 0.1f;
         }
 
         material.SetFloat("_Opacity", currentStaticIntensity);
 
         // Clamps Sanity Level to Min-Max Values
         currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
+    }
+
+    void Maximize()
+    {
+        currentSanityLevel = maxSanityLevel;
+
+        currentStaticIntensity = 0.5f;
+
+        material.SetFloat("_Opacity", currentStaticIntensity);
+
+        // Clamps Sanity Level to Min-Max Values
+        currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
+    }
+
+    void Terminate()
+    {
+        currentSanityLevel = 0;
+        currentStaticIntensity = 0f;
+        material.SetFloat("_Opacity", currentStaticIntensity);
     }
 }
