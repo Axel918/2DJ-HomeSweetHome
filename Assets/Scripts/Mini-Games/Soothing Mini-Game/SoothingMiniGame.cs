@@ -34,8 +34,6 @@ public class SoothingMiniGame : MonoBehaviour
         stabilizeBar.fillAmount = 0f;
         GameManager.Instance.PlayerIsSafe = true;
 
-        GameEvents.Instance.OnLevelFailed += ReturnToOverworld;
-
         RandomizeControlType();
 
         StartCoroutine(DecreaseGradually());
@@ -52,8 +50,6 @@ public class SoothingMiniGame : MonoBehaviour
 
         // Set Current Random Index to the Chosen Random Number Index
         currentRandomIndex = randomIndex;
-
-        Debug.Log("Random Number: " + randomIndex);
 
         for (int i = 0; i < controlType.Length; i++)
             controlType[i].SetActive(i == randomIndex);
@@ -110,8 +106,6 @@ public class SoothingMiniGame : MonoBehaviour
 
         teddyBear.IsBeingUsed = false;
         teddyBear.Cam.SetActive(false);
-
-        GameEvents.Instance.OnLevelFailed -= ReturnToOverworld;
 
         teddyBear = null;
         IsPlaying = false;

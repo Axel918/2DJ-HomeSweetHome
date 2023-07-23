@@ -74,6 +74,12 @@ public class StaticEffect : MonoBehaviour
 
         currentStaticIntensity = 0f;
 
+        // Increase the CurrentStaticIntensity based on the player's insanity level
+        for (int i = 0; i < currentSanityLevel; i++)
+        {
+            currentStaticIntensity += 0.1f;
+        }
+
         material.SetFloat("_Opacity", currentStaticIntensity);
 
         // Clamps Sanity Level to Min-Max Values
