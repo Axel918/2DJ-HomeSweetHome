@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: gestureData.Array.data[5]
       value: 
       objectReference: {fileID: 6365259214702972317, guid: f1e6a64dc5c084d439b436be86f7cc44, type: 3}
+    - target: {fileID: 9059899087430722628, guid: 9f709b39ce1c7de4c84af1efcd0a966e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.514
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f709b39ce1c7de4c84af1efcd0a966e, type: 3}
 --- !u!4 &125638317 stripped
@@ -1590,6 +1594,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 9.69
       objectReference: {fileID: 0}
+    - target: {fileID: 5520990562392616424, guid: 440ad1bfdee16b14886dd2ce3a547378, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6131174267291396289, guid: 440ad1bfdee16b14886dd2ce3a547378, type: 3}
       propertyPath: m_Name
       value: Police Car Variant
@@ -1608,7 +1616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131174267291396294, guid: 440ad1bfdee16b14886dd2ce3a547378, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -4.31
       objectReference: {fileID: 0}
     - target: {fileID: 6131174267291396294, guid: 440ad1bfdee16b14886dd2ce3a547378, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1638,6 +1646,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6131174267747210233, guid: 440ad1bfdee16b14886dd2ce3a547378, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131174269013709013, guid: 440ad1bfdee16b14886dd2ce3a547378, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 440ad1bfdee16b14886dd2ce3a547378, type: 3}
 --- !u!4 &991979005 stripped
@@ -1658,7 +1674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: timer
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: gestureData.Array.size
