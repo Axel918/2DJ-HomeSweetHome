@@ -809,11 +809,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7387511718047161444, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: monsterTimer
-      value: 65
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -2037407389491517141, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: jumpscareTimer
-      value: 45
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1226813143943629239, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: m_Name
@@ -865,7 +865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5297595929988956691, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: insanityTimer
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
@@ -1039,7 +1039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8598269215594182552, guid: 7e682a1faa5e71e42812f21066953ebe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.564
+      value: -0.215
       objectReference: {fileID: 0}
     - target: {fileID: 8598269215594182552, guid: 7e682a1faa5e71e42812f21066953ebe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1333,7 +1333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7916764670696279811, guid: 03583ad054968b54eb7e4af09d148068, type: 3}
       propertyPath: timer
-      value: 14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7916764670696279811, guid: 03583ad054968b54eb7e4af09d148068, type: 3}
       propertyPath: gestureData.Array.size
@@ -1523,7 +1523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1396354377158357713, guid: 63c08eed32b77fb46aa5e2ccb07868b9, type: 3}
       propertyPath: timer
-      value: 17
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1396354377158357713, guid: 63c08eed32b77fb46aa5e2ccb07868b9, type: 3}
       propertyPath: gestureData.Array.size
@@ -1996,7 +1996,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 735234672556418617, guid: 2f7b2c9b4a6dcf544ba5627f1970f660, type: 3}
       propertyPath: timer
-      value: 28
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 735234672556418617, guid: 2f7b2c9b4a6dcf544ba5627f1970f660, type: 3}
       propertyPath: gestureData.Array.size
@@ -3229,7 +3229,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: timer
-      value: 25
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.size

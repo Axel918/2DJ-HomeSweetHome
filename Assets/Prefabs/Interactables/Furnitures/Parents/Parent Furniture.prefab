@@ -282,7 +282,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6814803667733995669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -408,9 +408,8 @@ MonoBehaviour:
   triggerPoint: {fileID: 6814803667733995669}
   Cam: {fileID: 9062050995656229457}
   Animator: {fileID: 8607303929918109968}
-  patternData:
-  - {fileID: 1886690854476102256, guid: c836a82f51158a1418ea13cc45c4a6fb, type: 3}
-  - {fileID: 1886690854476102256, guid: fa2b6b5b034cf854cabcf88315e74fd1, type: 3}
+  gestureData: []
+  furnitureId: 
   timer: 1000
 --- !u!1 &9062050995656229457
 GameObject:
