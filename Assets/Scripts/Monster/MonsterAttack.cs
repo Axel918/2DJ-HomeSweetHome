@@ -15,12 +15,14 @@ public class MonsterAttack : MonoBehaviour
     {
         PlayerEvents.Instance.OnPlayerInsane += InitiateInsanityTimer;
         PlayerEvents.Instance.OnPlayerStabilized += Terminate;
+        GameEvents.Instance.OnLevelComplete += Terminate;
     }
 
     void OnDisable()
     {
         PlayerEvents.Instance.OnPlayerInsane -= InitiateInsanityTimer;
         PlayerEvents.Instance.OnPlayerStabilized -= Terminate;
+        GameEvents.Instance.OnLevelComplete -= Terminate;
     }
 
     void Awake()

@@ -15,12 +15,14 @@ public class MonsterSpawn : MonoBehaviour
     {
         PlayerEvents.Instance.OnPlayerStabilized += InitiateMonsterCountdown;
         PlayerEvents.Instance.OnPlayerInsane += Terminate;
+        GameEvents.Instance.OnLevelComplete += Terminate;
     }
 
     void OnDisable()
     {
         PlayerEvents.Instance.OnPlayerStabilized -= InitiateMonsterCountdown;
         PlayerEvents.Instance.OnPlayerInsane -= Terminate;
+        GameEvents.Instance.OnLevelComplete -= Terminate;
     }
 
     void Awake()

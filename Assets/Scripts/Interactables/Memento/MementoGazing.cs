@@ -16,21 +16,31 @@ public class MementoGazing : MonoBehaviour
     }
     #endregion
 
+    void OnEnable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane += OnReturnButtonClicked;
+    }
+
+    void OnDisable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane -= OnReturnButtonClicked;
+    }
+
     public void Initialize(Memento reference)
     {
         memento = reference;
 
-        // Subscribe to Events
-        PlayerEvents.Instance.OnPlayerInsane += OnReturnButtonClicked;
+        if (GameManager.Instance.State == GameManager.GameState.MONSTER_PRESENT)
+        {
+            OnReturnButtonClicked();
+            return;
+        }
     }
 
     void ClearData()
     {
         // Nullify References
         memento = null;
-
-        // Unsubscribe Events
-        PlayerEvents.Instance.OnPlayerInsane -= OnReturnButtonClicked;
     }
 
     public void OnReturnButtonClicked()

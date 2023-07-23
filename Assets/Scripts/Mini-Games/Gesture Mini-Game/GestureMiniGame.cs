@@ -58,6 +58,13 @@ public class GestureMiniGame : MonoBehaviour
         timerBar.fillAmount = 1f;
         isPaused = false;
 
+        if (GameManager.Instance.State == GameManager.GameState.MONSTER_PRESENT)
+        {
+            currentPatternFurniture.InProgress = false;
+            ReturnToOverworld();
+            return;
+        }
+
         // Start the Timer
         StartCoroutine(StartTimer());
 
@@ -202,7 +209,6 @@ public class GestureMiniGame : MonoBehaviour
     /// </summary>
     void ReturnToOverworld()
     {
-        //currentPatternFurniture.InProgress = false;
         StopAllCoroutines();
         ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
