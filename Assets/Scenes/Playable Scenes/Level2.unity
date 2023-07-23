@@ -609,6 +609,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2140786427}
+    - target: {fileID: 8305088431271001499, guid: f52cea68bdef66548b919ec29832286f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f4b6d0550dd644a4a87e2fbd03be2eb4, type: 2}
     - target: {fileID: 8533931802722470996, guid: f52cea68bdef66548b919ec29832286f, type: 3}
       propertyPath: m_LocalPosition.z
       value: -7.610001
@@ -1886,15 +1890,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7387511718047161444, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: monsterTimer
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: -2037407389491517141, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: jumpscareTimer
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: -2037407389491517141, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: scareProbability
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1226813143943629239, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: m_Name
@@ -2204,6 +2208,10 @@ PrefabInstance:
     - target: {fileID: 4336543245563247968, guid: 2a4b7a4c44ec9864bbe93a941234cf6b, type: 3}
       propertyPath: minSanityLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336543245563247968, guid: 2a4b7a4c44ec9864bbe93a941234cf6b, type: 3}
+      propertyPath: maxStaticIntensity
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4336543245563247971, guid: 2a4b7a4c44ec9864bbe93a941234cf6b, type: 3}
       propertyPath: m_Name
