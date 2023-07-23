@@ -43,6 +43,13 @@ AnimationClip:
     path: props_2d_washBasin
     classID: 212
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 9cecec98441ee704188287aab62521a1, type: 3}
+    attribute: m_Sprite
+    path: 2d_anim_hangerEmpty
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -58,6 +65,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 2360270284
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 527911377
       attribute: 1
       script: {fileID: 0}
@@ -67,6 +81,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 3bab9f4a7fc36cf408d6cc088eb0767f, type: 3}
     - {fileID: 21300000, guid: 83193a47f0394f74899b85bb7631790d, type: 3}
+    - {fileID: 21300000, guid: 9cecec98441ee704188287aab62521a1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
