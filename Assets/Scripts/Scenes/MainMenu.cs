@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnPlayButtonClicked()
     {
-        string[] scenes = { "GameScene", "GameUIScene", "Level" + PlayerManager.Instance.PlayerData.CurrentLevel };
+        string[] scenes = { "LetterScene" };
 
         SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
     }
@@ -24,8 +24,8 @@ public class MainMenu : MonoBehaviour
 
     public void OnGameExitButtonClicked()
     {
+        Debug.Log("You have Quit the Game.");
         Application.Quit();
-        Debug.Log("Game Exited");
     }
 
     public void OnReturnButtonClicked()

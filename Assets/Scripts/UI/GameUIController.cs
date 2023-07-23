@@ -22,18 +22,18 @@ public class GameUIController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
-        uiController.SetActive(true);
-        nonUIController.SetActive(true);
-
-        DebugMenu = GetComponent<DebugMenu>();
-        PauseMenu = GetComponent<PauseMenu>();
     }
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
+        uiController.SetActive(true);
+        nonUIController.SetActive(true);
+
+        DebugMenu = GetComponent<DebugMenu>();
+        PauseMenu = GetComponent<PauseMenu>();
+
         PanelManager.Instance.ActivatePanel("Game UI");
         transitionAnimator.gameObject.SetActive(true);
     }

@@ -6312,7 +6312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367a89d043f857341b9bc91c7d2a4afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PlayerDamage>k__BackingField: 20
   patternHolder: {fileID: 6122983444718286725}
   timerBar: {fileID: 6122983445191271055}
   canvasGroup: {fileID: 6122983446454469593}
