@@ -13,6 +13,16 @@ public class MonsterJumpscare : MonoBehaviour
 
     private Monster monsterSetup;                                                       // Monster Class Reference
 
+    void OnEnable()
+    {
+        GameEvents.Instance.OnLevelComplete += Terminate;
+    }
+
+    void OnDisable()
+    {
+        GameEvents.Instance.OnLevelComplete -= Terminate;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +61,10 @@ public class MonsterJumpscare : MonoBehaviour
             GameUIController.Instance.SetAnimation(scareIds[randomNumberScareIndex]);
 
         StartCoroutine(JumpscareCounter());
+    }
+
+    void Terminate()
+    {
+        StopAllCoroutines();
     }
 }
