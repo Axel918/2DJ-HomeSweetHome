@@ -11,7 +11,13 @@ public class StaticEffect : MonoBehaviour
     [Range(0, 5)]
     [SerializeField] private int maxSanityLevel;
 
+    [Header("Static Settings")]
+    [Range(0f, 1f)]
+    [SerializeField] private float maxStaticIntensity = 0.4f;
+
     #region "Private Properties"
+
+    private float staticIncrement = 0f;
     private int currentSanityLevel = 0;
     private float currentStaticIntensity = 0f;
     #endregion
@@ -39,13 +45,15 @@ public class StaticEffect : MonoBehaviour
 
     void Start()
     {
+        staticIncrement = maxStaticIntensity / maxSanityLevel;
+
         // Set the current sanity level based on the Minimum Sanity Level
         currentSanityLevel = minSanityLevel;
 
         // Increase the CurrentStaticIntensity based on the player's insanity level
         for (int i = 0; i < currentSanityLevel; i++)
         {
-            currentStaticIntensity += 0.1f;
+            currentStaticIntensity += staticIncrement;
         }
 
         material.SetFloat("_Opacity", currentStaticIntensity);
@@ -56,8 +64,8 @@ public class StaticEffect : MonoBehaviour
         // Incremenent the Sanity Level by 1
         if (currentSanityLevel < maxSanityLevel)
         {
-            // Increase the CurrentStaticIntensity by 0.1f; 
-            currentStaticIntensity += 0.1f;
+            // Increase the CurrentStaticIntensity by the staticIncrement; 
+            currentStaticIntensity += staticIncrement;
             material.SetFloat("_Opacity", currentStaticIntensity);
 
             currentSanityLevel++;
@@ -77,7 +85,7 @@ public class StaticEffect : MonoBehaviour
         // Increase the CurrentStaticIntensity based on the player's insanity level
         for (int i = 0; i < currentSanityLevel; i++)
         {
-            currentStaticIntensity += 0.1f;
+            currentStaticIntensity += staticIncrement;
         }
 
         material.SetFloat("_Opacity", currentStaticIntensity);
@@ -90,7 +98,7 @@ public class StaticEffect : MonoBehaviour
     {
         currentSanityLevel = maxSanityLevel;
 
-        currentStaticIntensity = 0.5f;
+        currentStaticIntensity = maxStaticIntensity;
 
         material.SetFloat("_Opacity", currentStaticIntensity);
 
