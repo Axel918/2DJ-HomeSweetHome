@@ -412,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077380143533066079, guid: 03270bbf1d0501249a215623d6c0da7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.89
+      value: -4.72
       objectReference: {fileID: 0}
     - target: {fileID: 4077380143533066079, guid: 03270bbf1d0501249a215623d6c0da7b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -607,8 +607,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251686983}
-  m_LocalRotation: {x: -0.12714857, y: 0.69558126, z: -0.12094005, w: -0.6966875}
-  m_LocalPosition: {x: 2.6351118, y: 1.09774, z: -2.300459}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -0.5590863, y: 2.632, z: -34.691917}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1269,7 +1269,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7916764670322067958, guid: 03583ad054968b54eb7e4af09d148068, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.259
+      value: -0.254
       objectReference: {fileID: 0}
     - target: {fileID: 7916764670696279811, guid: 03583ad054968b54eb7e4af09d148068, type: 3}
       propertyPath: timer
@@ -2089,6 +2089,14 @@ PrefabInstance:
     - target: {fileID: 735234673350320332, guid: 2f7b2c9b4a6dcf544ba5627f1970f660, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.362
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240836414358519680, guid: 2f7b2c9b4a6dcf544ba5627f1970f660, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 8240836414358519680, guid: 2f7b2c9b4a6dcf544ba5627f1970f660, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.92
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7b2c9b4a6dcf544ba5627f1970f660, type: 3}
@@ -2992,6 +3000,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1499182246}
     m_Modifications:
+    - target: {fileID: 7227783044968914465, guid: a01996003ea01dc4692bcc6ae3285a6f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7227783045743941674, guid: a01996003ea01dc4692bcc6ae3285a6f, type: 3}
       propertyPath: m_Name
       value: TeddyBear
