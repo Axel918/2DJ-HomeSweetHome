@@ -18,7 +18,6 @@ public class PlayerAttackedAnimationEvent : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         AudioManager.Instance.Stop("Death Sound");
-        AudioManager.Instance.Play("Monster Screech");
         GameUIController.Instance.SetAnimation("isMajorJumpscare");
     }
 

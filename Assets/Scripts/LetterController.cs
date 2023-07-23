@@ -12,6 +12,7 @@ public class LetterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Instance.Play("Crumpling");
         PanelManager.Instance.ActivatePanel("Letter");
         WriteText();
     }

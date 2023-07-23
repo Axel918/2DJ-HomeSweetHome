@@ -34,6 +34,12 @@ public class SoothingMiniGame : MonoBehaviour
         stabilizeBar.fillAmount = 0f;
         GameManager.Instance.PlayerIsSafe = true;
 
+        if (GameManager.Instance.State == GameManager.GameState.LEVEL_FAILED)
+        {
+            ReturnToOverworld();
+            return;
+        }
+
         RandomizeControlType();
 
         StartCoroutine(DecreaseGradually());

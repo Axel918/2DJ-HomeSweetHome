@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -88,9 +89,35 @@ public class GameManager : MonoBehaviour
         
         if (CurrentNumber >= TotalFurniture)
         {
-            SetGameState(GameState.LEVEL_COMPLETE);
-            RestartGame();
+            GameEvents.Instance.LevelComplete();
+            StartCoroutine(LevelCompleteTransition());
         }
+    }
+
+    IEnumerator LevelCompleteTransition()
+    {
+        // Set Game State to Level Complete
+        SetGameState(GameState.LEVEL_COMPLETE);
+
+        yield return new WaitForSeconds(1f);
+
+        // Fade to Black
+        PanelManager.Instance.ActivatePanel("Black Panel");
+
+        yield return new WaitForSeconds(1f);
+
+        // Play Smacking SFX
+        AudioManager.Instance.Play("Hitting Sound");
+
+        yield return new WaitForSeconds(1f);
+
+        // Play Door Closing SFX
+        AudioManager.Instance.Play("Door Closing");
+
+        yield return new WaitForSeconds(1f);
+
+        // Proceed to Next Level
+        RestartGame();
     }
 
     void GameOver()
