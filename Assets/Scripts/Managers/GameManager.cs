@@ -15,8 +15,8 @@ public class GameManager : MonoBehaviour
     public GameState State { get; private set; } = GameState.NO_MONSTER;               // Current Game Status Indicator
     public bool PlayerIsSafe { get; set; }                                             // Indicates if Player is Safe from Monster Attacks
 
-    [Header("Properties")]
-    [SerializeField] private int maxLevel = 3;                                         // Maximum Level Amount
+    [field : SerializeField, Header("Properties")] 
+    public int MaxLevel { get; private set; } = 3;                                      // Maximum Level Amount
 
     // TO BE REMOVED!!!
     public int CurrentNumber { get; private set; }
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (State == GameState.LEVEL_COMPLETE)
             PlayerManager.Instance.PlayerData.CurrentLevel++;
 
-        if (PlayerManager.Instance.PlayerData.CurrentLevel < maxLevel)
+        if (PlayerManager.Instance.PlayerData.CurrentLevel < MaxLevel)
         {
             // Load Letter Scene
             string[] scenes = { "LetterScene" };

@@ -72,10 +72,7 @@ public class StaticEffect : MonoBehaviour
         // Sets the currentSanityLevel back to the Minimum Level
         currentSanityLevel = minSanityLevel;
 
-        for (int i = 0; i < currentSanityLevel; i++)
-        {
-            currentStaticIntensity -= 0.1f;
-        }
+        currentStaticIntensity = 0f;
 
         material.SetFloat("_Opacity", currentStaticIntensity);
 
@@ -87,9 +84,12 @@ public class StaticEffect : MonoBehaviour
     {
         currentSanityLevel = maxSanityLevel;
 
+        currentStaticIntensity = 0.5f;
+
+        material.SetFloat("_Opacity", currentStaticIntensity);
+
         // Clamps Sanity Level to Min-Max Values
         currentSanityLevel = Mathf.Clamp(currentSanityLevel, minSanityLevel, maxSanityLevel);
-        material.SetFloat("_Opacity", currentStaticIntensity);
     }
 
     void Terminate()
