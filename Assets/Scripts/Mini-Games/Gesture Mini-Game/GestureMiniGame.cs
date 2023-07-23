@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class GestureMiniGame : MonoBehaviour
 {
     public static GestureMiniGame Instance;
-
-    [field: SerializeField, Header("Properties")] 
-    public float PlayerDamage { get; private set; } = 20f;                              // Player Damage Amount
     
     [Header("References")]
     [SerializeField] private Transform patternHolder;                                   // Pattern Holder Point Reference
@@ -22,6 +19,16 @@ public class GestureMiniGame : MonoBehaviour
     private float currentTimer;                                                         // Mini-Game Timer
 
     private bool isPaused;                                                              // Pause Timer Indicator
+
+    void OnEnable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane += ReturnToOverworld;
+    }
+
+    void OnDisable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
+    }
 
     #region Singleton
     void Awake()
@@ -50,9 +57,6 @@ public class GestureMiniGame : MonoBehaviour
         currentPatternIndex = 0;
         timerBar.fillAmount = 1f;
         isPaused = false;
-
-        // Subscribe Event
-        PlayerEvents.Instance.OnPlayerInsane += ReturnToOverworld;
 
         // Start the Timer
         StartCoroutine(StartTimer());
@@ -176,9 +180,6 @@ public class GestureMiniGame : MonoBehaviour
         // Player Chime SFX
         AudioManager.Instance.PlayOneShot("Mini Game C Chime");
 
-        // Unsubscribe Event
-        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
-
         ReturnToOverworld();
     }
 
@@ -190,10 +191,7 @@ public class GestureMiniGame : MonoBehaviour
         currentPatternFurniture.Failed();
         currentPatternFurniture.InProgress = false;
 
-        PlayerEvents.Instance.SetPlayerSanity(PlayerDamage);
-
-        // Unsubscribe Event
-        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
+        PlayerEvents.Instance.SetPlayerSanity(1);
 
         ReturnToOverworld();
     }
@@ -204,9 +202,11 @@ public class GestureMiniGame : MonoBehaviour
     /// </summary>
     void ReturnToOverworld()
     {
+        //currentPatternFurniture.InProgress = false;
         StopAllCoroutines();
         ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerEnable(true);
+        PlayerManager.Instance.Player.PlayerMovement.IsPlayingMiniGame = false;
     }
 }

@@ -45,6 +45,12 @@ public class MonsterAttack : MonoBehaviour
                 currentTimer--;
         }
 
+        if (GameManager.Instance.PlayerIsSafe)
+        {
+            Debug.Log("PLAYER IS SAVED BY THE BEAR!!!");
+            yield break;
+        }
+
         // Monster Gets Player. GAME OVER!!!
         Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");
         GameManager.Instance.SetGameState(GameManager.GameState.LEVEL_FAILED);

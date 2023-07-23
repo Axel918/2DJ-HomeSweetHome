@@ -16,6 +16,17 @@ public class Furniture : Interactable
     public bool IsComplete { get; set; }                                                // Indicates if thie Mini-Game Instance is Completed
     public bool InProgress { get; set; }                                                // Indicates if this Mini-Game Instance is Currently
                                                                                         // Being Played
+
+    void OnEnable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane += Terminate;
+    }
+
+    void OnDisable()
+    {
+        PlayerEvents.Instance.OnPlayerInsane -= Terminate;
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -95,6 +106,7 @@ public class Furniture : Interactable
     public void Completed()
     {
         GameManager.Instance.CheckList();   // TO BE REMOVED!!!
+
         InProgress = false;
         IsComplete = true;
         Destroy(triggerPoint.gameObject);
@@ -114,5 +126,13 @@ public class Furniture : Interactable
     public void TriggerAnimation(int value)
     {
         Animator.SetInteger("furnitureStatus", value);
+    }
+
+    void Terminate()
+    {
+        StopAllCoroutines();
+        TriggerAnimation(0);
+        InProgress = false;
+        PlayerEvents.Instance.SetPlayerEnable(true);
     }
 }

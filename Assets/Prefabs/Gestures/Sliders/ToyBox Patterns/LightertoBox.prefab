@@ -97,11 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011127278173, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_Name
-      value: CloseBox
+      value: LightertoBox
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071073
+      value: 0.70710427
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalRotation.x
@@ -113,11 +113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071063
+      value: 0.70710933
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011657598313, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -450
+      value: -630
       objectReference: {fileID: 0}
     - target: {fileID: 7781148011688489929, guid: a82d03b9dac3a0f4c8cf8698339d2597, type: 3}
       propertyPath: m_AnchorMax.y
