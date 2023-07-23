@@ -3639,7 +3639,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 209481380}
         m_TargetAssemblyTypeName: DebugMenu, Assembly-CSharp
-        m_MethodName: OnDisableMovementClicked
+        m_MethodName: OnEnableMovementClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

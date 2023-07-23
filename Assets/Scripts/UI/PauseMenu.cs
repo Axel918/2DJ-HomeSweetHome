@@ -22,16 +22,15 @@ public class PauseMenu : MonoBehaviour
 
         if (GameIsPaused)
         {
-            if (!pausePanel.activeSelf) 
+            if (!pausePanel.activeSelf)
                 return;
 
             if (Input.GetKeyDown(KeyCode.M))
             {
-                Debug.Log("Going to Main Menu");
+                OpenMainMenu();
                 return;
             }
         }
-
 
         // Escape can Resume and Pause the Game
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -41,6 +40,14 @@ public class PauseMenu : MonoBehaviour
             else
                 Pause();
         }
+    }
+
+    private void OpenMainMenu()
+    {
+        Time.timeScale = 1f;
+
+        string[] scenes = { "MainMenuScene" };
+        SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
     }
 
     private void Resume()

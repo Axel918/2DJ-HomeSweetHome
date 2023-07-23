@@ -66,7 +66,7 @@ public class DebugMenu : MonoBehaviour
 
     private void Update()
     {
-        if (!debugPanel.activeInHierarchy) return;
+        if (!debugPanel.activeSelf) return;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
