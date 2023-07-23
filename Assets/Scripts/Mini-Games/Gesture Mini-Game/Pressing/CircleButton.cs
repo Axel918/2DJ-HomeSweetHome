@@ -14,6 +14,9 @@ public class CircleButton : MonoBehaviour
         // Update to the CircleManager
         circleManager.Evaluate();
 
+        // Play SFX
+        AudioManager.Instance.PlayOneShot("Circle Game Sound");
+
         // Deactivate
         gameObject.SetActive(false);
     }

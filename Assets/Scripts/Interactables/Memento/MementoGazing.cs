@@ -18,12 +18,12 @@ public class MementoGazing : MonoBehaviour
 
     void OnEnable()
     {
-        PlayerEvents.Instance.OnPlayerInsane += OnReturnButtonClicked;
+        PlayerEvents.Instance.OnPlayerInsane += ReturnToOverworld;
     }
 
     void OnDisable()
     {
-        PlayerEvents.Instance.OnPlayerInsane -= OnReturnButtonClicked;
+        PlayerEvents.Instance.OnPlayerInsane -= ReturnToOverworld;
     }
 
     public void Initialize(Memento reference)
@@ -32,7 +32,7 @@ public class MementoGazing : MonoBehaviour
 
         if (GameManager.Instance.State == GameManager.GameState.MONSTER_PRESENT)
         {
-            OnReturnButtonClicked();
+            ReturnToOverworld();
             return;
         }
     }
@@ -44,6 +44,12 @@ public class MementoGazing : MonoBehaviour
     }
 
     public void OnReturnButtonClicked()
+    {
+        AudioManager.Instance.Play("Button Sound");
+        ReturnToOverworld();
+    }
+
+    void ReturnToOverworld()
     {
         memento.IsBeingGazed = false;
         memento.Cam.SetActive(false);
