@@ -681,7 +681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9059899086520427185, guid: 3c9232a9c0f41a0479d38a913c02d0fa, type: 3}
       propertyPath: timer
-      value: 18
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9059899086520427185, guid: 3c9232a9c0f41a0479d38a913c02d0fa, type: 3}
       propertyPath: gestureData.Array.size
@@ -813,7 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: timer
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1569701743437595671, guid: 4e4eeedea8e8d044ab2812e8bda995b9, type: 3}
       propertyPath: gestureData.Array.size
@@ -1391,7 +1391,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6665379222230473728, guid: 8497de1cbcf7b2641975d6342dd7d547, type: 3}
       propertyPath: timer
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6665379222230473728, guid: 8497de1cbcf7b2641975d6342dd7d547, type: 3}
       propertyPath: gestureData.Array.size
@@ -1609,7 +1609,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: timer
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6665379222230473728, guid: 65ee08aa2989eb14c8f452736dafe18e, type: 3}
       propertyPath: gestureData.Array.size
