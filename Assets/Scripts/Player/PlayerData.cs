@@ -6,6 +6,7 @@ public class PlayerData : MonoBehaviour
     public List<string> FurnitureList = new();
 
     public int CurrentLevel { get; set; } = 1;
+    public bool GameIsFinished { get; set; }
 
     private void Awake()
     {
