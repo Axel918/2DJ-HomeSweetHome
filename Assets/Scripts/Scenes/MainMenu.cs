@@ -9,7 +9,17 @@ public class MainMenu : MonoBehaviour
 
         AudioManager.Instance.Play("Main Menu Music");
 
-        PanelManager.Instance.ActivatePanel("Main Menu");
+        // Activate Panel based on Game Status
+        if (PlayerManager.Instance.PlayerData.GameIsFinished)
+        {
+            // Roll Credits if Player Has Finished the Game
+            PanelManager.Instance.ActivatePanel("Credits Menu");
+        }  
+        else
+        {
+            // Activate Main Menu Panel
+            PanelManager.Instance.ActivatePanel("Main Menu");
+        }
     }
 
     public void OnPlayButtonClicked()
@@ -39,5 +49,6 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.Instance.Play("Button Sound");
         PanelManager.Instance.ActivatePanel("Main Menu");
+        PlayerManager.Instance.PlayerData.GameIsFinished = false;
     }
 }
