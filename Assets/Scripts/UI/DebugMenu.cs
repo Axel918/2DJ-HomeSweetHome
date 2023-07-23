@@ -67,26 +67,76 @@ public class DebugMenu : MonoBehaviour
     public void OnPreviousLevelClicked()
     {
         Debug.Log("PREVIOUS LEVEL CLICKED");
+
+        if (Time.timeScale <= 0f) Time.timeScale = 1f;
+
+        PlayerManager.Instance.PlayerData.CurrentLevel--;
+
+        PlayerManager.Instance.PlayerData.CurrentLevel =
+                    Mathf.Clamp(PlayerManager.Instance.PlayerData.CurrentLevel, 1, 3);
+
+        // Load All Necessary Scenes for Gameplay
+        string[] scenes = { "LetterScene" };
+
+        // Load the Scenes with Fade In Transition
+        SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
+    }
+
+    public void OnRestartLevelClicked()
+    {
+        if (Time.timeScale <= 0f) Time.timeScale = 1f;
+
+        string[] scenes = { "LetterScene" };
+
+        // Load the Scenes with Fade In Transition
+        SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
     }
 
     public void OnNextLevelClicked()
     {
+        if (Time.timeScale <= 0f) Time.timeScale = 1f;
+
         Debug.Log("NEXT LEVEL CLICKED");
+
+        PlayerManager.Instance.PlayerData.CurrentLevel++;
+
+        PlayerManager.Instance.PlayerData.CurrentLevel =
+                    Mathf.Clamp(PlayerManager.Instance.PlayerData.CurrentLevel++, 1, 3);
+
+        // Load All Necessary Scenes for Gameplay
+        string[] scenes = { "LetterScene" };
+
+        // Load the Scenes with Fade In Transition
+        SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
     }
 
-    public void OnDisableMonsterClicked()
-    {
-        Debug.Log("DISABLE MONSTER CLICKED");
-    }
-
-    public void OnResetSanityClicked()
+    public void OnResetPlayerSanityClicked()
     {
         Debug.Log("RESET SANITY CLICKED");
+
+        GameManager.Instance.SetGameState(GameManager.GameState.NO_MONSTER);
+        PlayerEvents.Instance.PlayerStabilized();
+    }
+
+    public void OnMakePlayerInsaneClicked()
+    {
+        Debug.Log("PLAYER IS INSANE CLICKED");
+
+        GameManager.Instance.SetGameState(GameManager.GameState.MONSTER_PRESENT);
+        PlayerEvents.Instance.PlayerInsane();
     }
 
     public void OnDisableMovementClicked()
     {
         Debug.Log("DISABLE MOVEMENT CLICKED");
+
+        PlayerEvents.Instance.SetPlayerEnable(false);
     }
 
+    public void OnEnableMovementClicked()
+    {
+        Debug.Log("DISABLE MOVEMENT CLICKED");
+
+        PlayerEvents.Instance.SetPlayerEnable(true);
+    }
 }
