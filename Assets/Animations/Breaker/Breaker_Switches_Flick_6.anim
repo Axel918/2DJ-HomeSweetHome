@@ -33,6 +33,10 @@ AnimationClip:
       value: {fileID: 21300000, guid: ad09c49ff54d80d4e8617917603e2993, type: 3}
     - time: 1.1666666
       value: {fileID: 21300000, guid: 9f086f9ef64ab624ebc45c112d7f69ad, type: 3}
+    - time: 1.3333334
+      value: {fileID: 21300000, guid: 97f7303f099d9ed42bd957da1ae2727c, type: 3}
+    - time: 2.5
+      value: {fileID: 21300000, guid: 8878fad73d4220d4ca13ccc5966b82f9, type: 3}
     attribute: m_Sprite
     path: props_2d_breaker_fullyBroken
     classID: 212
@@ -59,12 +63,14 @@ AnimationClip:
     - {fileID: 21300000, guid: ad09c49ff54d80d4e8617917603e2993, type: 3}
     - {fileID: 21300000, guid: ad09c49ff54d80d4e8617917603e2993, type: 3}
     - {fileID: 21300000, guid: 9f086f9ef64ab624ebc45c112d7f69ad, type: 3}
+    - {fileID: 21300000, guid: 97f7303f099d9ed42bd957da1ae2727c, type: 3}
+    - {fileID: 21300000, guid: 8878fad73d4220d4ca13ccc5966b82f9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.1833333
+    m_StopTime: 2.5166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
