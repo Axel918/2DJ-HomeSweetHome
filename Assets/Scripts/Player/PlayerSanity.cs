@@ -10,12 +10,19 @@ public class PlayerSanity : MonoBehaviour
 
     void OnEnable()
     {
+        PlayerEvents.Instance.OnPlayerInsane += () => AudioManager.Instance.Play("Flatline");
+        PlayerEvents.Instance.OnPlayerStabilized += () => AudioManager.Instance.Stop("Flatline");
+        GameEvents.Instance.OnLevelFailed += () => AudioManager.Instance.Stop("Flatline");
         PlayerEvents.Instance.OnPlayerStabilized += ResetSanity;
         PlayerEvents.Instance.OnSetPlayerSanity += DecreaseSanity;
+
     }
 
     void OnDisable()
     {
+        PlayerEvents.Instance.OnPlayerInsane -= () => AudioManager.Instance.Play("Flatline");
+        PlayerEvents.Instance.OnPlayerStabilized -= () => AudioManager.Instance.Stop("Flatline");
+        GameEvents.Instance.OnLevelFailed -= () => AudioManager.Instance.Stop("Flatline");
         PlayerEvents.Instance.OnPlayerStabilized -= ResetSanity;
         PlayerEvents.Instance.OnSetPlayerSanity -= DecreaseSanity;
     }
