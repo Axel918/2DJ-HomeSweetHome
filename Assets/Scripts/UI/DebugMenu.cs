@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class DebugMenu : MonoBehaviour
 {
-    [Header("Debug Menu Panel")]
+    [Header("Menu Panels")]
     [SerializeField] private GameObject debugPanel;
+    [SerializeField] private GameObject pausePanel;
 
     [Header("Debug Menu Pages")]
     [SerializeField] private GameObject[] pages;
@@ -61,6 +62,22 @@ public class DebugMenu : MonoBehaviour
         }
 
         ActivatePage(currentPage);
+    }
+
+    private void Update()
+    {
+        if (!debugPanel.activeInHierarchy) return;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenPausePanel();
+        }
+    }
+
+    private void OpenPausePanel()
+    {
+        debugPanel.SetActive(false);
+        pausePanel.SetActive(true);
     }
 
 
