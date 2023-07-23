@@ -45,10 +45,11 @@ public class MonsterAttack : MonoBehaviour
                 currentTimer--;
         }
 
-        // Prevent Monster from Attacking the Player when Playing
-        // the Soothing Mini-Game
-        if (SoothingMiniGame.Instance.IsPlaying)
+        if (GameManager.Instance.PlayerIsSafe)
+        {
+            Debug.Log("PLAYER IS SAVED BY THE BEAR!!!");
             yield break;
+        }
 
         // Monster Gets Player. GAME OVER!!!
         Debug.Log("GAME OVER!!! YOU GOT CAUGHT BY THE MONSTER");

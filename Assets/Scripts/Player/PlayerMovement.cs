@@ -5,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera cam;                                        // Main Camera Reference
 
+    public bool IsPlayingMiniGame { get; set; } = false;                        // Indicates if Player is Currently Playing a Mini-Game
+
     private Player playerSetup;                                                 // Player Class Reference
     private bool canMove;                                                       // Indicates if Player Can Move
     private Vector3 moveDirection;                                              // Current Movement Direction

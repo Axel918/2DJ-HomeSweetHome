@@ -46,7 +46,10 @@ public abstract class Interactable : MonoBehaviour
 
         if (GameManager.Instance.State == GameManager.GameState.LEVEL_FAILED)
             return;
-        
+
+        if (PlayerManager.Instance.Player.PlayerMovement.IsPlayingMiniGame)
+            return;
+
         Examine();
     }
 

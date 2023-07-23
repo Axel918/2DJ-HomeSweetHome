@@ -205,5 +205,6 @@ public class GestureMiniGame : MonoBehaviour
         ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerEnable(true);
+        PlayerManager.Instance.Player.PlayerMovement.IsPlayingMiniGame = false;
     }
 }

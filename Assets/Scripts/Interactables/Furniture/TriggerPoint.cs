@@ -18,7 +18,10 @@ public class TriggerPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if (GameManager.Instance.State != GameManager.GameState.LEVEL_FAILED)
+            {
                 StartCoroutine(interactable.Activate());
+                PlayerManager.Instance.Player.PlayerMovement.IsPlayingMiniGame = true;
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State { get; private set; } = GameState.NO_MONSTER;               // Current Game Status Indicator
+    public bool PlayerIsSafe { get; set; }                                             // Indicates if Player is Safe from Monster Attacks
 
     [Header("Properties")]
     [SerializeField] private int maxLevel = 3;                                         // Maximum Level Amount
@@ -62,15 +63,15 @@ public class GameManager : MonoBehaviour
 
         if (PlayerManager.Instance.PlayerData.CurrentLevel < maxLevel)
         {
-            // Load All Necessary Scenes for Gameplay
-            string[] scenes = { "GameScene", "GameUIScene", "Level" + PlayerManager.Instance.PlayerData.CurrentLevel };
+            // Load Letter Scene
+            string[] scenes = { "LetterScene" };
 
             // Load the Scenes with Fade In Transition
             SceneLoader.Instance.LoadScene(scenes, SceneLoader.LoadingStyle.FADE_IN);
         }
         else
         {
-            // Load All Necessary Scenes for Gameplay
+            // Load Ending Scene
             string[] scenes = { "EndingScene" };
 
             // Load the Scenes with Fade In Transition

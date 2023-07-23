@@ -32,6 +32,7 @@ public class SoothingMiniGame : MonoBehaviour
     {
         teddyBear = reference;
         stabilizeBar.fillAmount = 0f;
+        GameManager.Instance.PlayerIsSafe = true;
 
         GameEvents.Instance.OnLevelFailed += ReturnToOverworld;
 
@@ -98,11 +99,14 @@ public class SoothingMiniGame : MonoBehaviour
         ClearData();
         PanelManager.Instance.ActivatePanel("Game UI");
         PlayerEvents.Instance.SetPlayerEnable(true);
+        PlayerManager.Instance.Player.PlayerMovement.IsPlayingMiniGame = false;
     }
 
     void ClearData()
     {
         StopAllCoroutines();
+
+        GameManager.Instance.PlayerIsSafe = false;
 
         teddyBear.IsBeingUsed = false;
         teddyBear.Cam.SetActive(false);
