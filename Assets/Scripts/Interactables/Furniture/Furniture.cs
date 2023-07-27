@@ -116,6 +116,7 @@ public class Furniture : Interactable
     public void Failed()
     {
         InProgress = false;
+        Cam.SetActive(false);
         TriggerAnimation(0);
     }
 
@@ -130,9 +131,13 @@ public class Furniture : Interactable
 
     void Terminate()
     {
+        if (IsComplete)
+            return;
+        
         StopAllCoroutines();
         TriggerAnimation(0);
         InProgress = false;
+        Cam.SetActive(false);
         PlayerEvents.Instance.SetPlayerEnable(true);
     }
 }
