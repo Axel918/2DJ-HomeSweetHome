@@ -476,7 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notes:
   - If the monster starts to attack, go to the <b>TEDDY BEAR</b> for comfort.
-  - The <b>TASK LIST</b> shows the progress on how many chores have been completed.
+  - The <b>TASK LIST</b> shows what chores you need to complete.
   - While exploring the house, you will come across <b>THINGS</b> that give light
     to the current situation.
   noteText: {fileID: 1415912592}

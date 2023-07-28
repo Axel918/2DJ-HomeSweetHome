@@ -45,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
         if (!canMove)
             return;
 
+        if (!playerSetup.NavMeshAgent.enabled)
+            return;
+
         // Go to Location where the Player Clicked
         if (Input.GetMouseButtonDown(0))
             PointAndClick();

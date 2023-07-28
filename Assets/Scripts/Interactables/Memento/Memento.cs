@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Memento : Interactable
 {
-    public bool IsBeingGazed { get; set; }
+    public bool IsBeingGazed { get; set; }                                  // Indicates if Player is Currently Viewing this Memento
 
     void OnEnable()
     {
@@ -48,9 +48,13 @@ public class Memento : Interactable
         MementoGazing.Instance.Initialize(this);
     }
 
+    /// <summary>
+    /// Cancels Currently Viewed Memento
+    /// </summary>
     void Terminate()
     {
         StopAllCoroutines();
+        Cam.SetActive(false);
         IsBeingGazed = false;
         PlayerEvents.Instance.SetPlayerEnable(true);
     }
