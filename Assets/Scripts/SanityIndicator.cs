@@ -36,6 +36,9 @@ public class SanityIndicator : MonoBehaviour
         animator.SetInteger("sanityLevel", currentSanityLevel);
 
         Debug.Log("Sanity Level: " + currentSanityLevel);
+
+        if (currentSanityLevel > 0)
+            AudioManager.Instance.Play("Heartbeat lvl " + currentSanityLevel);
     }
 
     /// <summary>
@@ -82,8 +85,9 @@ public class SanityIndicator : MonoBehaviour
 
     void Maximize()
     {
-        // Stop Currently Playing Heartbeat SFX
-        AudioManager.Instance.Stop("Heartbeat lvl " + currentSanityLevel);
+        if (currentSanityLevel > 0)
+            // Stop Currently Playing Heartbeat SFX
+            AudioManager.Instance.Stop("Heartbeat lvl " + currentSanityLevel);
 
         currentSanityLevel = maxSanityLevel;
 

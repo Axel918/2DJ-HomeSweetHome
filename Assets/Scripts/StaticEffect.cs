@@ -57,6 +57,9 @@ public class StaticEffect : MonoBehaviour
         }
 
         material.SetFloat("_Opacity", currentStaticIntensity);
+
+        if (currentSanityLevel > 0)
+            AudioManager.Instance.Play("Static lvl " + currentSanityLevel);
     }
 
     void IncreaseStatic(int value)
@@ -107,7 +110,8 @@ public class StaticEffect : MonoBehaviour
 
     void Maximize()
     {
-        AudioManager.Instance.Stop("Static lvl " + currentSanityLevel);
+        if (currentSanityLevel > 0)
+            AudioManager.Instance.Stop("Static lvl " + currentSanityLevel);
 
         currentSanityLevel = maxSanityLevel;
 
