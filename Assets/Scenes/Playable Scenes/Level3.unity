@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5297595929988956691, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
       propertyPath: insanityTimer
-      value: 18
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c3a1627c42997a449c5e9231b5bd970, type: 3}
