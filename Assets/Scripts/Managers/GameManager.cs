@@ -19,9 +19,8 @@ public class GameManager : MonoBehaviour
     [field : SerializeField, Header("Properties")] 
     public int MaxLevel { get; private set; } = 3;                                      // Maximum Level Amount
 
-    // TO BE REMOVED!!!
-    public int CurrentNumber { get; private set; }
-    public int TotalFurniture { get; set; }
+    public int CurrentNumber { get; private set; }                                      // Current Finished Furniture Count
+    public int TotalFurniture { get; set; }                                             // Total Furniture Count
 
     void OnEnable()
     {
@@ -81,7 +80,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// TO BE REMOVED!!!
+    /// Check if All Chores Have Been Completed
     /// </summary>
     public void CheckList()
     {

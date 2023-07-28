@@ -31,34 +31,11 @@ public class Furniture : Interactable
     {
         base.Awake();
 
-        // TO BE REMOVED!!!
         GameManager.Instance.TotalFurniture++;
 
         IsComplete = false;
         InProgress = false;
     }
-
-    /*void OnMouseEnter()
-    {   
-        if (IsComplete)
-            return;
-
-        if (inProgress)
-            return;
-
-        //GetComponent<Renderer>().material.color = Color.red;
-    }
-
-    void OnMouseExit()
-    {
-        if (IsComplete)
-            return;
-
-        if (inProgress)
-            return;
-
-        //GetComponent<Renderer>().material.color = Color.white;
-    }*/
 
     protected override void Examine()
     {
@@ -105,7 +82,7 @@ public class Furniture : Interactable
     /// </summary>
     public void Completed()
     {
-        GameManager.Instance.CheckList();   // TO BE REMOVED!!!
+        GameManager.Instance.CheckList();
 
         InProgress = false;
         IsComplete = true;
@@ -113,6 +90,9 @@ public class Furniture : Interactable
         Cam.SetActive(false);
     }
 
+    /// <summary>
+    /// Gets Executed Upon Failure
+    /// </summary>
     public void Failed()
     {
         InProgress = false;
@@ -129,6 +109,9 @@ public class Furniture : Interactable
         Animator.SetInteger("furnitureStatus", value);
     }
 
+    /// <summary>
+    /// Cancels Currently Played Furniture
+    /// </summary>
     void Terminate()
     {
         if (IsComplete)
